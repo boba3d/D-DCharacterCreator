@@ -9,8 +9,9 @@ import javafx.stage.Stage;
 
 public class Main extends Application implements ControlledScreen{
     ScreensController myController;
+    Character mycharacter;
 
-    //set location and name for FXML screens
+    //set location and names for FXML screens
         public static String Welcome = "Welcome";
         public static String WelcomeFile = "FXML/Welcome.fxml";
 
