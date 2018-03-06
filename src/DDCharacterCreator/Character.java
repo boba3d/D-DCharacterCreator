@@ -6,11 +6,11 @@ public class Character {
     Integer age;
     String weight;
     String height;
-    Enum race;
-    Enum characterClass;
+    Enum.Race race;
+    Enum.Class characterClass;
     Integer level;
     Enum background;
-    Enum allignment;
+    Enum.Alignment allignment;
     Enum eyeColor;
     String Pname;
 
@@ -54,19 +54,19 @@ public class Character {
         this.height = height;
     }
 
-    public Enum getRace() {
+    public Enum.Race getRace() {
         return race;
     }
 
-    public void setRace(Enum race) {
+    public void setRace(Enum.Race race) {
         this.race = race;
     }
 
-    public Enum getCharacterClass() {
+    public Enum.Class getCharacterClass() {
         return characterClass;
     }
 
-    public void setCharacterClass(Enum characterClass) {
+    public void setCharacterClass(Enum.Class characterClass) {
         this.characterClass = characterClass;
     }
 
@@ -86,11 +86,11 @@ public class Character {
         this.background = background;
     }
 
-    public Enum getAllignment() {
+    public Enum.Alignment getAllignment() {
         return allignment;
     }
 
-    public void setAllignment(Enum allignment) {
+    public void setAllignment(Enum.Alignment allignment) {
         this.allignment = allignment;
     }
 
