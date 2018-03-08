@@ -25,7 +25,6 @@ public class Main extends Application implements ControlledScreen{
             mainContainer.loadScreen(Main.Welcome, Main.WelcomeFile);
 
 
-
         //set first screen
         mainContainer.setScreen(Main.Welcome);
         Group root = new Group();

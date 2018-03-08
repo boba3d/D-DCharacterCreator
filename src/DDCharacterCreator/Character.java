@@ -1,112 +1,367 @@
 package DDCharacterCreator;
 
 public class Character {
-    String name;
-    String appearance;
-    Integer age;
-    String weight;
-    String height;
-    Enum.Race race;
-    Enum.Class characterClass;
-    Integer level;
-    Enum background;
-    Enum.Alignment allignment;
-    Enum eyeColor;
-    String Pname;
+    //Basic info
+        private String charName;
+        private Enum.Class charClass;
+        private Integer charLevel;
+        private Enum charBackground;
+        private Enum.Race charRace;
+        private Enum.Alignment charAlignment;
+        private Integer charExperiencePoints;
+        private String charPlayerName;
 
-    public String getName() {
-        return name;
+    //Saving Throws
+        private Integer charStrength;
+        private Integer charDexterity;
+        private Integer charConstitution;
+        private Integer charIntelligence;
+        private Integer charWisdom;
+        private Integer charCharisma;
+
+        private CharacterSkills charSkills;
+
+        private Integer charArmorClass;
+        private Integer charInitiative;
+        private Integer charSpeed;
+        private Integer charHitPointMaximum;
+        private Integer charHitDice;
+
+    //Attacks & spellcasting
+        private String charATKName;
+        private Integer charATKBonus;
+        private String charATKDamageType;
+
+    //Equipment
+        private Integer charCP;
+        private Integer charSP;
+        private Integer charEP;
+        private Integer charGP;
+        private Integer charPP;
+
+    //Character appearance
+        private String charAppearance; //reference to db
+        private Integer charAge;
+        private String charHeight;
+        private String charWeight;
+        private Enum charEyeColor;
+        private Enum charSkin;
+        private Enum charHair;
+        private String charSymbol;
+        private String charBackstory;
+        private String charAdditionalFeaturesTraits;
+        private String Treasure;
+
+        //**************************************************************** GETTER AND SETTERS ***************************************
+    public String getCharName() {
+        return charName;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setCharName(String charName) {
+        this.charName = charName;
     }
 
-    public String getAppearance() {
-        return appearance;
+    public Enum.Class getCharClass() {
+        return charClass;
     }
 
-    public void setAppearance(String appearance) {
-        this.appearance = appearance;
+    public void setCharClass(Enum.Class charClass) {
+        this.charClass = charClass;
     }
 
-    public Integer getAge() {
-        return age;
+    public Integer getCharLevel() {
+        return charLevel;
     }
 
-    public void setAge(Integer age) {
-        this.age = age;
+    public void setCharLevel(Integer charLevel) {
+        this.charLevel = charLevel;
     }
 
-    public String getWeight() {
-        return weight;
+    public Enum getCharBackground() {
+        return charBackground;
     }
 
-    public void setWeight(String weight) {
-        this.weight = weight;
+    public void setCharBackground(Enum charBackground) {
+        this.charBackground = charBackground;
     }
 
-    public String getHeight() {
-        return height;
+    public Enum.Race getCharRace() {
+        return charRace;
     }
 
-    public void setHeight(String height) {
-        this.height = height;
+    public void setCharRace(Enum.Race charRace) {
+        this.charRace = charRace;
     }
 
-    public Enum.Race getRace() {
-        return race;
+    public Enum.Alignment getCharAlignment() {
+        return charAlignment;
     }
 
-    public void setRace(Enum.Race race) {
-        this.race = race;
+    public void setCharAlignment(Enum.Alignment charAlignment) {
+        this.charAlignment = charAlignment;
     }
 
-    public Enum.Class getCharacterClass() {
-        return characterClass;
+    public Integer getCharExperiencePoints() {
+        return charExperiencePoints;
     }
 
-    public void setCharacterClass(Enum.Class characterClass) {
-        this.characterClass = characterClass;
+    public void setCharExperiencePoints(Integer charExperiencePoints) {
+        this.charExperiencePoints = charExperiencePoints;
     }
 
-    public Integer getLevel() {
-        return level;
+    public String getCharPlayerName() {
+        return charPlayerName;
     }
 
-    public void setLevel(Integer level) {
-        this.level = level;
+    public void setCharPlayerName(String charPlayerName) {
+        this.charPlayerName = charPlayerName;
     }
 
-    public Enum getBackground() {
-        return background;
+    public Integer getCharStrength() {
+        return charStrength;
     }
 
-    public void setBackground(Enum background) {
-        this.background = background;
+    public void setCharStrength(Integer charStrength) {
+        this.charStrength = charStrength;
     }
 
-    public Enum.Alignment getAllignment() {
-        return allignment;
+    public Integer getCharDexterity() {
+        return charDexterity;
     }
 
-    public void setAllignment(Enum.Alignment allignment) {
-        this.allignment = allignment;
+    public void setCharDexterity(Integer charDexterity) {
+        this.charDexterity = charDexterity;
     }
 
-    public Enum getEyeColor() {
-        return eyeColor;
+    public Integer getCharConstitution() {
+        return charConstitution;
     }
 
-    public void setEyeColor(Enum eyeColor) {
-        this.eyeColor = eyeColor;
+    public void setCharConstitution(Integer charConstitution) {
+        this.charConstitution = charConstitution;
     }
 
-    public String getPname() {
-        return Pname;
+    public Integer getCharIntelligence() {
+        return charIntelligence;
     }
 
-    public void setPname(String pname) {
-        Pname = pname;
+    public void setCharIntelligence(Integer charIntelligence) {
+        this.charIntelligence = charIntelligence;
+    }
+
+    public Integer getCharWisdom() {
+        return charWisdom;
+    }
+
+    public void setCharWisdom(Integer charWisdom) {
+        this.charWisdom = charWisdom;
+    }
+
+    public Integer getCharCharisma() {
+        return charCharisma;
+    }
+
+    public void setCharCharisma(Integer charCharisma) {
+        this.charCharisma = charCharisma;
+    }
+
+    public CharacterSkills getCharSkills() {
+        return charSkills;
+    }
+
+    public void setCharSkills(CharacterSkills charSkills) {
+        this.charSkills = charSkills;
+    }
+
+    public Integer getCharArmorClass() {
+        return charArmorClass;
+    }
+
+    public void setCharArmorClass(Integer charArmorClass) {
+        this.charArmorClass = charArmorClass;
+    }
+
+    public Integer getCharInitiative() {
+        return charInitiative;
+    }
+
+    public void setCharInitiative(Integer charInitiative) {
+        this.charInitiative = charInitiative;
+    }
+
+    public Integer getCharSpeed() {
+        return charSpeed;
+    }
+
+    public void setCharSpeed(Integer charSpeed) {
+        this.charSpeed = charSpeed;
+    }
+
+    public Integer getCharHitPointMaximum() {
+        return charHitPointMaximum;
+    }
+
+    public void setCharHitPointMaximum(Integer charHitPointMaximum) {
+        this.charHitPointMaximum = charHitPointMaximum;
+    }
+
+    public Integer getCharHitDice() {
+        return charHitDice;
+    }
+
+    public void setCharHitDice(Integer charHitDice) {
+        this.charHitDice = charHitDice;
+    }
+
+    public String getCharATKName() {
+        return charATKName;
+    }
+
+    public void setCharATKName(String charATKName) {
+        this.charATKName = charATKName;
+    }
+
+    public Integer getCharATKBonus() {
+        return charATKBonus;
+    }
+
+    public void setCharATKBonus(Integer charATKBonus) {
+        this.charATKBonus = charATKBonus;
+    }
+
+    public String getCharATKDamageType() {
+        return charATKDamageType;
+    }
+
+    public void setCharATKDamageType(String charATKDamageType) {
+        this.charATKDamageType = charATKDamageType;
+    }
+
+    public Integer getCharCP() {
+        return charCP;
+    }
+
+    public void setCharCP(Integer charCP) {
+        this.charCP = charCP;
+    }
+
+    public Integer getCharSP() {
+        return charSP;
+    }
+
+    public void setCharSP(Integer charSP) {
+        this.charSP = charSP;
+    }
+
+    public Integer getCharEP() {
+        return charEP;
+    }
+
+    public void setCharEP(Integer charEP) {
+        this.charEP = charEP;
+    }
+
+    public Integer getCharGP() {
+        return charGP;
+    }
+
+    public void setCharGP(Integer charGP) {
+        this.charGP = charGP;
+    }
+
+    public Integer getCharPP() {
+        return charPP;
+    }
+
+    public void setCharPP(Integer charPP) {
+        this.charPP = charPP;
+    }
+
+    public String getCharAppearance() {
+        return charAppearance;
+    }
+
+    public void setCharAppearance(String charAppearance) {
+        this.charAppearance = charAppearance;
+    }
+
+    public Integer getCharAge() {
+        return charAge;
+    }
+
+    public void setCharAge(Integer charAge) {
+        this.charAge = charAge;
+    }
+
+    public String getCharHeight() {
+        return charHeight;
+    }
+
+    public void setCharHeight(String charHeight) {
+        this.charHeight = charHeight;
+    }
+
+    public String getCharWeight() {
+        return charWeight;
+    }
+
+    public void setCharWeight(String charWeight) {
+        this.charWeight = charWeight;
+    }
+
+    public Enum getCharEyeColor() {
+        return charEyeColor;
+    }
+
+    public void setCharEyeColor(Enum charEyeColor) {
+        this.charEyeColor = charEyeColor;
+    }
+
+    public Enum getCharSkin() {
+        return charSkin;
+    }
+
+    public void setCharSkin(Enum charSkin) {
+        this.charSkin = charSkin;
+    }
+
+    public Enum getCharHair() {
+        return charHair;
+    }
+
+    public void setCharHair(Enum charHair) {
+        this.charHair = charHair;
+    }
+
+    public String getCharSymbol() {
+        return charSymbol;
+    }
+
+    public void setCharSymbol(String charSymbol) {
+        this.charSymbol = charSymbol;
+    }
+
+    public String getCharBackstory() {
+        return charBackstory;
+    }
+
+    public void setCharBackstory(String charBackstory) {
+        this.charBackstory = charBackstory;
+    }
+
+    public String getCharAdditionalFeaturesTraits() {
+        return charAdditionalFeaturesTraits;
+    }
+
+    public void setCharAdditionalFeaturesTraits(String charAdditionalFeaturesTraits) {
+        this.charAdditionalFeaturesTraits = charAdditionalFeaturesTraits;
+    }
+
+    public String getTreasure() {
+        return Treasure;
+    }
+
+    public void setTreasure(String treasure) {
+        Treasure = treasure;
     }
 }

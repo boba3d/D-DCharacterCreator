@@ -1,9 +1,9 @@
 package DDCharacterCreator.FXML;
 
-import DDCharacterCreator.ControlledScreen;
-import DDCharacterCreator.ScreensController;
 import DDCharacterCreator.Character;
+import DDCharacterCreator.ControlledScreen;
 import DDCharacterCreator.Enum;
+import DDCharacterCreator.ScreensController;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -54,7 +54,7 @@ public class WelcomeController implements Initializable, ControlledScreen {
 
     @FXML
     public void readRaceSubmit() {
-        myChar.setRace(raceBox.getSelectionModel().getSelectedItem());
-        System.out.println(myChar.getRace());
+        myChar.setCharRace(raceBox.getSelectionModel().getSelectedItem());
+        System.out.println(myChar.getCharRace());
     }
 }
