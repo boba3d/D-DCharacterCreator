@@ -1,9 +1,10 @@
 package DDCharacterCreator.FXML;
 
-import DDCharacterCreator.Character;
+
 import DDCharacterCreator.ControlledScreen;
-import DDCharacterCreator.Enum;
 import DDCharacterCreator.ScreensController;
+import DDCharacterCreator.Character;
+import DDCharacterCreator.Enum;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
