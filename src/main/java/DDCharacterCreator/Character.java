@@ -5,7 +5,7 @@ public class Character{
         private String charName;
         private Enum.Class charClass;
         private Integer charLevel;
-        private Enum charBackground;
+        private Enum.Background charBackground;
         private Enum.Race charRace;
         private Enum.Alignment charAlignment;
         private Integer charExperiencePoints;
@@ -77,11 +77,11 @@ public class Character{
         this.charLevel = charLevel;
     }
 
-    public Enum getCharBackground() {
+    public Enum.Background getCharBackground() {
         return charBackground;
     }
 
-    public void setCharBackground(Enum charBackground) {
+    public void setCharBackground(Enum.Background charBackground) {
         this.charBackground = charBackground;
     }
 

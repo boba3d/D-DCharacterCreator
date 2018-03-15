@@ -45,6 +45,11 @@ public class Enum {
         public String getDescrip() {return descrip;}
     }
 
+    // Enum data type with the backgrounds
+    public enum Background{
+
+    }
+
     public enum Race {
         // name, size category, base walking speed, str, dex, con, int, wis, cha, description
         HILLDWARF ("Hill Dwarf", "Medium", 25, 0, 0, 2, 0, 1, 0,
@@ -140,4 +145,123 @@ public class Enum {
 
         public String toString() {return salign;}
     }
+    /*Marsol Daman
+    //ADD LOGIC DOWN HERE
+     */
+    public void checkRace(Character character){
+
+        switch(character.getCharRace()){
+            case HIGHELF:
+                character.setCharDexterity(+2);
+                character.setCharIntelligence(+1);
+                break;
+            case DARKELF:
+                character.setCharDexterity(+2);
+                character.setCharWisdom(+1);
+                break;
+            case WOODELF:
+                character.setCharDexterity(+2);
+                character.setCharCharisma(+1);
+                break;
+            case HALFELF:
+                character.setCharCharisma(+2);
+                // two other ability scores of your choice increase by 1. TELL NOAH TELL NOAH TELL NOAH
+                break;
+            case HUMAN:
+                character.setCharDexterity(+1);
+                character.setCharCharisma(+1);
+                character.setCharConstitution(+1);
+                character.setCharWisdom(+1);
+                character.setCharStrength(+1);
+                character.setCharIntelligence(+1);
+                break;
+            case STOUT:
+                character.setCharDexterity(+2);
+                character.setCharConstitution(+1);
+                break;
+            case LIGHTFOOT:
+                character.setCharDexterity(+2);
+                character.setCharCharisma(+1);
+                break;
+            case HALFORC:
+                character.setCharStrength(+2);
+                character.setCharConstitution(+1);
+                break;
+            case ROCKGNOME:
+                character.setCharIntelligence(+2);
+                character.setCharConstitution(+1);
+                break;
+            case FORESTGNOME:
+                character.setCharIntelligence(+2);
+                character.setCharDexterity(+1);
+                break;
+            case TIEFLING:
+                character.setCharIntelligence(+2);
+                character.setCharCharisma(+1);
+                break;
+            case HILLDWARF:
+                character.setCharConstitution(+2);
+                character.setCharWisdom(+1);
+                break;
+            case MOUNTAINDWARF:
+                character.setCharStrength(+2);
+                character.setCharConstitution(+2);
+                break;
+            case DRAGONBORN:
+                character.setCharStrength(+2);
+                character.setCharCharisma(+1);
+                break;
+
+        }
+    }
+    //ADD LOGIC DOWN HERE
+    public void checkBackground(Character character){
+        switch(character.getCharBackground()){
+
+        }
+    }
+    //ADD LOGIC DOWN HERE
+    public void checkClass(Character character){
+        switch(character.getCharClass()){
+            case BARBARIAN:
+                character.setCharHitDice(12);
+                break;
+            case BARD:
+                character.setCharHitDice(8);
+                break;
+            case CLERIC:
+                character.setCharHitDice(8);
+                break;
+            case DRUID:
+                character.setCharHitDice(8);
+                break;
+            case FIGHTER:
+                character.setCharHitDice(10);
+                break;
+            case MONK:
+                character.setCharHitDice(8);
+                break;
+            case PALADIN:
+                character.setCharHitDice(10);
+                break;
+            case RANGER:
+                character.setCharHitDice(10);
+                break;
+            case ROGUE:
+                character.setCharHitDice(8);
+                break;
+            case SORCERER:
+                character.setCharHitDice(6);
+                break;
+            case WARLOCK:
+                character.setCharHitDice(8);
+                break;
+            case WIZARD:
+                character.setCharHitDice(6);
+                break;
+
+        }
+    }
+
+
 }
