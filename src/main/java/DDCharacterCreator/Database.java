@@ -26,7 +26,7 @@ public class Database {
             e.printStackTrace();
         }
         try{
-            MyDB = MyManager.getDatabase("DDCreatorAPP");
+            MyDB = MyManager.getDatabase("ddcreatorapp");
         }catch (Exception e){
             e.printStackTrace();
         }

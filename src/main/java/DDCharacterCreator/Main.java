@@ -1,15 +1,23 @@
 package DDCharacterCreator;
 
 
+import com.couchbase.lite.Context;
+import com.couchbase.lite.JavaContext;
+import com.couchbase.lite.NetworkReachabilityManager;
+import com.couchbase.lite.storage.SQLiteStorageEngineFactory;
 import javafx.application.Application;
 import javafx.scene.Group;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
+import java.io.File;
+
 
 public class Main extends Application implements ControlledScreen {
     ScreensController myController;
     Character mycharacter;
+    Database DB;
+    Context context;
 
     //set location and names for FXML screens
         public static String Welcome = "Welcome";
@@ -22,7 +30,6 @@ public class Main extends Application implements ControlledScreen {
         //load all screens in
             mainContainer.loadScreen(Main.Welcome, Main.WelcomeFile);
 
-
         //set first screen
         mainContainer.setScreen(Main.Welcome);
         Group root = new Group();
@@ -33,6 +40,20 @@ public class Main extends Application implements ControlledScreen {
         //add icon if wanted
         //primaryStage.getIcons().add(new Image("https://ae01.alicdn.com/kf/HTB1Dbv8HFXXXXXNaFXXq6xXFXXXd/22-5CM-PLANE-SILHOUETTE-Car-Sticker-Decal-Cartoon-Plane-Motorcycle-Car-Styling-Black-Silver-C2-0193.jpg"));
         primaryStage.show();
+
+        //initialize character
+            mycharacter = new Character();
+            mycharacter.setCharSkills(new CharacterSkills());
+
+
+        //Start Database
+            //DB = new Database();
+            //context = new JavaContext("Data");
+            //DB.StartDatabase(context);
+        //print character
+            Print print = new Print();
+            //testChar();
+            //print.printChar(mycharacter, "C:\\ProjectFiles\\DDPDF.pdf");
     }
 
 
@@ -44,5 +65,7 @@ public class Main extends Application implements ControlledScreen {
         launch(args);
     }
 
-
+    private void testChar(){
+        mycharacter.setCharName("Test");
+    }
 }
