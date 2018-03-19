@@ -1,6 +1,28 @@
 package DDCharacterCreator;
 
+import com.sun.org.apache.regexp.internal.REDebugCompiler;
+
 public class Enum {
+    public enum EyeColor{
+        BLUE,
+        RED,
+        GREEN,
+        YELLOW,
+        HAZEL,
+        TEAL,
+        GREY,
+        BROWN,
+        BLACK,
+        WHITE,
+        PINK,
+        PURPLE,
+        MAGENTA,
+        PLUMCRAZY,
+        ORANGE,
+        RAINBOW,
+        NONE
+    }
+
     public enum Class {
         // name, description
         BARBARIAN ("Barbarian", "A fierce warrior of primitive background" +
