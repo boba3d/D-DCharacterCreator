@@ -34,5 +34,27 @@
     <orderEntry type="library" name="Maven: org.slf4j:slf4j-log4j12:1.7.25" level="project" />
     <orderEntry type="library" name="Maven: org.slf4j:slf4j-api:1.7.25" level="project" />
     <orderEntry type="library" name="Maven: log4j:log4j:1.2.17" level="project" />
+    <orderEntry type="library" name="Maven: com.couchbase.lite:couchbase-lite-java:1.4.1" level="project" />
+    <orderEntry type="library" name="Maven: com.couchbase.lite:couchbase-lite-java-core:1.4.1" level="project" />
+    <orderEntry type="library" name="Maven: com.squareup.okhttp3:okhttp:3.3.1" level="project" />
+    <orderEntry type="library" name="Maven: com.squareup.okio:okio:1.8.0" level="project" />
+    <orderEntry type="library" name="Maven: com.fasterxml.jackson.core:jackson-core:2.5.0" level="project" />
+    <orderEntry type="library" name="Maven: com.fasterxml.jackson.core:jackson-annotations:2.5.0" level="project" />
+    <orderEntry type="library" name="Maven: com.fasterxml.jackson.core:jackson-databind:2.5.0" level="project" />
+    <orderEntry type="library" name="Maven: com.github.oxo42:stateless4j:2.4.0" level="project" />
+    <orderEntry type="library" name="Maven: com.couchbase.lite:couchbase-lite-java-sqlite-custom:1.4.1" level="project" />
+    <orderEntry type="library" name="Maven: com.itextpdf:itext7-core:7.1.1" level="project" />
+    <orderEntry type="library" name="Maven: com.itextpdf:barcodes:7.1.1" level="project" />
+    <orderEntry type="library" name="Maven: com.itextpdf:font-asian:7.1.1" level="project" />
+    <orderEntry type="library" name="Maven: com.itextpdf:forms:7.1.1" level="project" />
+    <orderEntry type="library" name="Maven: com.itextpdf:hyph:7.1.1" level="project" />
+    <orderEntry type="library" name="Maven: com.itextpdf:io:7.1.1" level="project" />
+    <orderEntry type="library" name="Maven: com.itextpdf:kernel:7.1.1" level="project" />
+    <orderEntry type="library" name="Maven: com.itextpdf:layout:7.1.1" level="project" />
+    <orderEntry type="library" name="Maven: com.itextpdf:pdfa:7.1.1" level="project" />
+    <orderEntry type="library" name="Maven: com.itextpdf:sign:7.1.1" level="project" />
+    <orderEntry type="library" name="Maven: org.slf4j:slf4j-log4j12:1.7.25" level="project" />
+    <orderEntry type="library" name="Maven: org.slf4j:slf4j-api:1.7.25" level="project" />
+    <orderEntry type="library" name="Maven: log4j:log4j:1.2.17" level="project" />
   </component>
 </module>
