@@ -25,8 +25,14 @@ public class Print {
     PdfAcroForm form = null;
     Map<String, PdfFormField> fields;
 
-    public boolean printChar(Character myChar, String destination){
+    public boolean printChar(Character myChar){
+        String fileName = myChar.getCharPlayerName();
+        String home = System.getProperty("user.home");
+        String destination = new File(home+"/Downloads/D-DCharachterSheet-"+ fileName +".pdf").toString();
+
+
         try {
+            System.out.println(destination);
             pdfDoc = new PdfDocument(new PdfReader(src), new PdfWriter(destination));
             form = PdfAcroForm.getAcroForm(pdfDoc, true);
         }catch (Exception e){
@@ -42,8 +48,7 @@ public class Print {
 
         form.flattenFields();
         pdfDoc.close();
-
-        PrintPDF(destination);
+        //PrintPDF(destination);
         return true;
     }
 
