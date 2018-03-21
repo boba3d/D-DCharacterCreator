@@ -56,8 +56,8 @@ public class ageHeightWeightController implements Initializable, ControlledScree
                 "Weight: " + String.format("%.2f",getWeight())));
         Character MyChar = Main.getChar();
         MyChar.setCharAge((int) getAge());
-        MyChar.setCharHeight(String.format("%.2f",getHeight()));
-        MyChar.setCharWeight(String.format("%.2f",getWeight()));
+        MyChar.setCharHeight(String.format("%.2f",getHeight()) + " Ft");
+        MyChar.setCharWeight(String.format("%.2f",getWeight()) + " Pounds");
         Main.PrintCharacter();
     }
 

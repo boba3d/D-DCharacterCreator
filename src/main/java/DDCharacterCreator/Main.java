@@ -72,8 +72,10 @@ public class Main extends Application implements ControlledScreen {
     }
     static public void PrintCharacter(){
         Print print = new Print();
-        mycharacter.setCharName("Test");
+        mycharacter.setCharName("Dungeon master");
         mycharacter.setCharPlayerName("DDGroup");
+        mycharacter.setCharHitDice(+10);
+        mycharacter.setCharRace(Enum.Race.DRAGONBORN);
         print.printChar(mycharacter, DB);
     }
 }
