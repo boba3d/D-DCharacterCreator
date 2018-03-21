@@ -2,7 +2,10 @@ package DDCharacterCreator;
 
 import com.couchbase.lite.*;
 
+import javax.imageio.ImageIO;
 import java.awt.*;
+import java.awt.image.BufferedImage;
+import java.io.*;
 import java.text.SimpleDateFormat;
 import java.util.*;
 
@@ -15,14 +18,12 @@ import java.util.*;
  */
 public class Database {
     private com.couchbase.lite.Database db;
-
-
     /**
      * Start the database
      * @param context The context to use
      * @return true on success
      */
-    public boolean start(Context context) {
+    public boolean StartDatabase(Context context) {
         try {
             Manager manager = new Manager(context, Manager.DEFAULT_OPTIONS);
             db = manager.getDatabase("ddcreatorapp");
@@ -37,10 +38,10 @@ public class Database {
     /**
      * Add an image to the database
      * @param type The image type
-     * @param image The image to add
+     * @param imageloc The image to add
      * @return true on success
      */
-    public boolean addImage(String type, Image image){
+    public boolean addImage(String type, String imageloc, String imagename){
         Document doc  = db.createDocument();
         SimpleDateFormat dateFormatter = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS'Z'");
         UUID uuid = UUID.randomUUID();
@@ -57,16 +58,38 @@ public class Database {
 
         properties.put("Character", type);
 
-        //put pictures in it.
-
         //put in db
-        try{
-            doc.putProperties(properties);
-        }catch (Exception e){
-            e.printStackTrace();
-            return false;
-        }
+            try{
+                doc.putProperties(properties);
+            }catch (Exception e){
+                e.printStackTrace();
+            }
+        //attach image
+        AddAttachment(doc, imageloc, imagename);
         return true;
+    }
+
+    private void AddAttachment(Document doc, String imageloc, String ImageName){
+        //convert
+            ByteArrayInputStream stream = null;
+            ByteArrayOutputStream bitmap = new ByteArrayOutputStream();
+            File input = new File(imageloc);
+
+            try {
+                BufferedImage image = ImageIO.read(input);
+                ImageIO.write(image, "bmp", bitmap);
+                stream = new ByteArrayInputStream(bitmap.toByteArray());
+            }catch(Exception e){
+                e.printStackTrace();
+            }
+        //add attachment
+            UnsavedRevision newRev = doc.getCurrentRevision().createRevision();
+            newRev.setAttachment(ImageName, "image/png", stream);
+            try {
+                newRev.save();
+            }catch (Exception e){
+                e.printStackTrace();
+            }
     }
 
     /**
@@ -81,6 +104,7 @@ public class Database {
         View v = db.getExistingView("characters");
         // basic info
         p.put("type", "Character");
+        p.put("Char", c);
         p.put("name", c.getCharName());
         p.put("class", c.getCharClass());
         p.put("level", c.getCharLevel());

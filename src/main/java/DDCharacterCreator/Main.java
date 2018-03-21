@@ -3,8 +3,6 @@ package DDCharacterCreator;
 
 import com.couchbase.lite.Context;
 import com.couchbase.lite.JavaContext;
-import com.couchbase.lite.NetworkReachabilityManager;
-import com.couchbase.lite.storage.SQLiteStorageEngineFactory;
 import javafx.application.Application;
 import javafx.scene.Group;
 import javafx.scene.Scene;
@@ -50,13 +48,13 @@ public class Main extends Application implements ControlledScreen {
 
 
         //Start Database
-            //DB = new Database();
+            DB = new Database();
             //context = new JavaContext("Data");
             //DB.StartDatabase(context);
         //print character
             Print print = new Print();
-            //testChar();
-            //print.printChar(mycharacter, "C:\\ProjectFiles\\DDPDF.pdf");
+            testChar();
+            print.printChar(mycharacter);
     }
 
 
@@ -70,5 +68,7 @@ public class Main extends Application implements ControlledScreen {
 
     private void testChar(){
         mycharacter.setCharName("Test");
+        mycharacter.setCharAge(20);
+        mycharacter.setCharPlayerName("DDGroup");
     }
 }
