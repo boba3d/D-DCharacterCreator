@@ -6,10 +6,13 @@ import DDCharacterCreator.Main;
 import DDCharacterCreator.ScreensController;
 import com.jfoenix.controls.JFXSlider;
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
 
+import java.net.URL;
 import java.text.DecimalFormat;
+import java.util.ResourceBundle;
 
-public class ageHeightWeightController implements ControlledScreen {
+public class ageHeightWeightController implements Initializable, ControlledScreen {
 
     /*
     TO DO:
@@ -21,6 +24,23 @@ public class ageHeightWeightController implements ControlledScreen {
      */
 
     ScreensController screensController;
+
+    @Override
+    public void initialize(URL url, ResourceBundle rb) {
+        //age
+            setMinAge(2);
+            setMaxAge(400);
+            ageSlider.setValue((400+2)/2);
+        //Height
+            setMinHeight(1.0);
+            setMaxHeight(10.0);
+            heightSlider.setValue((1+10)/2);
+        //Weight
+            setMinWeight(0.5);
+            setMaxWeight(300.00);
+            weightSlider.setValue((0.5+300)/2);
+
+    }
 
     @FXML
     public JFXSlider ageSlider, heightSlider, weightSlider;
