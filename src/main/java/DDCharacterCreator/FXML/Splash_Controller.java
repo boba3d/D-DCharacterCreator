@@ -14,8 +14,7 @@ public class Splash_Controller implements Initializable, ControlledScreen {
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        //NextScreen();
-        //myController.setScreen(AirAxel.Welcome);
+
     }
     public void setScreenParent(ScreensController screenParent){
         myController = screenParent;
