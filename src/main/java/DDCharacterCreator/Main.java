@@ -6,6 +6,7 @@ import com.couchbase.lite.JavaContext;
 import javafx.application.Application;
 import javafx.scene.Group;
 import javafx.scene.Scene;
+import javafx.scene.image.Image;
 import javafx.stage.Stage;
 
 import java.io.File;
@@ -42,7 +43,7 @@ public class Main extends Application implements ControlledScreen {
         primaryStage.setScene(scene);
         primaryStage.setTitle(" D&D character creator");
         //add icon if wanted
-        //primaryStage.getIcons().add(new Image("https://ae01.alicdn.com/kf/HTB1Dbv8HFXXXXXNaFXXq6xXFXXXd/22-5CM-PLANE-SILHOUETTE-Car-Sticker-Decal-Cartoon-Plane-Motorcycle-Car-Styling-Black-Silver-C2-0193.jpg"));
+        primaryStage.getIcons().add(new Image("/SplashPicture.png"));
         primaryStage.show();
 
         //initialize character
