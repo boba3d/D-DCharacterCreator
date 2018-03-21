@@ -20,8 +20,10 @@ public class Main extends Application implements ControlledScreen {
     Context context;
 
     //set location and names for FXML screens
-        public static String Welcome = "Welcome";
-        public static String WelcomeFile = "/Welcome.fxml";
+    private static final String Welcome = "Welcome";
+    private static final String WelcomeFile = "/Welcome.fxml";
+    private static final String AGEWEIGHTHEIGHT_MENU = "ageWeightHeight_menu";
+    private static final String AGEWEIGHTHEIGHT_MENUFILE = "/ageWeightHeight_menu.fxml";
 
     @Override
     public void start(Stage primaryStage) {
@@ -29,9 +31,10 @@ public class Main extends Application implements ControlledScreen {
         ScreensController mainContainer = new ScreensController();
         //load all screens in
             mainContainer.loadScreen(Main.Welcome, Main.WelcomeFile);
+        mainContainer.loadScreen(Main.AGEWEIGHTHEIGHT_MENU, Main.AGEWEIGHTHEIGHT_MENUFILE);
 
         //set first screen
-        mainContainer.setScreen(Main.Welcome);
+        mainContainer.setScreen(Main.AGEWEIGHTHEIGHT_MENU);
         Group root = new Group();
         root.getChildren().addAll(mainContainer);
         Scene scene = new Scene(root);
