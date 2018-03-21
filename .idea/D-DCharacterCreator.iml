@@ -12,6 +12,8 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="library" exported="" name="mysql-connector-java-5.0.8-bin" level="project" />
+    <orderEntry type="library" name="jfoenix" level="project" />
     <orderEntry type="library" name="Maven: com.couchbase.lite:couchbase-lite-java:1.4.1" level="project" />
     <orderEntry type="library" name="Maven: com.couchbase.lite:couchbase-lite-java-core:1.4.1" level="project" />
     <orderEntry type="library" name="Maven: com.squareup.okhttp3:okhttp:3.3.1" level="project" />
@@ -36,7 +38,6 @@
     <orderEntry type="library" name="Maven: org.slf4j:slf4j-api:1.7.25" level="project" />
     <orderEntry type="library" name="Maven: log4j:log4j:1.2.17" level="project" />
     <orderEntry type="library" name="Maven: com.google.code.gson:gson:2.3.1" level="project" />
-    <orderEntry type="library" exported="" name="mysql-connector-java-5.0.8-bin" level="project" />
-    <orderEntry type="library" name="jfoenix" level="project" />
+    <orderEntry type="library" name="Maven: com.jfoenix:jfoenix:8.0.2" level="project" />
   </component>
 </module>
