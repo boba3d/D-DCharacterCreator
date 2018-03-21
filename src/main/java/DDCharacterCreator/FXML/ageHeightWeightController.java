@@ -29,7 +29,6 @@ public class ageHeightWeightController implements ControlledScreen {
      * Test function. Assigned to button with label value 'Test'.
      */
     public void printValues() {
-        DecimalFormat df = new DecimalFormat();
         System.out.println(("Age: " + getAge() + "\n" +
                 "Height: " + String.format("%.2f",getHeight()) + "\n" +
                 "Weight: " + String.format("%.2f",getWeight())));
