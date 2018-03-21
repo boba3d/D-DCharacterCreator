@@ -25,7 +25,7 @@ public class Print {
     PdfAcroForm form = null;
     Map<String, PdfFormField> fields;
 
-    public boolean printChar(Character myChar){
+    public boolean printChar(Character myChar,CharacterDatabase chDB ){
         String fileName = myChar.getCharPlayerName();
         String home = System.getProperty("user.home");
         String destination = new File(home+"/Downloads/D-DCharachterSheet-"+ fileName +".pdf").toString();

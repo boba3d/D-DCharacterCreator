@@ -13,15 +13,15 @@ import java.io.File;
 
 public class Main extends Application implements ControlledScreen {
     ScreensController myController;
-    Character mycharacter;
-    Database DB;
+    static Character mycharacter;
+    static CharacterDatabase DB;
     Context context;
 
     //set location and names for FXML screens
     private static final String Welcome = "Welcome";
     private static final String WelcomeFile = "/Welcome.fxml";
     private static final String AGEWEIGHTHEIGHT_MENU = "ageWeightHeight_menu";
-    private static final String AGEWEIGHTHEIGHT_MENUFILE = "/ageWeightHeight_menu.fxml";
+    private static final String AGEWEIGHTHEIGHT_MENUFILE = "/ageHeightWeight_menu.fxml";
 
     @Override
     public void start(Stage primaryStage) {
@@ -48,13 +48,11 @@ public class Main extends Application implements ControlledScreen {
 
 
         //Start Database
-            DB = new Database();
+            DB = new CharacterDatabase();
             //context = new JavaContext("Data");
             //DB.StartDatabase(context);
         //print character
-            Print print = new Print();
-            testChar();
-            print.printChar(mycharacter);
+
     }
 
 
@@ -66,9 +64,13 @@ public class Main extends Application implements ControlledScreen {
         launch(args);
     }
 
-    private void testChar(){
+    public static Character getChar(){
+        return mycharacter;
+    }
+    static public void PrintCharacter(){
+        Print print = new Print();
         mycharacter.setCharName("Test");
-        mycharacter.setCharAge(20);
         mycharacter.setCharPlayerName("DDGroup");
+        print.printChar(mycharacter, DB);
     }
 }

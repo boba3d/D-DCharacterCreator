@@ -1,9 +1,13 @@
 package DDCharacterCreator.FXML;
 
+import DDCharacterCreator.Character;
 import DDCharacterCreator.ControlledScreen;
+import DDCharacterCreator.Main;
 import DDCharacterCreator.ScreensController;
 import com.jfoenix.controls.JFXSlider;
 import javafx.fxml.FXML;
+
+import java.text.DecimalFormat;
 
 public class ageHeightWeightController implements ControlledScreen {
 
@@ -25,10 +29,15 @@ public class ageHeightWeightController implements ControlledScreen {
      * Test function. Assigned to button with label value 'Test'.
      */
     public void printValues() {
+        DecimalFormat df = new DecimalFormat();
         System.out.println(("Age: " + getAge() + "\n" +
-                "Height: " + getHeight() + "\n" +
-                "Weight: " + getWeight()));
-
+                "Height: " + String.format("%.2f",getHeight()) + "\n" +
+                "Weight: " + String.format("%.2f",getWeight())));
+        Character MyChar = Main.getChar();
+        MyChar.setCharAge((int) getAge());
+        MyChar.setCharHeight(String.format("%.2f",getHeight()));
+        MyChar.setCharWeight(String.format("%.2f",getWeight()));
+        Main.PrintCharacter();
     }
 
     @Override
