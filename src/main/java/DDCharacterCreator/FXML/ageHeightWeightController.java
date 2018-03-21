@@ -5,9 +5,11 @@ import DDCharacterCreator.ControlledScreen;
 import DDCharacterCreator.Main;
 import DDCharacterCreator.ScreensController;
 import com.jfoenix.controls.JFXSlider;
+import javafx.beans.value.ObservableValue;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 
+import javax.swing.event.ChangeListener;
 import java.net.URL;
 import java.text.DecimalFormat;
 import java.util.ResourceBundle;

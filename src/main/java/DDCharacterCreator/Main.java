@@ -18,6 +18,8 @@ public class Main extends Application implements ControlledScreen {
     Context context;
 
     //set location and names for FXML screens
+    private static final String Splash = "Splash";
+    private static final String SplashFile = "/Splash.fxml";
     private static final String Welcome = "Welcome";
     private static final String WelcomeFile = "/Welcome.fxml";
     private static final String AGEWEIGHTHEIGHT_MENU = "ageWeightHeight_menu";
@@ -28,11 +30,12 @@ public class Main extends Application implements ControlledScreen {
 
         ScreensController mainContainer = new ScreensController();
         //load all screens in
+        mainContainer.loadScreen(Main.Splash, Main.SplashFile);
             mainContainer.loadScreen(Main.Welcome, Main.WelcomeFile);
-        mainContainer.loadScreen(Main.AGEWEIGHTHEIGHT_MENU, Main.AGEWEIGHTHEIGHT_MENUFILE);
+            mainContainer.loadScreen(Main.AGEWEIGHTHEIGHT_MENU, Main.AGEWEIGHTHEIGHT_MENUFILE);
 
         //set first screen
-        mainContainer.setScreen(Main.AGEWEIGHTHEIGHT_MENU);
+        mainContainer.setScreen(Main.Splash);
         Group root = new Group();
         root.getChildren().addAll(mainContainer);
         Scene scene = new Scene(root);
