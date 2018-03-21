@@ -68,8 +68,8 @@ public class ageHeightWeightController implements Initializable, ControlledScree
 
     /* GETTERS */
 
-    public double getAge() {
-        return ageSlider.getValue();
+    public int getAge() {
+        return (int) ageSlider.getValue();
     }
 
     public double getHeight() {
@@ -82,11 +82,11 @@ public class ageHeightWeightController implements Initializable, ControlledScree
 
     /* SETTERS */
 
-    public void setMinAge(double minAge) {
+    public void setMinAge(int minAge) {
         ageSlider.setMin(minAge);
     }
 
-    public void setMaxAge(double maxAge) {
+    public void setMaxAge(int maxAge) {
         ageSlider.setMax(maxAge);
     }
 
