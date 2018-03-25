@@ -1,22 +1,18 @@
 package DDCharacterCreator;
 
 
-import com.couchbase.lite.Context;
-import com.couchbase.lite.JavaContext;
+
 import javafx.application.Application;
 import javafx.scene.Group;
 import javafx.scene.Scene;
 import javafx.scene.image.Image;
 import javafx.stage.Stage;
 
-import java.io.File;
-
 
 public class Main extends Application implements ControlledScreen {
-    ScreensController myController;
-    static Character mycharacter;
-    static CharacterDatabase DB;
-    Context context;
+    private ScreensController myController;
+    private static Character mycharacter;
+    private static CharacterDatabase DB;
 
     //set location and names for FXML screens
     private static final String Splash = "Splash";
@@ -25,6 +21,8 @@ public class Main extends Application implements ControlledScreen {
     private static final String WelcomeFile = "/Welcome.fxml";
     private static final String AGEWEIGHTHEIGHT_MENU = "ageWeightHeight_menu";
     private static final String AGEWEIGHTHEIGHT_MENUFILE = "/ageHeightWeight_menu.fxml";
+    private static final String CharAppearance = "CharAppearance";
+    private static final String CharAppearanceFile = "/CharacterAppearance.fxml";
 
     @Override
     public void start(Stage primaryStage) {
@@ -34,6 +32,7 @@ public class Main extends Application implements ControlledScreen {
         mainContainer.loadScreen(Main.Splash, Main.SplashFile);
             mainContainer.loadScreen(Main.Welcome, Main.WelcomeFile);
             mainContainer.loadScreen(Main.AGEWEIGHTHEIGHT_MENU, Main.AGEWEIGHTHEIGHT_MENUFILE);
+            mainContainer.loadScreen(Main.CharAppearance, Main.CharAppearanceFile);
 
         //set first screen
         mainContainer.setScreen(Main.Splash);
@@ -49,12 +48,14 @@ public class Main extends Application implements ControlledScreen {
         //initialize character
             mycharacter = new Character();
             mycharacter.setCharSkills(new CharacterSkills());
-
+            mycharacter.setCharRace(Enum.Race.WOODELF);
 
         //Start Database
             DB = new CharacterDatabase();
-            //context = new JavaContext("Data");
-            //DB.StartDatabase(context);
+            DB.OpenConnectionToDB();
+            //DB.addImage("woodelf", "characters_woodelf_woodelf1","https://s3.us-east-2.amazonaws.com/ddcharactorcreator/characters/woodelf/WE1.jpg");
+            //DB.getImages(mycharacter);
+            DB.CloseConnectionToDB();
         //print character
 
     }

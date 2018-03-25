@@ -1,12 +1,14 @@
 package DDCharacterCreator;
 
-import com.couchbase.lite.*;
-import com.google.gson.Gson;
+import com.couchbase.client.java.Bucket;
+import com.couchbase.client.java.Cluster;
 
-import javax.imageio.ImageIO;
-import java.awt.image.BufferedImage;
-import java.io.*;
-import java.text.SimpleDateFormat;
+import com.couchbase.client.java.CouchbaseCluster;
+import com.couchbase.client.java.document.*;
+import com.couchbase.client.java.document.json.*;
+import com.couchbase.client.java.env.CouchbaseEnvironment;
+import com.couchbase.client.java.env.DefaultCouchbaseEnvironment;
+
 import java.util.*;
 
 /**
@@ -17,137 +19,83 @@ import java.util.*;
  * TODO update character, fetch names of all characters, select character by name
  */
 public class CharacterDatabase {
-    private com.couchbase.lite.Database db;
+        static Bucket bucket;
 
-    public boolean StartDatabase(Context context) {
-        try {
-            Manager manager = new Manager(context, Manager.DEFAULT_OPTIONS);
-            db = manager.getDatabase("ddcreatorapp");
-        }
-        catch (Exception e) {
-            e.printStackTrace();
-            return false;
-        }
+    public boolean OpenConnectionToDB() {
+        CouchbaseEnvironment env = DefaultCouchbaseEnvironment.builder()
+                .connectTimeout(180 * 1000) // 180 Seconds
+                .keepAliveInterval(3600 * 1000) // 3600 Seconds
+                .queryTimeout(1000000)
+                .build();
+        Cluster cluster = CouchbaseCluster.create(env,"cbapi.axelvh.com:11210");
+        bucket = cluster.openBucket("DDCreator", "DDCreator1234");
+        System.out.println(cluster.diagnostics().toString());
         return true;
     }
-public Database getDatabase(){
-        return db;
-}
 
-    public boolean addImage(String type, String imageloc, String imagename){
-        Document doc  = db.createDocument();
-        SimpleDateFormat dateFormatter = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS'Z'");
-        UUID uuid = UUID.randomUUID();
-        Calendar calendar = GregorianCalendar.getInstance();
-        long currentTime = calendar.getTimeInMillis();
-        String currentTimeString = dateFormatter.format(calendar.getTime());
-
-        String id = currentTime + "-" + uuid.toString();
-
-        Map<String, Object> properties = new HashMap<>();
-        properties.put("_id", id);
-        properties.put("type", "CharacterImage");
-        properties.put("created_at", currentTimeString);
-
-        properties.put("Character", type);
-
-        //put in db
-            try{
-                doc.putProperties(properties);
-            }catch (Exception e){
-                e.printStackTrace();
-            }
-        //attach image
-        AddAttachment(doc, imageloc, imagename);
+    public boolean CloseConnectionToDB(){
+        bucket.close();
+        bucket = null;
         return true;
     }
 
 
-    private void AddAttachment(Document doc, String imageloc, String ImageName){
-        //convert
-            ByteArrayInputStream stream = null;
-            ByteArrayOutputStream bitmap = new ByteArrayOutputStream();
-            File input = new File(imageloc);
+    public boolean addImage(String race, String id, String imageloc){
 
-            try {
-                BufferedImage image = ImageIO.read(input);
-                ImageIO.write(image, "bmp", bitmap);
-                stream = new ByteArrayInputStream(bitmap.toByteArray());
-            }catch(Exception e){
-                e.printStackTrace();
+        OpenConnectionToDB();
+        JsonObject Image = JsonObject.create()
+                .put("type", "characterappearance")
+                .put("race", race)
+                .put("image",imageloc);
+
+        bucket.upsert(JsonDocument.create(id, Image));
+        return true;
+    }
+
+    public LinkedList<String> getImages(Character myChar){
+        LinkedList<String> imgList = new LinkedList<>();
+        String race = myChar.getCharRace().name().toLowerCase();
+
+        boolean done = false;
+        int i = 1;
+        while(!done) {
+            String link = "characters_" + race + "_" + race + i;
+
+            JsonDocument jsonDocument = bucket.get(link);
+            if(jsonDocument != null){
+                //System.out.println(jsonDocument.content().getString("image"));
+                imgList.add(jsonDocument.content().getString("image"));
+            }else{
+                done = true;
             }
-        //add attachment
-            UnsavedRevision newRev = doc.getCurrentRevision().createRevision();
-            newRev.setAttachment(ImageName, "image/png", stream);
-            try {
-                newRev.save();
-            }catch (Exception e){
-                e.printStackTrace();
-            }
+            i++;
+        }
+        return imgList;
     }
 
 
     public boolean addCharacter(Character c){
-        SimpleDateFormat dateFormatter = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS'Z'");
-        Calendar calendar = GregorianCalendar.getInstance();
-        String currentTimeString = dateFormatter.format(calendar.getTime());
 
-        Document d = db.createDocument();
-        Map<String, Object> properties = new HashMap<>();
-            properties.put("_id", "DDCHARACTER");
-            properties.put("type", "CharacterObject");
-            properties.put("created_at", currentTimeString);
 
-            properties.put("Character", c);
-
-        try{
-            d.putProperties(properties);
-        }
-        catch(CouchbaseLiteException e){
-            e.printStackTrace();
-            return false;
-        }
         return true;
     }
 
 
     public Character fetchCharacter(){
         Character c = null;
-        Document retrievedDocument = db.getDocument("DDCHARACTER"); // Retrieve the document by id
-        Object charObj = retrievedDocument.getProperties().get("Character");
-        Gson gson = new Gson();
-        String jsonString = gson.toJson(charObj, Map.class); //Convert the object to json string using Gson
-        c = gson.fromJson(jsonString, Character.class); //convert the json st
-        removeCharacter("DDCHARACTER");
+
         return c;
     }
 
 
     public boolean UpdateCharacter(Character c, String id){
-        Document doc = db.getDocument(id);
-        Map<String, Object> properties = new HashMap<String, Object>();
-        properties.putAll(doc.getProperties());
-        properties.put("Character", c);
-        try{
-            doc.putProperties(properties);
-        }
-        catch(CouchbaseLiteException e){
-            e.printStackTrace();
-            return false;
-        }
+
         return true;
     }
 
 
     private boolean removeCharacter(String id){
-        Document d = db.getDocument(id);
-        try{
-            d.delete();
-        }
-        catch(CouchbaseLiteException e){
-            e.printStackTrace();
-            return false;
-        }
-        return d.isDeleted();
+
+        return true;
     }
 }

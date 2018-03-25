@@ -20,17 +20,6 @@
         </plugins>
     </build>
     <dependencies>
-    <!-- https://mvnrepository.com/artifact/com.couchbase.lite/couchbase-lite-java -->
-        <dependency>
-            <groupId>com.couchbase.lite</groupId>
-            <artifactId>couchbase-lite-java</artifactId>
-            <version>1.4.1</version>
-        </dependency>
-        <dependency>
-            <groupId>org.xerial</groupId>
-            <artifactId>sqlite-jdbc</artifactId>
-            <version>3.8.11.1</version>
-        </dependency>
         <dependency>
             <groupId>com.itextpdf</groupId>
             <artifactId>itext7-core</artifactId>
@@ -52,7 +41,12 @@
             <artifactId>jfoenix</artifactId>
             <version>8.0.2</version>
         </dependency>
-
+        <!-- the couchbase java sdk -->
+        <dependency>
+            <groupId>com.couchbase.client</groupId>
+            <artifactId>java-client</artifactId>
+            <version>2.5.6</version>
+        </dependency>
     </dependencies>
 
 </project>
