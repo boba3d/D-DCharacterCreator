@@ -16,8 +16,7 @@ import javafx.scene.control.Label;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class WelcomeController implements Initializable, ControlledScreen {
-    ScreensController myController;
+public class WelcomeController extends ControlledScreen implements Initializable {
     Character myChar = new Character();
 
     @FXML
@@ -36,9 +35,6 @@ public class WelcomeController implements Initializable, ControlledScreen {
     private ObservableList<Enum.Race> raceBoxData = FXCollections.observableArrayList(Enum.Race.values());
     //private ObservableList<Enum.Class> classBoxData = FXCollections.observableArrayList(Enum.Class.values());
 
-    public void setScreenParent(ScreensController screenParent){
-        myController = screenParent;
-    }
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {

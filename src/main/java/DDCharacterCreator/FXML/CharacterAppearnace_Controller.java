@@ -17,8 +17,7 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 
-public class CharacterAppearnace_Controller implements Initializable, ControlledScreen {
-    ScreensController myController;
+public class CharacterAppearnace_Controller extends ControlledScreen implements Initializable {
     @FXML
     private Pane imgScrollPane;
     @Override
@@ -38,12 +37,9 @@ public class CharacterAppearnace_Controller implements Initializable, Controlled
         imgScrollPane.getChildren().add(gridpane);
 
     }
-    public void setScreenParent(ScreensController screenParent){
-        myController = screenParent;
-    }
 
     public void NextScreen(){
 
-        myController.setScreen("ageWeightHeight_menu");
+        getScreenParent().setScreen("ageWeightHeight_menu");
     }
 }

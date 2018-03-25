@@ -8,7 +8,7 @@
 
 <GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0"
           prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8"
-          fx:controller="DDCharacterCreator.FXML.ageHeightWeightController">
+          fx:controller="DDCharacterCreator.FXML.levelController">
     <columnConstraints>
         <ColumnConstraints hgrow="SOMETIMES" percentWidth="12.5"/>
         <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0"/>
@@ -74,40 +74,19 @@
                     <center>
                         <GridPane BorderPane.alignment="CENTER">
                             <columnConstraints>
-                                <ColumnConstraints hgrow="SOMETIMES" percentWidth="26.66"/>
-                                <ColumnConstraints hgrow="SOMETIMES" percentWidth="10.0"/>
-                                <ColumnConstraints hgrow="SOMETIMES" percentWidth="26.66"/>
-                                <ColumnConstraints hgrow="SOMETIMES" percentWidth="10.0"/>
-                                <ColumnConstraints hgrow="SOMETIMES"/>
+                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0"/>
                             </columnConstraints>
                             <rowConstraints>
+                                <RowConstraints percentHeight="45.0" vgrow="SOMETIMES"/>
                                 <RowConstraints percentHeight="10.0" vgrow="SOMETIMES"/>
-                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+                                <RowConstraints percentHeight="45.0" vgrow="SOMETIMES"/>
                             </rowConstraints>
                             <children>
-                                <JFXSlider fx:id="ageSlider" indicatorPosition="RIGHT" orientation="VERTICAL"
-                                           GridPane.halignment="CENTER" GridPane.rowIndex="1"
-                                           GridPane.valignment="CENTER"/>
-                                <JFXSlider fx:id="heightSlider" indicatorPosition="RIGHT" orientation="VERTICAL"
-                                           GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="1"
-                                           GridPane.valignment="CENTER"/>
-                                <JFXSlider fx:id="weightSlider" orientation="VERTICAL" GridPane.columnIndex="4"
-                                           GridPane.halignment="CENTER" GridPane.rowIndex="1"
-                                           GridPane.valignment="CENTER"/>
-                                <Label text="Age" textAlignment="CENTER" textFill="GOLD" GridPane.halignment="CENTER"
-                                       GridPane.valignment="CENTER">
-                                    <font>
-                                        <Font size="18.0"/>
-                                    </font>
-                                </Label>
-                                <Label text="Height" textAlignment="CENTER" textFill="GOLD" GridPane.columnIndex="2"
-                                       GridPane.halignment="CENTER" GridPane.valignment="CENTER">
-                                    <font>
-                                        <Font size="18.0"/>
-                                    </font>
-                                </Label>
-                                <Label text="Weight" textAlignment="CENTER" textFill="GOLD" GridPane.columnIndex="4"
-                                       GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                                <JFXSlider fx:id="levelSlider" indicatorPosition="RIGHT" minorTickCount="5"
+                                           showTickMarks="true" GridPane.halignment="CENTER" GridPane.rowIndex="2"
+                                           GridPane.valignment="TOP"/>
+                                <Label text="Level Selection" textFill="GOLD" GridPane.halignment="CENTER"
+                                       GridPane.valignment="BOTTOM">
                                     <font>
                                         <Font size="18.0"/>
                                     </font>

@@ -1,75 +1,35 @@
 package DDCharacterCreator.FXML;
 
-import DDCharacterCreator.Character;
 import DDCharacterCreator.ControlledScreen;
-import DDCharacterCreator.Main;
 import DDCharacterCreator.ScreensController;
 import com.jfoenix.controls.JFXSlider;
-import javafx.beans.value.ObservableValue;
 import javafx.fxml.FXML;
-import javafx.fxml.Initializable;
 
-import javax.swing.event.ChangeListener;
-import java.net.URL;
-import java.text.DecimalFormat;
-import java.util.ResourceBundle;
-
-public class        ageHeightWeightController implements Initializable, ControlledScreen {
+public class ageHeightWeightController extends ControlledScreen {
 
     /*
     TO DO:
     * Slider value shows double value for height/weight and unit (years, in -> ft'in"/m, lbs/kg)
-    * Fix slider value display (is behind text)
-    * Move all styling to .css
     * Auto-grab min/max values from race database, include deviation? (some people live to 120, avg. is 80s)
-    * Replace labels with graphics (- age)
      */
-
-    ScreensController screensController;
-
-    @Override
-    public void initialize(URL url, ResourceBundle rb) {
-        //age
-            setMinAge(2);
-            setMaxAge(400);
-            ageSlider.setValue((400+2)/2);
-        //Height
-            setMinHeight(1.0);
-            setMaxHeight(10.0);
-            heightSlider.setValue((1+10)/2);
-        //Weight
-            setMinWeight(0.5);
-            setMaxWeight(300.00);
-            weightSlider.setValue((0.5+300)/2);
-
-    }
 
     @FXML
     public JFXSlider ageSlider, heightSlider, weightSlider;
 
     /**
-     * Test function. Assigned to button with label value 'Test'.
+     * Test function.
      */
     public void printValues() {
         System.out.println(("Age: " + getAge() + "\n" +
-                "Height: " + String.format("%.2f",getHeight()) + "\n" +
-                "Weight: " + String.format("%.2f",getWeight())));
-        Character MyChar = Main.getChar();
-        MyChar.setCharAge((int) getAge());
-        MyChar.setCharHeight(String.format("%.2f",getHeight()) + " Ft");
-        MyChar.setCharWeight(String.format("%.2f",getWeight()) + " Pounds");
-        Main.PrintCharacter();
-    }
+                "Height: " + getHeight() + "\n" +
+                "Weight: " + getWeight()));
 
-    @Override
-    public void setScreenParent(ScreensController screenPage) {
-        screensController = screenPage;
     }
 
     /* GETTERS */
 
-    public int getAge() {
-        return (int) ageSlider.getValue();
+    public double getAge() {
+        return ageSlider.getValue();
     }
 
     public double getHeight() {
@@ -82,11 +42,11 @@ public class        ageHeightWeightController implements Initializable, Controll
 
     /* SETTERS */
 
-    public void setMinAge(int minAge) {
+    public void setMinAge(double minAge) {
         ageSlider.setMin(minAge);
     }
 
-    public void setMaxAge(int maxAge) {
+    public void setMaxAge(double maxAge) {
         ageSlider.setMax(maxAge);
     }
 

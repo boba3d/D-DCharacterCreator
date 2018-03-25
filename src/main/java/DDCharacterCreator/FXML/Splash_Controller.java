@@ -9,19 +9,15 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 
 
-public class Splash_Controller implements Initializable, ControlledScreen {
-    ScreensController myController;
+public class Splash_Controller extends ControlledScreen implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
 
     }
-    public void setScreenParent(ScreensController screenParent){
-        myController = screenParent;
-    }
 
     public void NextScreen(){
 
-        myController.setScreen("ageWeightHeight_menu");
+        getScreenParent().setScreen("ageHeightWeight_menu");
     }
 }
