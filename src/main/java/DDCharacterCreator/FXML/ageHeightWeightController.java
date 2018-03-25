@@ -14,7 +14,7 @@ import java.net.URL;
 import java.text.DecimalFormat;
 import java.util.ResourceBundle;
 
-public class ageHeightWeightController implements Initializable, ControlledScreen {
+public class        ageHeightWeightController implements Initializable, ControlledScreen {
 
     /*
     TO DO:

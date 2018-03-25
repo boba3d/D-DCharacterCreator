@@ -1,5 +1,6 @@
 package DDCharacterCreator;
 
+import com.sun.deploy.uitoolkit.ToolkitStore;
 import com.sun.org.apache.regexp.internal.REDebugCompiler;
 
 public class Enum {
@@ -70,6 +71,50 @@ public class Enum {
     // Enum data type with the backgrounds
     public enum Background{
 
+    }
+    //Tools
+    public enum Tools{
+        Alchemist_Supplies,
+        Brewer_Supplies,
+        Calligrapher_Supplies,
+        Carpenter_Tools,
+        Cartographer_Tools,
+        Cobbler_Tools,
+        Cook_Utensils,
+        Glassblower_Tools,
+        Jewelers_Tools,
+        Leatherworker_Tools,
+        Mason_Tools,
+        Painter_Supplies,
+        Potter_Tools,
+        Smith_Tools,
+        Tinker_Tools,
+        Weaver_Tools,
+        Woodcarver_Tools,
+        Disguise_Kit,
+        Forgery_Kit,
+        Gaming_Set,
+        Dice_Set,
+        Dragonchess_Set,
+        Playing_card_Set,
+        Three_Dragon_Ante_Set,
+        Herbalism_Kit,
+        Navigator_Tools,
+        Poisoner_Kit,
+        Thieves_Tools
+    }
+    //Musical Instruments
+    public enum MusicalInstruments{
+        BAGPIPES,
+        DRUM,
+        DULCIMER,
+        FLUTE,
+        LUT,
+        LYRE,
+        HORN,
+        PANFLUTE,
+        SHAWM,
+        VIOL
     }
 
     public enum Race {
@@ -246,6 +291,7 @@ public class Enum {
     public void checkClass(Character character){
         switch(character.getCharClass()){
             case BARBARIAN:
+
                 character.setCharHitDice(12);
                 break;
             case BARD:
