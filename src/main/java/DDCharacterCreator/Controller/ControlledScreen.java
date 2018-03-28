@@ -1,4 +1,6 @@
-package DDCharacterCreator;
+package DDCharacterCreator.Controller;
+
+import DDCharacterCreator.ScreensController;
 
 public abstract class ControlledScreen {
     private ScreensController screenParent;

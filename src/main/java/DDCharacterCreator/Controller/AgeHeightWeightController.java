@@ -1,11 +1,9 @@
-package DDCharacterCreator.FXML;
+package DDCharacterCreator.Controller;
 
-import DDCharacterCreator.ControlledScreen;
-import DDCharacterCreator.ScreensController;
 import com.jfoenix.controls.JFXSlider;
 import javafx.fxml.FXML;
 
-public class ageHeightWeightController extends ControlledScreen {
+public class AgeHeightWeightController extends ControlledScreen implements MenuController {
 
     /*
     TO DO:
@@ -15,6 +13,21 @@ public class ageHeightWeightController extends ControlledScreen {
 
     @FXML
     public JFXSlider ageSlider, heightSlider, weightSlider;
+
+    @Override
+    public void backFunction() {
+        System.out.println("Back Test");
+    }
+
+    @Override
+    public void forwardFunction() {
+        System.out.println("Forward Test");
+    }
+
+    @Override
+    public void randomizeAll() {
+        System.out.println("Rand test");
+    }
 
     /**
      * Test function.

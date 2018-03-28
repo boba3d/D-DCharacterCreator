@@ -1,13 +1,27 @@
-package DDCharacterCreator.FXML;
+package DDCharacterCreator.Controller;
 
-import DDCharacterCreator.ControlledScreen;
 import com.jfoenix.controls.JFXTextField;
 import javafx.fxml.FXML;
 
-public class nameController extends ControlledScreen {
+public class NameController extends ControlledScreen implements MenuController {
 
     @FXML
     public JFXTextField characterNameField, playerNameField;
+
+    @Override
+    public void backFunction() {
+        System.out.println("Back Test");
+    }
+
+    @Override
+    public void forwardFunction() {
+        System.out.println("Forward Test");
+    }
+
+    @Override
+    public void randomizeAll() {
+        System.out.println("Rand test");
+    }
 
     /**
      * Test function.

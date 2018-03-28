@@ -1,6 +1,5 @@
-package DDCharacterCreator.FXML;
+package DDCharacterCreator.Controller;
 
-import DDCharacterCreator.ControlledScreen;
 import com.jfoenix.controls.JFXSlider;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -8,19 +7,33 @@ import javafx.fxml.Initializable;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class levelController extends ControlledScreen implements Initializable {
-
-    @FXML
-    public JFXSlider levelSlider;
+public class LevelController extends ControlledScreen implements Initializable, MenuController {
 
     final private int MINLEVEL = 1;
     final private int MAXLEVEL = 25;
+    @FXML
+    public JFXSlider levelSlider;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         setMinLevel(MINLEVEL);
         setMaxLevel(MAXLEVEL);
         resetLevelSlider();
+    }
+
+    @Override
+    public void backFunction() {
+        System.out.println("Back Test");
+    }
+
+    @Override
+    public void forwardFunction() {
+        System.out.println("Forward Test");
+    }
+
+    @Override
+    public void randomizeAll() {
+        System.out.println("Rand test");
     }
 
     /**

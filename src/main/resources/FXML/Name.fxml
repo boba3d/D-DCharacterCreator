@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import com.jfoenix.controls.*?>
+<?import javafx.scene.layout.*?>
+
+<GridPane xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1"
+          fx:controller="DDCharacterCreator.Controller.NameController">
+    <children>
+        <JFXTextField fx:id="characterNameField" alignment="CENTER" focusColor="YELLOW" labelFloat="true"
+                      promptText="Character Name" unFocusColor="RED" GridPane.halignment="CENTER"
+                      GridPane.valignment="CENTER">
+            <font>
+                <Font size="24.0"/>
+            </font>
+        </JFXTextField>
+        <JFXTextField fx:id="playerNameField" alignment="CENTER" focusColor="YELLOW" labelFloat="true"
+                      promptText="Player Name" unFocusColor="RED" GridPane.rowIndex="2">
+            <font>
+                <Font size="24.0"/>
+            </font>
+        </JFXTextField>
+    </children>
+    <columnConstraints>
+        <ColumnConstraints percentWidth="100.0"/>
+    </columnConstraints>
+    <rowConstraints>
+        <RowConstraints percentHeight="45.0"/>
+        <RowConstraints percentHeight="10.0"/>
+        <RowConstraints percentHeight="45.0"/>
+    </rowConstraints>
+</GridPane>

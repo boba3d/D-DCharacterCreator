@@ -1,11 +1,9 @@
-package DDCharacterCreator.FXML;
+package DDCharacterCreator.Controller;
 
 import java.net.URL;
 import java.util.ResourceBundle;
 
-import DDCharacterCreator.ControlledScreen;
 import DDCharacterCreator.ScreensController;
-import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 
 
@@ -17,7 +15,6 @@ public class Splash_Controller extends ControlledScreen implements Initializable
     }
 
     public void NextScreen(){
-
-        getScreenParent().setScreen("ageHeightWeight_menu");
+        getScreenParent().setScene(ScreensController.AGEWEIGHTHEIGHT);
     }
 }

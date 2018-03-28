@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.text.*?>
+<?import com.jfoenix.controls.*?>
+<?import javafx.scene.layout.*?>
+
+<GridPane xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1"
+          fx:controller="DDCharacterCreator.Controller.AgeHeightWeightController">
+    <children>
+        <JFXSlider fx:id="ageSlider" indicatorPosition="RIGHT" orientation="VERTICAL" GridPane.halignment="CENTER"
+                   GridPane.rowIndex="1" GridPane.valignment="CENTER"/>
+        <JFXSlider fx:id="heightSlider" indicatorPosition="RIGHT" orientation="VERTICAL" GridPane.columnIndex="2"
+                   GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER"/>
+        <JFXSlider fx:id="weightSlider" orientation="VERTICAL" GridPane.columnIndex="4" GridPane.halignment="CENTER"
+                   GridPane.rowIndex="1" GridPane.valignment="CENTER"/>
+        <Label text="Age" textAlignment="CENTER" textFill="GOLD" GridPane.halignment="CENTER"
+               GridPane.valignment="CENTER">
+            <font>
+                <Font size="18.0"/>
+            </font>
+        </Label>
+        <Label text="Height" textAlignment="CENTER" textFill="GOLD" GridPane.columnIndex="2"
+               GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+            <font>
+                <Font size="18.0"/>
+            </font>
+        </Label>
+        <Label text="Weight" textAlignment="CENTER" textFill="GOLD" GridPane.columnIndex="4"
+               GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+            <font>
+                <Font size="18.0"/>
+            </font>
+        </Label>
+    </children>
+    <columnConstraints>
+        <ColumnConstraints percentWidth="26.66"/>
+        <ColumnConstraints percentWidth="10.0"/>
+        <ColumnConstraints percentWidth="26.66"/>
+        <ColumnConstraints percentWidth="10.0"/>
+        <ColumnConstraints hgrow="SOMETIMES"/>
+    </columnConstraints>
+    <rowConstraints>
+        <RowConstraints percentHeight="10.0"/>
+        <RowConstraints percentHeight="90.0"/>
+    </rowConstraints>
+</GridPane>

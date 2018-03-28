@@ -1,6 +1,5 @@
-package DDCharacterCreator.FXML;
+package DDCharacterCreator.Controller;
 
-import DDCharacterCreator.ControlledScreen;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXTextArea;
 import javafx.fxml.FXML;
@@ -9,7 +8,7 @@ import javafx.fxml.Initializable;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class selectionController extends ControlledScreen implements Initializable {
+public class SelectionController extends ControlledScreen implements Initializable, MenuController {
 
     /*
     TO DO:
@@ -34,6 +33,21 @@ public class selectionController extends ControlledScreen implements Initializab
 
         selectBackButton.setOnAction(e -> setSelected(getSelected() - 1));
         selectForwardButton.setOnAction(e -> setSelected(getSelected() + 1));
+    }
+
+    @Override
+    public void backFunction() {
+        System.out.println("Back Test");
+    }
+
+    @Override
+    public void forwardFunction() {
+        System.out.println("Forward Test");
+    }
+
+    @Override
+    public void randomizeAll() {
+        System.out.println("Rand test");
     }
 
     /**

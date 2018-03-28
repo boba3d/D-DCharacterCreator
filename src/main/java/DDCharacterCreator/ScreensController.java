@@ -1,101 +1,114 @@
 package DDCharacterCreator;
 
-import java.util.HashMap;
-import javafx.animation.KeyFrame;
-import javafx.animation.KeyValue;
-import javafx.animation.Timeline;
-import javafx.beans.property.DoubleProperty;
-import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
+import DDCharacterCreator.Controller.ControlledScreen;
+import DDCharacterCreator.Controller.MenuController;
+import DDCharacterCreator.Controller.NavigationMenuController;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.Node;
 import javafx.scene.Parent;
-import javafx.scene.layout.StackPane;
-import javafx.util.Duration;
+import javafx.scene.Scene;
+import javafx.scene.image.Image;
+import javafx.stage.Stage;
+
+import java.io.IOException;
+import java.util.HashMap;
 
 
-public class ScreensController  extends StackPane {
+public class ScreensController {
+
     //Holds the screens to be displayed
+    private HashMap<String, String> screens;
 
-    private HashMap<String, Node> screens = new HashMap<>();
+    //The stage our ScreensController works on
+    //Should be primaryStage from Main.java in this instance
+    private Stage stage;
 
-    public ScreensController() {
-        super();
+    //Set location and names for Controller screens
+    //Names are public, so they may be easily accessed outside this class
+    //Pathnames are private, because this class is the only one accessing them
+    public static final String AGEWEIGHTHEIGHT = "AgeHeightWeight";
+    private final String AGEWEIGHTHEIGHTFILE = "/FXML/AgeHeightWeight.fxml";
+    public static final String CHARAPPEARANCE = "CharAppearance";
+    private final String CHARAPPEARANCEFILE = "/FXML/CharacterAppearance.fxml";
+    public static final String LEVEL = "Level";
+    private final String LEVELFILE = "/FXML/Level.fxml";
+    private final String MENUFILE = "/FXML/Menu.fxml"; //MENU not included, don't want to load just the UI by itself
+    public static final String NAME = "Name";
+    private final String NAMEFILE = "/FXML/Name.fxml";
+    public static final String SELECTION = "Selection";
+    private final String SELECTIONFILE = "/FXML/Selection.fxml";
+    public static final String SPLASH = "Splash";
+    private final String SPLASHFILE = "/FXML/Splash.fxml";
+    public static final String WELCOME = "Welcome";
+    private final String WELCOMEFILE = "/FXML/Welcome.fxml";
+
+    //Icon image
+    private static final String ICONFILE = "/SplashPicture.png";
+
+    //First scene to display
+    private static final String FIRSTSCENE = SPLASH;
+
+    ScreensController(Stage stage) {
+        this.stage = stage;
+        screens = new HashMap<>();
+
+        //Put constant names with constant pathnames into HashMap
+        addScene(AGEWEIGHTHEIGHT, AGEWEIGHTHEIGHTFILE);
+        addScene(CHARAPPEARANCE, CHARAPPEARANCEFILE);
+        addScene(LEVEL, LEVELFILE);
+        addScene(NAME, NAMEFILE);
+        addScene(SELECTION, SELECTIONFILE);
+        addScene(SPLASH, SPLASHFILE);
+        addScene(WELCOME, WELCOMEFILE);
+
+        stage.setTitle("D&D character creator");
+        stage.getIcons().add(new Image(ICONFILE));
+
+        setScene(FIRSTSCENE);
+
+        stage.show();
     }
 
-    //Add the screen to the collection
-    public void addScreen(String name, Node screen) {
-        screens.put(name, screen);
+    /**
+     * Adds a new mapping using name as a key to its pathname.
+     *
+     * @param name     The key value, or name of the scene.
+     * @param pathname The pathname of the scene.
+     */
+    private void addScene(String name, String pathname) {
+        screens.put(name, pathname);
     }
 
-    //Returns the Node with the appropriate name
-    public Node getScreen(String name) {
+    //Returns the pathname to the corresponding name
+    public String getScene(String name) {
         return screens.get(name);
     }
 
-    //Loads the fxml file, add the screen to the screens collection and
-    //finally injects the screenPane to the controller.
-    public boolean loadScreen(String name, String resource) {
+    /**
+     * Sets the current scene corresponding to input name.
+     *
+     * @param name The name of the scene in the HashMap
+     * @return True if successfully loaded, false if exception thrown.
+     */
+    public boolean setScene(String name) {
         try {
-            FXMLLoader myLoader = new FXMLLoader(getClass().getResource(resource));
-            Parent loadScreen = (Parent) myLoader.load();
-            ControlledScreen myScreenControler = ((ControlledScreen) myLoader.getController());
-            myScreenControler.setScreenParent(this);
-            addScreen(name, loadScreen);
-            return true;
-        } catch (Exception e) {
-            System.out.println(e.getMessage());
-            return false;
-        }
-    }
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource(getScene(name)));
+            Parent root = fxmlLoader.load(); //Load the scene first so we may check its inheritance
 
-    //This method tries to displayed the screen with a predefined name.
-    //First it makes sure the screen has been already loaded.  Then if there is more than
-    //one screen the new screen is been added second, and then the current screen is removed.
-    // If there isn't any screen being displayed, the new screen is just added to the root.
-    public boolean setScreen(final String name) {
-        if (screens.get(name) != null) {   //screen loaded
-            final DoubleProperty opacity = opacityProperty();
-
-            if (!getChildren().isEmpty()) {    //if there is more than one screen
-                Timeline fade = new Timeline(
-                        new KeyFrame(Duration.ZERO, new KeyValue(opacity, 1.0)),
-                        new KeyFrame(new Duration(1000), new EventHandler<ActionEvent>() {
-                            @Override
-                            public void handle(ActionEvent t) {
-                                getChildren().remove(0);                    //remove the displayed screen
-                                getChildren().add(0, screens.get(name));     //add the screen
-                                Timeline fadeIn = new Timeline(
-                                        new KeyFrame(Duration.ZERO, new KeyValue(opacity, 0.0)),
-                                        new KeyFrame(new Duration(800), new KeyValue(opacity, 1.0)));
-                                fadeIn.play();
-                            }
-                        }, new KeyValue(opacity, 0.0)));
-                fade.play();
-
+            if (fxmlLoader.getController() instanceof MenuController) { //If it is a MenuController (uses the UI)
+                FXMLLoader fxmlLoaderMenu = new FXMLLoader(getClass().getResource(MENUFILE));
+                root = fxmlLoaderMenu.load(); //Load the menu scene and set it as the root
+                NavigationMenuController nMC = fxmlLoaderMenu.getController(); //Get the menu's controller
+                nMC.setNodeFXMLLoader(new FXMLLoader(getClass().getResource(getScene(name)))); //Pass the scene's FXMLLoader
+                nMC.setScreenParent(this); //Set the screenParent of both the menu and the scene to this one
             } else {
-                setOpacity(0.0);
-                getChildren().add(screens.get(name));       //no one else been displayed, then just show
-                Timeline fadeIn = new Timeline(
-                        new KeyFrame(Duration.ZERO, new KeyValue(opacity, 0.0)),
-                        new KeyFrame(new Duration(2500), new KeyValue(opacity, 1.0)));
-                fadeIn.play();
+                ((ControlledScreen) fxmlLoader.getController()).setScreenParent(this); //Set the screenParent of the scene to this one
             }
-            return true;
-        } else {
-            System.out.println("screen hasn't been loaded!!! \n");
-            return false;
-        }
 
-    }
-
-    //This method will remove the screen with the given name from the collection of screens
-    public boolean unloadScreen(String name) {
-        if (screens.remove(name) == null) {
-            System.out.println("Screen didn't exist");
-            return false;
-        } else {
+            stage.setScene(new Scene(root, 600, 400)); //Finally, set the current scene in the stage to our root
             return true;
+        } catch (IOException e) {
+            e.printStackTrace();
+            return false;
         }
     }
 }

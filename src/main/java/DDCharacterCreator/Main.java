@@ -3,45 +3,28 @@ package DDCharacterCreator;
 
 
 import javafx.application.Application;
-import javafx.scene.Group;
-import javafx.scene.Scene;
-import javafx.scene.image.Image;
 import javafx.stage.Stage;
 
 
 public class Main extends Application {
-    private ScreensController myController;
+    private ScreensController screensController;
     private static Character mycharacter;
     private static CharacterDatabase DB;
 
-    //set location and names for FXML screens
-    private static final String Splash = "Splash";
-    private static final String SplashFile = "/Splash.fxml";
-    private static final String Welcome = "Welcome";
-    private static final String WelcomeFile = "/Welcome.fxml";
-    private static final String AGEWEIGHTHEIGHT_MENU = "ageHeightWeight_menu";
-    private static final String AGEWEIGHTHEIGHT_MENUFILE = "/ageHeightWeight_menu.fxml";
-    private static final String CharAppearance = "CharAppearance";
-    private static final String CharAppearanceFile = "/CharacterAppearance.fxml";
-    private static final String LEVEL_MENU = "level_menu";
-    private static final String LEVEL_MENUFILE = "/level_menu.fxml";
-    private static final String NAME_MENU = "name_menu";
-    private static final String NAME_MENUFILE = "/name_menu.fxml";
-    private static final String SELECTION_MENU = "selection_menu";
-    private static final String SELECTION_MENUFILE = "/selection_menu.fxml";
-
     @Override
     public void start(Stage primaryStage) {
+        /*
+        TO DO: DELETE CODE SOON
 
-        ScreensController mainContainer = new ScreensController();
+        ScreensControllerOld mainContainer = new ScreensControllerOld();
         //load all screens in
-        mainContainer.loadScreen(Main.Splash, Main.SplashFile);
-            mainContainer.loadScreen(Main.Welcome, Main.WelcomeFile);
-            mainContainer.loadScreen(Main.AGEWEIGHTHEIGHT_MENU, Main.AGEWEIGHTHEIGHT_MENUFILE);
-        mainContainer.loadScreen(Main.LEVEL_MENU, Main.LEVEL_MENUFILE);
-            mainContainer.loadScreen(Main.CharAppearance, Main.CharAppearanceFile);
-        mainContainer.loadScreen(Main.NAME_MENU, Main.NAME_MENUFILE);
-        mainContainer.loadScreen(Main.SELECTION_MENU, Main.SELECTION_MENUFILE);
+        mainContainer.setScreen(Main.Splash, Main.SplashFile);
+        mainContainer.setScreen(Main.Welcome, Main.WelcomeFile);
+        mainContainer.setScreen(Main.AGEWEIGHTHEIGHT_MENU, Main.AGEWEIGHTHEIGHT_MENUFILE);
+        mainContainer.setScreen(Main.LEVEL_MENU, Main.LEVEL_MENUFILE);
+        mainContainer.setScreen(Main.CharAppearance, Main.CharAppearanceFile);
+        mainContainer.setScreen(Main.NAME_MENU, Main.NAME_MENUFILE);
+        mainContainer.setScreen(Main.SELECTION_MENU, Main.SELECTION_MENUFILE);
 
         //set first screen
         mainContainer.setScreen(Main.Splash);
@@ -49,10 +32,11 @@ public class Main extends Application {
         root.getChildren().addAll(mainContainer);
         Scene scene = new Scene(root);
         primaryStage.setScene(scene);
-        primaryStage.setTitle(" D&D character creator");
-        //add icon if wanted
-        primaryStage.getIcons().add(new Image("/SplashPicture.png"));
+        primaryStage.setTitle("D&D character creator");
         primaryStage.show();
+        */
+
+        screensController = new ScreensController(primaryStage);
 
         //initialize character
             mycharacter = new Character();
@@ -66,7 +50,6 @@ public class Main extends Application {
             //DB.getImages(mycharacter);
             DB.CloseConnectionToDB();
         //print character
-
     }
 
     public static void main(String[] args) {
@@ -76,6 +59,7 @@ public class Main extends Application {
     public static Character getChar(){
         return mycharacter;
     }
+
     static public void PrintCharacter(){
         Print print = new Print();
         mycharacter.setCharName("Dungeon master");
