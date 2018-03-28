@@ -15,6 +15,7 @@ public class Dice {
     public Dice(){
         r = new Random();
     }
+    public Dice(long seed) { r = new Random(seed); }
 
     /**
      * Roll the dice.
