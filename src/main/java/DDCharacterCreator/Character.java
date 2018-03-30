@@ -5,6 +5,7 @@ public class Character{
         private String charName;
         private Enum.Class charClass;
         private Integer charLevel;
+        private String charGender;
         private Enum.Background charBackground;
         private Enum.Race charRace;
         private Enum.Alignment charAlignment;
@@ -53,6 +54,7 @@ public class Character{
         private String Treasure;
 
         //**************************************************************** GETTER AND SETTERS ***************************************
+
     public String getCharName() {
         return charName;
     }
@@ -61,9 +63,13 @@ public class Character{
         this.charName = charName;
     }
 
-    public Enum.Class getCharClass() {
-        return charClass;
+    public String getCharGender() {
+        return charGender;
     }
+
+    public void setCharGender() { this.charGender = charGender;  }
+
+    public Enum.Class getCharClass() { return charClass; }
 
     public void setCharClass(Enum.Class charClass) {
         this.charClass = charClass;
