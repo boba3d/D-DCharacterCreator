@@ -39,6 +39,7 @@ public class Character{
         private Integer charEP;
         private Integer charGP;
         private Integer charPP;
+        private String charEquipment;
 
     //Character appearance
         private String charAppearance; //reference to db
@@ -63,9 +64,11 @@ public class Character{
         this.charName = charName;
     }
 
-    public String getCharGender() {
-        return charGender;
-    }
+    public String getCharGender() { return charGender; }
+
+    public String getCharEquipment() { return charEquipment;}
+
+    public void setCharEquipment() { this.charEquipment = charEquipment;}
 
     public void setCharGender() { this.charGender = charGender;  }
 

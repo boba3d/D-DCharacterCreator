@@ -29,9 +29,7 @@ public class CharacterSkills extends Character{
         this.charAcrobatics = charAcrobatics;
     }
 
-    public Integer getCharAnimalHandling() {
-        return charAnimalHandling;
-    }
+    public Integer getCharAnimalHandling() { return charAnimalHandling; }
 
     public void setCharAnimalHandling(Integer charAnimalHandling) {
         this.charAnimalHandling = charAnimalHandling;

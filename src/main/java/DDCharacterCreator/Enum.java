@@ -3,6 +3,14 @@ package DDCharacterCreator;
 import com.sun.deploy.uitoolkit.ToolkitStore;
 import com.sun.org.apache.regexp.internal.REDebugCompiler;
 
+
+/**
+ * A class for managing the Logic for the character based off rules in 5e
+ * @author Marsol Daman, Lauren Lingeman
+ * @version 1.0
+ * @since 1.0
+ * TODO Finish spells, cantrips, ideals, traits, bonds, flaws, features & traits, character backstory, allies & organizations, Additional Features & traits
+ */
 public class Enum {
     public enum EyeColor {
         BLUE,
@@ -128,8 +136,34 @@ public class Enum {
     }
 
     // Enum data type with the backgrounds
-    public enum Background {
+    // Name, # of languages,, # of Musical Instruments, Starting Gold, Equipment
+    public enum Background{
+        ACOLYTE("Acolyte",2,0,15,"Set of common clothes, Holy Symbol, Prayer book, 5 sticks of incense, Vestments"),
+        CHARLATAN("Charlatan", 0, 0, 15, "Set of Fine Clothes, Disguise Kit, 1 Charlaton tool, Forgery Kit"),
+        CRIMINAL("Criminal",0, 0, 15, "Set of dark common clothes including a hood and a crowbar, One type of gaming set, thieves’ tools"),
+        ENTERTAINER("Entertainer", 0, 1, 15, "A Costume, Disguise kit, Favor of an admirer"),
+        FOLK_HERO("Folk Hero", 0, 0, 10, "Set of common clothes, One type of artisan’s tools, vehicles (land),  A shovel, An iron pot"),
+        GUILD_ARTISAN("Guild Artisan", 1, 0, 15, "Set of traveler’s clothes, One type of artisan’s tools, a letter of introduction from your guild"),
+        HERMIT("Hermit", 1,0,5,"Set of common clothes, Herbalism kit, A scroll case stuffed full of notes from your studies or prayers, a Winter blanket"),
+        NOBLE("Noble", 1, 0, 25,"Set of Fine Clothes, A Signet Ring, A Scroll of Pedigree, One type of gaming set"),
+        OUTLANDER("Outlander", 1, 1, 10, "Set of traveler’s clothes, A staff, a hunting trap, a trophy from an animal you killed"),
+        SAGE("Sage", 2, 0, 10, "Set of common clothes, A bottle of black ink, a quill, a small knife, a letter from a dead colleague posing a question you have not yet been able to answer"),
+        SAILOR("Sailor", 0, 0, 10,"Set of common clothes, Navigator’s tools, Vehicles, A belaying pin (club), 50 feet of silk rope, a lucky charm"),
+        SOLDIER("Solider",0 ,0 , 10, "Set of common clothes, An insignia of rank, a trophy taken from a fallen enemy, One type of gaming set, vehicles (land), a set of bone dice or deck of cards");
 
+        private final String name;
+        private final String equipment;
+        private final int languages;
+        private final int musical_instruments;
+        private final int gold;
+
+        Background(String name, int languages, int musical_instruments, int gold, String equipment){
+        this.name= name;
+        this.languages=languages;
+        this.musical_instruments=musical_instruments;
+        this.gold=gold;
+        this.equipment=equipment;
+        }
     }
 
     //Tools
