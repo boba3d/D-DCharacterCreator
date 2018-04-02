@@ -181,14 +181,14 @@ public class Randomizer {
                 break;
             default: return "Bobby No-name";
         }
-        return values[randomize(values.length) - 1].toString();
+        return values[randomize(values.length - 1)].toString();
     }
 
     /**
      * @return Random character level.
      */
     public static Integer getCharLevel(){
-        return randomize(20)+1;
+        return randomize(1, 20);
     }
 
     public static Enum.Background getCharBackground(Enum.Race race, Enum.Class clss) { return null; }
@@ -241,7 +241,7 @@ public class Randomizer {
      * @param race The race to base the age on.
      * @return A random age.
      */
-    public Integer getAge(Enum.Race race){
+    public static Integer getAge(Enum.Race race){
         switch(race){
             case WOODELF: case DARKELF:  case HIGHELF:
                 return randomize(750);
@@ -270,7 +270,7 @@ public class Randomizer {
      * @param race The race to base the height on.
      * @return A random height, in inches.
      */
-    public Integer getHeight(Enum.Race race){
+    public static Integer getHeight(Enum.Race race){
         switch(race){
             case WOODELF: case DARKELF: case HIGHELF: case HALFELF:
                 return randomize(48, 84);
@@ -295,7 +295,7 @@ public class Randomizer {
      * @param race The race to base the weight on.
      * @return A random weight, in pounds.
      */
-    public Integer getWeight(Enum.Race race){
+    public static Integer getWeight(Enum.Race race){
         switch(race){
             case WOODELF: case DARKELF: case HIGHELF: case HALFELF:
                 return randomize(80, 180);
@@ -319,7 +319,7 @@ public class Randomizer {
     /**
      * @return A random eye color.
      */
-    public Enum.EyeColor getEyeColor(){
+    public static Enum.EyeColor getEyeColor(){
         return Enum.EyeColor.values()[randomize(Enum.EyeColor.values().length - 1)];
     }
 
@@ -328,7 +328,7 @@ public class Randomizer {
      * (Marsol already did this, albeit in a lot more code, oops)
      * @return A string array formatted: [Background, Traits, Ideals, Bonds, Flaws]
      */
-    public String[] getPersonality(){
+    public static String[] getPersonality(){
         String[] ret = new String[5];
         Integer bg = randomize(Enum.backgrounds.length);
 
@@ -343,7 +343,7 @@ public class Randomizer {
     /**
      * @return A randomly generated character sheet.
      */
-    public Character getCharacter(){
+    public static Character getCharacter(){
         Character c = new Character();
         // Basic info
         c.setCharClass(getCharClass());
@@ -351,7 +351,6 @@ public class Randomizer {
         c.setCharExperiencePoints(Enum.getExperiencePoints(c.getCharLevel()));
         c.setCharGender(getCharGender());
         c.setCharRace(getCharRace());
-        c.setCharBackground(getCharBackground(c.getCharRace(), c.getCharClass()));
         c.setCharAlignment(getCharAlignment());
         c.setCharName(getCharName(c.getCharRace(), c.getCharGender()));
 
@@ -390,7 +389,7 @@ public class Randomizer {
      * @param player The player's name
      * @return A randomly generated character sheet.
      */
-    public Character getCharacter(String player){
+    public static Character getCharacter(String player){
         Character c = getCharacter();
         c.setCharPlayerName(player);
         return c;
