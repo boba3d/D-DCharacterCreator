@@ -25,7 +25,7 @@ public class Main extends Application {
             //DB.addImage("woodelf", "characters_woodelf_woodelf1","https://s3.us-east-2.amazonaws.com/ddcharactorcreator/characters/woodelf/WE1.jpg");
             //DB.CloseConnectionToDB();
         //print character
-
+        //PrintCharacter();
         screensController = new ScreensController(primaryStage);
     }
 

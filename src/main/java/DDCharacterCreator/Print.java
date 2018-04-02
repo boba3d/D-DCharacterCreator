@@ -2,20 +2,14 @@ package DDCharacterCreator;
 
 import com.itextpdf.forms.PdfAcroForm;
 import com.itextpdf.forms.fields.PdfFormField;
-import com.itextpdf.kernel.pdf.PdfDocument;
-import com.itextpdf.kernel.pdf.PdfReader;
-import com.itextpdf.kernel.pdf.PdfWriter;
+import com.itextpdf.kernel.pdf.*;
 
 import javax.print.*;
 import javax.print.attribute.HashPrintRequestAttributeSet;
-import javax.print.attribute.PrintJobAttributeSet;
-import javax.print.attribute.PrintRequestAttributeSet;
-import javax.print.event.PrintJobAttributeListener;
-import javax.print.event.PrintJobListener;
-import java.awt.*;
 import java.awt.print.PrinterJob;
 import java.io.*;
-import java.lang.reflect.Executable;
+
+
 import java.util.Map;
 
 public class Print {
@@ -28,7 +22,7 @@ public class Print {
     public boolean printChar(Character myChar,CharacterDatabase chDB ){
         String fileName = myChar.getCharPlayerName();
         String home = System.getProperty("user.home");
-        String destination = new File(home+"/Downloads/D-DCharachterSheet-"+ fileName +".pdf").toString();
+        String destination = new File(home+"/Downloads/D-DCharachterSheet-22"+ fileName +".pdf").toString();
 
 
         try {
@@ -218,7 +212,9 @@ public class Print {
         }
 
         //Page 2
-        //fields.get("CharacterAppearance").setValue();
+        if(myChar.getCharAppearance() != null) {
+
+        }
         //fields.get("Symbol_Picture_af_image").setValue();
         //fields.get("Symbol_Name").setValue();
     }
@@ -246,4 +242,6 @@ public class Print {
             System.out.println("No service found");
         }
     }
+
+
 }

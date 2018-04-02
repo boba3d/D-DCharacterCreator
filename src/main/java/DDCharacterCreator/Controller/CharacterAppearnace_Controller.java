@@ -29,7 +29,7 @@ import java.util.LinkedList;
 import java.util.ResourceBundle;
 
 
-public class CharacterAppearnace_Controller extends ControlledScreen implements Initializable{
+public class CharacterAppearnace_Controller extends ControlledScreen implements Initializable, MenuController{
 
     @FXML private GridPane PictureGrid;
     @FXML private JFXButton btnUploadAppearance;
@@ -38,6 +38,7 @@ public class CharacterAppearnace_Controller extends ControlledScreen implements 
     Boolean NodeSelected = false;
     Object NodeSource;
 
+    @Override
     public void initialize(URL url, ResourceBundle rb) {
 
         MyCharacter = Main.getChar();
@@ -111,6 +112,21 @@ public class CharacterAppearnace_Controller extends ControlledScreen implements 
         });
     }
 
+    @Override
+    public void backFunction() {
+        System.out.println("Back Test");
+    }
+
+    @Override
+    public void forwardFunction() {
+        System.out.println("Forward Test");
+    }
+
+    @Override
+    public void randomizeAll() {
+        System.out.println("Rand test");
+    }
+
     @FXML
     void uploadAppearance(ActionEvent event) {
         //choose file
@@ -140,11 +156,5 @@ public class CharacterAppearnace_Controller extends ControlledScreen implements 
         String clickedImgUrl = (String)((ImageView)source).getUserData();
         MyCharacter.setCharAppearance(clickedImgUrl);
     }
-    public void openNavBar() {
-        System.out.println("Hamburger test");
-    }
 
-    public void NextScreen(){
-        getScreenParent().setScene(ScreensController.AGEWEIGHTHEIGHT);
-    }
 }

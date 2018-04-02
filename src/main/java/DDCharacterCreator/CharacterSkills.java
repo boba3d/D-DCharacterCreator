@@ -1,6 +1,8 @@
 package DDCharacterCreator;
 
-public class CharacterSkills extends Character{
+import java.io.Serializable;
+
+public class CharacterSkills extends Character implements Serializable{
 
     private Integer charAcrobatics;
     private Integer charAnimalHandling;

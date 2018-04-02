@@ -1,6 +1,9 @@
 package DDCharacterCreator;
 
-public class Character{
+import java.io.Serializable;
+
+public class Character implements Serializable{
+    private static final long serialVersionUID = 1L;
     //Basic info
         private String charName;
         private Enum.Class charClass;

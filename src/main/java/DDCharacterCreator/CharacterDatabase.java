@@ -9,6 +9,8 @@ import com.couchbase.client.java.document.json.*;
 import com.couchbase.client.java.env.CouchbaseEnvironment;
 import com.couchbase.client.java.env.DefaultCouchbaseEnvironment;
 
+import java.io.FileOutputStream;
+import java.io.ObjectOutputStream;
 import java.util.*;
 
 /**
@@ -74,8 +76,11 @@ public class CharacterDatabase {
     }
 
 
-    public boolean addCharacter(Character c){
-
+    public boolean SaveCharacter(Character c) throws Exception{
+        //FileOutputStream fos = new FileOutputStream("mybean.ser");
+        //ObjectOutputStream oos = new ObjectOutputStream(fos);
+        //oos.writeObject(mb);
+        //oos.close();
 
         return true;
     }
