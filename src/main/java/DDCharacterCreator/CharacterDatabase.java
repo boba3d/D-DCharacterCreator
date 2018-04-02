@@ -27,7 +27,7 @@ public class CharacterDatabase {
                 .keepAliveInterval(3600 * 1000) // 3600 Seconds
                 .queryTimeout(1000000)
                 .build();
-        Cluster cluster = CouchbaseCluster.create(env,"cbapi.axelvh.com:11210");
+        Cluster cluster = CouchbaseCluster.create(env,"cbapi.axelvh.com");
         bucket = cluster.openBucket("DDCreator", "DDCreator1234");
         System.out.println(cluster.diagnostics().toString());
         return true;

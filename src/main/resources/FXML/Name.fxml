@@ -5,7 +5,7 @@
 <?import javafx.scene.layout.*?>
 
 <GridPane xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1"
-          fx:controller="DDCharacterCreator.Controller.NameController">
+          fx:controller="DDCharacterCreator.Controller.NameController" >
     <children>
         <JFXTextField fx:id="characterNameField" alignment="CENTER" focusColor="YELLOW" labelFloat="true"
                       promptText="Character Name" unFocusColor="RED" GridPane.halignment="CENTER"
