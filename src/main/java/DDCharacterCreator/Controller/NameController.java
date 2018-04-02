@@ -1,5 +1,6 @@
 package DDCharacterCreator.Controller;
 
+import DDCharacterCreator.Main;
 import com.jfoenix.controls.JFXTextField;
 import javafx.fxml.FXML;
 
@@ -16,6 +17,8 @@ public class NameController extends ControlledScreen implements MenuController {
     @Override
     public void forwardFunction() {
         System.out.println("Forward Test");
+        Main.getChar().setCharName(getCharacterName());
+        Main.getChar().setCharPlayerName(getPlayerName());
     }
 
     @Override

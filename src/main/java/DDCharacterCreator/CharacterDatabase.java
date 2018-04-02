@@ -77,8 +77,8 @@ public class CharacterDatabase {
 
 
     public boolean SaveCharacter(Character c) throws Exception{
-        //FileOutputStream fos = new FileOutputStream("mybean.ser");
-        //ObjectOutputStream oos = new ObjectOutputStream(fos);
+        FileOutputStream fos = new FileOutputStream("char.ser");
+        ObjectOutputStream oos = new ObjectOutputStream(fos);
         //oos.writeObject(mb);
         //oos.close();
 
