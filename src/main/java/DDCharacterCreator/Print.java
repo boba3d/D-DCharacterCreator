@@ -81,14 +81,14 @@ public class Print {
         if(myChar.getCharEyeColor() != null) {
             //fields.get("Eyes").setValue(myChar.getCharEyeColor());
         }
-        if(myChar.getCharHeight() !=null){
-            fields.get("Height").setValue(myChar.getCharHeight());
+        if(myChar.getCharHeight() !=null){ // TODO reformatting
+            fields.get("Height").setValue(myChar.getCharHeight().toString());
         }
         if(myChar.getCharSkin() != null) {
             //fields.get("Skin").setValue(myChar.getCharSkin());
         }
-        if(myChar.getCharWeight() !=null){
-            fields.get("Weight").setValue(myChar.getCharWeight());
+        if(myChar.getCharWeight() !=null){ // TODO reformatting
+            fields.get("Weight").setValue(myChar.getCharWeight().toString());
         }
         if(myChar.getCharHair() != null) {
             //fields.get("Hair").setValue(myChar.getCharHair());
