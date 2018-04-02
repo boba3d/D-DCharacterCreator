@@ -5,6 +5,7 @@ public class Character{
         private String charName;
         private Enum.Class charClass;
         private Integer charLevel;
+        private Enum.Gender charGender;
         private Enum.Background charBackground;
         private Enum.Race charRace;
         private Enum.Alignment charAlignment;
@@ -38,13 +39,14 @@ public class Character{
         private Integer charEP;
         private Integer charGP;
         private Integer charPP;
+        private String charEquipment;
 
     //Character appearance
         private String charAppearance; //reference to db
         private Integer charAge;
-        private String charHeight;
-        private String charWeight;
-        private Enum charEyeColor;
+        private Integer charHeight;
+        private Integer charWeight;
+        private Enum.EyeColor charEyeColor;
         private Enum charSkin;
         private Enum charHair;
         private String charSymbol;
@@ -52,7 +54,14 @@ public class Character{
         private String charAdditionalFeaturesTraits;
         private String Treasure;
 
+
+        private String charPersonalityTraits;
+        private String charIdeals;
+        private String charBonds;
+        private String charFlaws;
+
         //**************************************************************** GETTER AND SETTERS ***************************************
+
     public String getCharName() {
         return charName;
     }
@@ -61,9 +70,15 @@ public class Character{
         this.charName = charName;
     }
 
-    public Enum.Class getCharClass() {
-        return charClass;
-    }
+    public Enum.Gender getCharGender() { return charGender; }
+
+    public String getCharEquipment() { return charEquipment;}
+
+    public void setCharEquipment(String value) { this.charEquipment = value;}
+
+    public void setCharGender(Enum.Gender value) { this.charGender = value;  }
+
+    public Enum.Class getCharClass() { return charClass; }
 
     public void setCharClass(Enum.Class charClass) {
         this.charClass = charClass;
@@ -293,27 +308,27 @@ public class Character{
         this.charAge = charAge;
     }
 
-    public String getCharHeight() {
+    public Integer getCharHeight() {
         return charHeight;
     }
 
-    public void setCharHeight(String charHeight) {
+    public void setCharHeight(Integer charHeight) {
         this.charHeight = charHeight;
     }
 
-    public String getCharWeight() {
+    public Integer getCharWeight() {
         return charWeight;
     }
 
-    public void setCharWeight(String charWeight) {
+    public void setCharWeight(Integer charWeight) {
         this.charWeight = charWeight;
     }
 
-    public Enum getCharEyeColor() {
+    public Enum.EyeColor getCharEyeColor() {
         return charEyeColor;
     }
 
-    public void setCharEyeColor(Enum charEyeColor) {
+    public void setCharEyeColor(Enum.EyeColor charEyeColor) {
         this.charEyeColor = charEyeColor;
     }
 
@@ -324,6 +339,22 @@ public class Character{
     public void setCharSkin(Enum charSkin) {
         this.charSkin = charSkin;
     }
+
+    public void setCharPersonalityTraits(String charPersonalityTraits) { this.charPersonalityTraits = charPersonalityTraits; }
+
+    public String getCharPersonalityTraits() { return charPersonalityTraits; }
+
+    public void setCharIdeals(String charIdeals) { this.charIdeals = charIdeals; }
+
+    public String getCharIdeals() { return charIdeals; }
+
+    public void setCharBonds(String charBonds) { this.charBonds = charBonds; }
+
+    public String getCharBonds() { return charBonds; }
+
+    public void setCharFlaws(String charFlaws) { this.charFlaws = charFlaws; }
+
+    public String getCharFlaws() { return charFlaws; }
 
     public Enum getCharHair() {
         return charHair;
