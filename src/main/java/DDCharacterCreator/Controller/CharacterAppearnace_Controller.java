@@ -1,37 +1,147 @@
 package DDCharacterCreator.Controller;
 
+import DDCharacterCreator.Character;
+import DDCharacterCreator.Main;
 import DDCharacterCreator.ScreensController;
+import com.jfoenix.controls.JFXButton;
+import com.sun.org.apache.xpath.internal.operations.Bool;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.geometry.Pos;
+
+import javafx.geometry.HPos;
+import javafx.geometry.VPos;
+import javafx.scene.Node;
+import javafx.scene.control.Button;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.GridPane;
-import javafx.scene.layout.Pane;
+import javafx.stage.FileChooser;
+import javafx.stage.Stage;
 
+
+import java.awt.*;
+import java.awt.event.MouseEvent;
+import java.io.File;
 import java.net.URL;
+import java.util.Iterator;
+import java.util.LinkedList;
 import java.util.ResourceBundle;
 
 
-public class CharacterAppearnace_Controller extends ControlledScreen implements Initializable {
-    @FXML
-    private Pane imgScrollPane;
-    @Override
+public class CharacterAppearnace_Controller extends ControlledScreen implements Initializable{
+
+    @FXML private GridPane PictureGrid;
+    @FXML private JFXButton btnUploadAppearance;
+
+    Character MyCharacter;
+    Boolean NodeSelected = false;
+    Object NodeSource;
+
     public void initialize(URL url, ResourceBundle rb) {
 
-        GridPane gridpane = new GridPane();
-        gridpane.setMinSize(400, 200);
-        gridpane.setVgap(5);
-        gridpane.setHgap(5);
-        gridpane.setAlignment(Pos.CENTER_LEFT);
-        Image image = new Image("https://s3.us-east-2.amazonaws.com/ddcharactorcreator/characters/woodelf/WE5.jpg");
-        Image image2 = new Image("https://s3.us-east-2.amazonaws.com/ddcharactorcreator/characters/woodelf/WE5.jpg");
-        Image image3 = new Image("https://s3.us-east-2.amazonaws.com/ddcharactorcreator/characters/woodelf/WE5.jpg");
-        gridpane.add(new ImageView(image),0,0);
-        gridpane.add(new ImageView(image2),1,0);
-        gridpane.add(new ImageView(image3), 0,1);
-        imgScrollPane.getChildren().add(gridpane);
+        MyCharacter = Main.getChar();
 
+        LinkedList<String> dbimg = Main.getDB().getImages(MyCharacter);
+        Iterator<String> imgIter = dbimg.iterator();
+
+        //add all objects to grid
+        for(int i =0; i <4; i++){
+            for(int j =0; j < 3; j++){
+                if(imgIter.hasNext()) {
+                    String URL = imgIter.next();
+                    Image image = new Image(URL);
+                    ImageView pic = new ImageView();
+                    pic.setPreserveRatio(true);
+                    pic.setFitWidth(125);
+                    pic.setFitHeight(250);
+                    pic.setImage(image);
+                    pic.setUserData(URL);
+                    pic.setOnMouseClicked(event -> {
+                        ProcessImage(event.getSource());
+                        for (Node node : PictureGrid.getChildren()) {
+                                node.setOpacity(0.2);
+                        }
+                        pic.setOpacity(1.0);
+                    });
+                    pic.setOnMouseEntered((javafx.scene.input.MouseEvent t) -> {
+                        if(NodeSource != t.getSource()) {
+                            if (NodeSelected) {
+                                pic.setOpacity(1.0);
+                            } else {
+                                pic.setOpacity(0.2);
+                            }
+                        }
+                    });
+
+                    pic.setOnMouseExited((javafx.scene.input.MouseEvent t) -> {
+                        if(NodeSource != t.getSource()) {
+                            if (NodeSelected) {
+                                pic.setOpacity(0.2);
+                            } else {
+                                pic.setOpacity(1.0);
+                            }
+                        }
+                    });
+
+                    PictureGrid.setHalignment(pic, HPos.CENTER);
+                    PictureGrid.setValignment(pic, VPos.CENTER);
+                    PictureGrid.add(pic, j, i);
+                }
+            }
+        }
+        btnUploadAppearance.setOnMouseEntered((javafx.scene.input.MouseEvent t) -> {
+            if(NodeSource != t.getSource()) {
+                if (NodeSelected) {
+                    btnUploadAppearance.setOpacity(1.0);
+                } else {
+                    btnUploadAppearance.setOpacity(0.2);
+                }
+            }
+            });
+
+        btnUploadAppearance.setOnMouseExited((javafx.scene.input.MouseEvent t) -> {
+            if(NodeSource != t.getSource()) {
+                if (NodeSelected) {
+                    btnUploadAppearance.setOpacity(0.2);
+                } else {
+                    btnUploadAppearance.setOpacity(1.0);
+                }
+            }
+        });
+    }
+
+    @FXML
+    void uploadAppearance(ActionEvent event) {
+        //choose file
+            FileChooser imgPicker = new FileChooser();
+            imgPicker.getExtensionFilters().addAll(
+                    new FileChooser.ExtensionFilter("JPG", "*.jpg"),
+                    new FileChooser.ExtensionFilter("PNG", "*.png")
+            );
+            imgPicker.setTitle("Select custom appearance");
+            File file = imgPicker.showOpenDialog(new Stage());
+        //handle file
+            if(file != null){
+                for (Node node : PictureGrid.getChildren()) {
+                    node.setOpacity(0.2);
+                }
+                btnUploadAppearance.setOpacity(1.0);
+                NodeSelected = true;
+                NodeSource = event.getSource();
+                MyCharacter.setCharAppearance(file.getAbsolutePath());
+            }
+    }
+
+    private void ProcessImage(Object source){
+        NodeSelected = true;
+        NodeSource = source;
+        btnUploadAppearance.setOpacity(0.2);
+        String clickedImgUrl = (String)((ImageView)source).getUserData();
+        MyCharacter.setCharAppearance(clickedImgUrl);
+    }
+    public void openNavBar() {
+        System.out.println("Hamburger test");
     }
 
     public void NextScreen(){
