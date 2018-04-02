@@ -54,6 +54,12 @@ public class Character{
         private String charAdditionalFeaturesTraits;
         private String Treasure;
 
+
+        private String charPersonalityTraits;
+        private String charIdeals;
+        private String charBonds;
+        private String charFlaws;
+
         //**************************************************************** GETTER AND SETTERS ***************************************
 
     public String getCharName() {
@@ -333,6 +339,22 @@ public class Character{
     public void setCharSkin(Enum charSkin) {
         this.charSkin = charSkin;
     }
+
+    public void setCharPersonalityTraits(String charPersonalityTraits) { this.charPersonalityTraits = charPersonalityTraits; }
+
+    public String getCharPersonalityTraits() { return charPersonalityTraits; }
+
+    public void setCharIdeals(String charIdeals) { this.charIdeals = charIdeals; }
+
+    public String getCharIdeals() { return charIdeals; }
+
+    public void setCharBonds(String charBonds) { this.charBonds = charBonds; }
+
+    public String getCharBonds() { return charBonds; }
+
+    public void setCharFlaws(String charFlaws) { this.charFlaws = charFlaws; }
+
+    public String getCharFlaws() { return charFlaws; }
 
     public Enum getCharHair() {
         return charHair;

@@ -31,6 +31,67 @@ public class Enum {
         RAINBOW,
         NONE
     }
+    //PERSONALITY TRAITS, IDEALS, BONDS, FLAWS
+    //4 PER BACKGROUND, RANDOMLY GENERATED FUNCTION BELOW
+    String[] acolytePT={"I've enjoyed fine food, drink, and high society among my temple's elite.","I see omens in every event and action.", "I quote (or misquote) sacred lexls and proverbs in almost every situation. ","Nothing can shake my oplimislic attitude. "};
+    String[] acolyteIdeals={"Faith","Aspiration", "Charity","Tradition"};
+    String[] acolyteBonds={"I would die to recover an ancient relic of my faith that was lost long ago.","I owe my life to the priest who took me in when my parents died.", "I will do anything to protect the temple where I served.","Everything I do is for the common people."};
+    String[] acolyteFlaws={"My piety sometimes leads me to blindly trust those that profess faith in my god.","I judge others harshly, and myself even more severely.", "I am suspicious of strangers and expect the worst of them.","I am inflexible in my thinking."};
+
+    String[] noblePT={"I take great pains to always look my best and follow the latest fashions","If you do me an injury, I will crush you, ruin your name, and salt your fields.", "My favor, once lost, is lost forever.","The common folk love me for my kindness and generosity."};
+    String[] nobleIdeals={"Respect","Responsibility", "Independence","Noble Obligation"};
+    String[] nobleBonds={"I am in love with the heir of a family that my family despises.","The common folk must see me as a hero of the people", "My loyalty to my sovereign is unwavering.","I will face any challenge to win the approval of my family."};
+    String[] nobleFlaws={"I have an insatiable desire for carnal pleasures.","In fact, the world does revolve around me.", "I hide a truly scandalous secret that could ruin my family forever.","I secretly believe that everyone is beneath me.\n"};
+
+    String[] charlatanPT = {"I fall in and out of love easily.","I have a joke for every occasion", "Flattery is my preferred trick for getting what I want.", "I’m a born gambler who can't resist taking a risk for a potential payoff."};
+    String[] charlatanBonds = {"Somewhere out there, I have a child who doesn’t know me.","A powerful person killed someone I love. Someday soon, I’ll have my revenge.", "I owe everything to my mentor", "I come from a noble family, and one day I’ll reclaim my lands." };
+    String[] charlatanFlaws = {"I can’t resist a pretty face.","I'm always in debt.", "I’m too greedy for my own good.", "I can’t resist swindling people who are more powerful than me."};
+    String[] charlatanIdeals = {"Independence","Fairness","Charity","Creativity"};
+
+    String[] criminalPT = {"I am always calm, no matter what the situation.", "I am incredibly slow to trust.", "I blow up at the slightest insult.", "I would rather make a new friend than a new enemy."};
+    String[] criminalIdeals={"Honor", "Charity", "Freedom", "Redemption"};
+    String[] criminalBonds={"My ill-gotten gains go to support my family.", "I’m guilty of a terrible crime. I hope I can redeem myself for it.", "I’m trying to pay off an old debt I owe to a generous benefactor.", "Someone I loved died because of a mistake I made."};
+    String[] criminalFlaws={"I have a “tell” that reveals when I'm lying.", "I turn tail and run when things look bad.", "If there’s a plan, I’ll forget it. If I don’t forget it, I’ll ignore it.", "An innocent person is in prison for a crime that I committed."};
+
+    String[] folkheroPT={"I judge people by their actions, not their words.","If someone is in trouble, I’m always ready to lend help.","Thinking is for other people. I prefer action.","When I set my mind to something, I follow through no matter what gets in my way."};
+    String[] folkheroIdeals={"Respect","Freedom","Sincerity","Might"};
+    String[] folkheroBonds={"I have a family, but I have no idea where they are. ","I wish my childhood sweetheart had come with me to pursue my destiny.","I worked the land, I love the land, and I will protect the land.","I protect those who cannot protect themselves."};
+    String[] folkheroFlaws={"The tyrant who rules my land will stop at nothing to see me killed.","Secretly, I believe that things would be better if I were a tyrant lording over the land.","I have a weakness for the vices of the city, especially hard drink.","I have trouble trusting in my allies."};
+
+    String[] guildartPT={"I’m well known for my work, and I want to make sure everyone appreciates it.","I’m a snob who looks down on those who can’t appreciate fine art.","I’m full of witty aphorisms and have a proverb for every occasion.","I like to talk at length about my profession."};
+    String[] guildartIdeals={"Community","Generosity","Freedom","Greed"};
+    String[] guildartBonds={" I pursue wealth to secure someone’s love.","I owe my guild a great debt for forging me into the person I am today.","One day I will return to my guild and prove that I am the greatest artisan of them all.","The workshop where I learned my trade is the most important place in the world to me."};
+    String[] guildartFlaws={"I’ll do anything to get my hands on something rare or priceless.","I’m quick to assume that someone is trying to cheat me.","I’m never satisfied with what I have— I always want more.","I would kill to acquire a noble title."};
+
+    String[] entertainerPT={"I get bitter if I’m not the center of attention.","I know a story relevant to almost every situation.","I love a good insult, even one directed at me.","I’ll settle for nothing less than perfection."};
+    String[] entertainerIdeals={"Beauty","Tradition","Creativity","Greed"};
+    String[] entertainerBonds={"I want to be famous, whatever it takes.","I would do anything for the other members of my old troupe.","I will do anything to prove myself superior to my hated rival.","Someone stole my precious instrument, and someday I’ll get it back."};
+    String[] entertainerFlaws={"I once satirized a noble who still wants my head. It was a mistake that I will likely repeat.","Despite my best efforts, I am unreliable to my friends.","I’ll do anything to win fame and renown.","I’m a sucker for a pretty face."};
+
+    String[] hermitPT={"I am working on a grand philosophical theory and love sharing my ideas.","I am utterly serene, even in the face of disaster.","I feel tremendous empathy for all who suffer.","I’m oblivious to etiquette and social expectations."};
+    String[] hermitIdeals={"Greater Good","Logic","Power","Free Thinking."};
+    String[] hermitBonds={"Nothing is more important than the other members of my hermitage, order, or association.","My isolation gave me great insight into a great evil that only I can destroy.","Should my discovery come to light, it could bring ruin to the world.","I entered seclusion because I loved someone I could not have."};
+    String[] hermitFlaws={"I let my need to win arguments overshadow friendships and harmony.","I am dogmatic in my thoughts and philosophy.","I like keeping secrets and won’t share them with anyone.","I’d risk too much to uncover a lost bit of knowledge."};
+
+    String[] outlanderPT={"I feel far more comfortable around animals than people.","I was, in fact, raised by wolves.","I watch over my friends as if they were a litter of newborn pups.","I’m driven by a wanderlust that led me away from home."};
+    String[] outlanderIdeals={"Change","Honor","Might","Nature"};
+    String[] outlanderBonds={"I will bring terrible wrath down on the evildoers who destroyed my homeland.","I suffer awful visions of a coming disaster and will do anything to prevent it.","It is my duty to provide children to sustain my tribe.","An injury to the unspoiled wilderness of my home is an injury to me."};
+    String[] outlanderFlaws={"I am slow to trust members of other races, tribes, and societies.","Violence is my answer to almost any challenge.","There’s no room for caution in a life lived to the fullest.","I am too enamored of ale, wine, and other intoxicants."};
+
+    String[] sagePT={"I am horribly, horribly awkward in social situations.","I've read every book in the world’s greatest libraries—or I like to boast that I have.","I use polysyllabic words that convey the impression of great erudition.","There’s nothing I like more than a good mystery."};
+    String[] sageIdeals={"Knowledge","Beauty","No Limits.","Self-Improvement."};
+    String[] sageBonds={"I sold my soul for knowledge.","My life’s work is a series of tomes related to a specific field of lore.","I work to preserve a library, university, scriptorium, or monastery.","It is my duty to protect my students."};
+    String[] sageFlaws={"I can’t keep a secret to save my life, or anyone else’s.","Unlocking an ancient mystery is worth the price of a civilization.","I overlook obvious solutions in favor of complicated ones.","I am easily distracted by the promise of information."};
+
+    String[] sailorPT={"My friends know they can rely on me, no matter what.","I stretch the truth for the sake of a good story.","My language is as foul as an otyugh nest.","I never pass up a friendly wager."};
+    String[] sailorIdeals={"Respect","Fairness","Aspiration","Mastery"};
+    String[] sailorBonds={"The ship is most important—crewmates and captains come and go.","I was cheated out of my fair share of the profits, and I want to get my due.","I’m loyal to my captain first, everything else second.","I’ll always remember my first ship."};
+    String[] sailorFlaws={"My pride will probably lead to my destruction.","Once I start drinking, it’s hard for me to stop.","I’ll say anything to avoid having to do extra work.","I follow orders, even if I think they’re wrong."};
+
+    String[] soldierPT={"I can stare down a hell hound without flinching.","I enjoy being strong and like breaking things.","I have a crude sense of humor.","I'm always polite and respectful."};
+    String[] soldierIdeals={"Might","Live and Let Live.","Nation","Greater Good"};
+    String[] soldierBonds={"I would still lay down my life for the people I served with.","Those who fight beside me are those worth dying for.","I fight for those who cannot fight for themselves.","My honor is my life."};
+    String[] soldierFlaws={"I have little respect for anyone who is not a proven warrior.","I obey the law, even if the law causes misery.","My hatred of my enemies is blind and unreasoning.","I’d rather eat my armor than admit when I’m wrong."};
 
     public enum maleDwarfNames{
         Adrik, Alberich, Baern, Barendd, Brottor, Bruenor, Oain, Oarrak, Oelg, Eberk, Einkil, Fargrim, Flint, Gardain, Harbek, Kildrak, Morgran, Orsik, Oskar, Rangrim, Rurik, Taklinn, Thoradin, Thorin, Tordek, Traubon, Travok, Ulfgar, Veit, Vondal
@@ -308,6 +369,7 @@ public class Enum {
         }
     }
 
+
     public enum Alignment {
         LAWFULGOOD("Lawful Good"),
         LAWFULNEUTRAL("Lawful Neutral"),
@@ -400,9 +462,88 @@ public class Enum {
         }
     }
 
-    //ADD LOGIC DOWN HERE
+    /*
+    MD>> This will check what the character's background is and randomly assign it Personality Traits, ideals, bonds, and flaws
+     */
     public void checkBackground(Character character) {
+        Dice dice = new Dice();
+        int temp;
         switch (character.getCharBackground()) {
+            case ACOLYTE:
+                temp = dice.Roll(4,1);
+                character.setCharPersonalityTraits(acolytePT[temp]);
+                character.setCharIdeals(acolyteIdeals[temp]);
+                character.setCharBonds(acolyteBonds[temp]);
+                character.setCharFlaws(acolyteFlaws[temp]);
+            case CHARLATAN:
+                temp = dice.Roll(4,1);
+                character.setCharPersonalityTraits(charlatanPT[temp]);
+                character.setCharIdeals(charlatanIdeals[temp]);
+                character.setCharBonds(charlatanBonds[temp]);
+                character.setCharFlaws(charlatanFlaws[temp]);
+            case CRIMINAL:
+                temp = dice.Roll(4,1);
+                character.setCharPersonalityTraits(criminalPT[temp]);
+                character.setCharIdeals(criminalIdeals[temp]);
+                character.setCharBonds(criminalBonds[temp]);
+                character.setCharFlaws(criminalFlaws[temp]);
+            case ENTERTAINER:
+                temp = dice.Roll(4,1);
+                character.setCharPersonalityTraits(entertainerPT[temp]);
+                character.setCharIdeals(entertainerIdeals[temp]);
+                character.setCharBonds(entertainerBonds[temp]);
+                character.setCharFlaws(entertainerFlaws[temp]);
+            case FOLK_HERO:
+                temp = dice.Roll(4,1);
+                character.setCharPersonalityTraits(folkheroPT[temp]);
+                character.setCharIdeals(folkheroIdeals[temp]);
+                character.setCharBonds(folkheroBonds[temp]);
+                character.setCharFlaws(folkheroFlaws[temp]);
+            case GUILD_ARTISAN:
+                temp = dice.Roll(4,1);
+                character.setCharPersonalityTraits(guildartPT[temp]);
+                character.setCharIdeals(guildartIdeals[temp]);
+                character.setCharBonds(guildartBonds[temp]);
+                character.setCharFlaws(guildartFlaws[temp]);
+            case HERMIT:
+                temp = dice.Roll(4,1);
+                character.setCharPersonalityTraits(hermitPT[temp]);
+                character.setCharIdeals(hermitIdeals[temp]);
+                character.setCharBonds(hermitBonds[temp]);
+                character.setCharFlaws(hermitFlaws[temp]);
+            case NOBLE:
+                temp = dice.Roll(4,1);
+                character.setCharPersonalityTraits(noblePT[temp]);
+                character.setCharIdeals(nobleIdeals[temp]);
+                character.setCharBonds(nobleBonds[temp]);
+                character.setCharFlaws(nobleFlaws[temp]);
+            case OUTLANDER:
+                temp = dice.Roll(4,1);
+                character.setCharPersonalityTraits(outlanderPT[temp]);
+                character.setCharIdeals(outlanderIdeals[temp]);
+                character.setCharBonds(outlanderBonds[temp]);
+                character.setCharFlaws(outlanderFlaws[temp]);
+            case SAGE:
+                temp = dice.Roll(4,1);
+                character.setCharPersonalityTraits(sagePT[temp]);
+                character.setCharIdeals(sageIdeals[temp]);
+                character.setCharBonds(sageBonds[temp]);
+                character.setCharFlaws(sageFlaws[temp]);
+                break;
+            case SAILOR:
+                temp = dice.Roll(4,1);
+                character.setCharPersonalityTraits(sailorPT[temp]);
+                character.setCharIdeals(sailorIdeals[temp]);
+                character.setCharBonds(sailorBonds[temp]);
+                character.setCharFlaws(sailorFlaws[temp]);
+                break;
+            case SOLDIER:
+                temp = dice.Roll(4,1);
+                character.setCharPersonalityTraits(soldierPT[temp]);
+                character.setCharIdeals(soldierIdeals[temp]);
+                character.setCharBonds(soldierBonds[temp]);
+                character.setCharFlaws(soldierFlaws[temp]);
+                break;
         }
     }
 
