@@ -6,10 +6,10 @@ import com.sun.org.apache.regexp.internal.REDebugCompiler;
 
 /**
  * A class for managing the Logic for the character based off rules in 5e
- * @author Marsol Daman, Lauren Lingeman
+ * @author Marsol Daman, Lauren Lingeman, Michael Maclean
  * @version 1.0
  * @since 1.0
- * TODO Finish spells, cantrips, ideals, traits, bonds, flaws, features & traits, character backstory, allies & organizations, Additional Features & traits
+ * TODO Finish spells, cantrips, features & traits, character backstory, allies & organizations, Additional Features & traits
  */
 public class Enum {
     public enum EyeColor {
@@ -411,8 +411,10 @@ public class Enum {
         }
     }
 
-    /*Marsol Daman
-    //ADD LOGIC DOWN HERE
+    /**
+     * Once the Race is selected, this function will modify the character object's skills with
+     * The appropriate stat boosts for each specific race.
+     * @param character object: The current character object with Race already saved
      */
     public void checkRace(Character character) {
 
@@ -481,9 +483,13 @@ public class Enum {
         }
     }
 
-    /*
-    MD>> This will check what the character's background is and randomly assign it Personality Traits, ideals, bonds, and flaws
+    /**
+     * Once the Background is selected, this function will modify the character object's Personality Traits,
+     * Skills, Bonds, and Flaws by rolling a 4-sided die and randomly pulling from the string arrays up above
+     * It sets these strings to the character object
+     * @param character object: The current character object with Background already saved
      */
+
     public static void checkBackground(Character character) {
         Dice dice = new Dice();
         int temp;
@@ -565,8 +571,11 @@ public class Enum {
                 break;
         }
     }
-
-    //ADD LOGIC DOWN HERE
+    /**
+     * Once the class is selected, this function will modify the character object's skills, hit die, and saving throws
+     * with the appropriate data for each specific class.
+     * @param character object: The current character object with class already saved
+     */
     public static void checkClass(Character character) {
         switch (character.getCharClass()) {
             case BARBARIAN:
