@@ -15,9 +15,7 @@ public class Main extends Application {
         //initialize character
             mycharacter = new Character();
             mycharacter.setCharSkills(new CharacterSkills());
-            mycharacter.setCharName("Dungeon master");
-            mycharacter.setCharPlayerName("DDGroup");
-            mycharacter.setCharRace(Enum.Race.WOODELF);
+            //mycharacter.setCharRace(Enum.Race.WOODELF);
 
         //Start Database
             DB = new CharacterDatabase();
@@ -32,7 +30,6 @@ public class Main extends Application {
                 DB.SaveCharacter(mycharacter);
                 mycharacter = null;
                 mycharacter = DB.fetchCharacter();
-                System.out.println(mycharacter.getCharName());
             }catch (Exception e){
                 System.out.println(e);
             }*/

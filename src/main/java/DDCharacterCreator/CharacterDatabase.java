@@ -96,16 +96,4 @@ public class CharacterDatabase {
         ois.close();
         return c;
     }
-
-
-    public boolean UpdateCharacter(Character c, String id){
-
-        return true;
-    }
-
-
-    private boolean removeCharacter(String id){
-
-        return true;
-    }
 }
