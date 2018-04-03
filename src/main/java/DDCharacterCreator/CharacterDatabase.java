@@ -9,7 +9,9 @@ import com.couchbase.client.java.document.json.*;
 import com.couchbase.client.java.env.CouchbaseEnvironment;
 import com.couchbase.client.java.env.DefaultCouchbaseEnvironment;
 
+import java.io.FileInputStream;
 import java.io.FileOutputStream;
+import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.util.*;
 
@@ -79,16 +81,19 @@ public class CharacterDatabase {
     public boolean SaveCharacter(Character c) throws Exception{
         FileOutputStream fos = new FileOutputStream("char.ser");
         ObjectOutputStream oos = new ObjectOutputStream(fos);
-        //oos.writeObject(mb);
-        //oos.close();
+        oos.writeObject(c);
+        oos.close();
 
         return true;
     }
 
 
-    public Character fetchCharacter(){
+    public Character fetchCharacter() throws Exception{
         Character c = null;
-
+        FileInputStream fis = new FileInputStream("char.ser");
+        ObjectInputStream ois = new ObjectInputStream(fis);
+        c = (Character) ois.readObject();
+        ois.close();
         return c;
     }
 

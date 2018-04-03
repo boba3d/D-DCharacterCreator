@@ -15,6 +15,6 @@ public class Splash_Controller extends ControlledScreen implements Initializable
     }
 
     public void NextScreen(){
-        getScreenParent().setScene(ScreensController.AGEWEIGHTHEIGHT);
+        getScreenParent().setScene(ScreensController.NAME);
     }
 }

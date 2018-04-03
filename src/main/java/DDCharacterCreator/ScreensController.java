@@ -45,7 +45,7 @@ public class ScreensController {
     private static final String ICONFILE = "/SplashPicture.png";
 
     //First scene to display
-    private static final String FIRSTSCENE = NAME;
+    private static final String FIRSTSCENE = SPLASH;
 
     ScreensController(Stage stage) {
         this.stage = stage;
