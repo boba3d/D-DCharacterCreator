@@ -229,7 +229,7 @@ public class Enum {
         OUTLANDER("Outlander", 1, 1, 10, "Set of traveler’s clothes, A staff, a hunting trap, a trophy from an animal you killed"),
         SAGE("Sage", 2, 0, 10, "Set of common clothes, A bottle of black ink, a quill, a small knife, a letter from a dead colleague posing a question you have not yet been able to answer"),
         SAILOR("Sailor", 0, 0, 10,"Set of common clothes, Navigator’s tools, Vehicles, A belaying pin (club), 50 feet of silk rope, a lucky charm"),
-        SOLDIER("Solider",0 ,0 , 10, "Set of common clothes, An insignia of rank, a trophy taken from a fallen enemy, One type of gaming set, vehicles (land), a set of bone dice or deck of cards");
+        SOLDIER("Soldier", 0, 0, 10, "Set of common clothes, An insignia of rank, a trophy taken from a fallen enemy, One type of gaming set, vehicles (land), a set of bone dice or deck of cards");
 
         private final String name;
         private final String equipment;
