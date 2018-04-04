@@ -137,7 +137,7 @@ public class CharacterAppearnace_Controller extends ControlledScreen implements 
         //choose file
             FileChooser imgPicker = new FileChooser();
             imgPicker.getExtensionFilters().addAll(
-                    new FileChooser.ExtensionFilter("JPG", "*.jpg"),
+                    new FileChooser.ExtensionFilter("JPEG", "*.jpg, *.jpeg"),
                     new FileChooser.ExtensionFilter("PNG", "*.png")
             );
             imgPicker.setTitle("Select custom appearance");

@@ -14,10 +14,6 @@ public class CharacterTest {
 
     @Test
     public void CharacterTest() {
-        c.setCharRace(Enum.Race.WOODELF);
-        Enum.checkRace(c);
-        Assert.assertEquals(2,(int)c.getCharDexterity());
-        Assert.assertTrue(true);
 
         c.setCharBackground(Enum.Background.ACOLYTE);
         Enum.checkBackground(c);

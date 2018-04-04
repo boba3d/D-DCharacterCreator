@@ -23,8 +23,6 @@ public class Main extends Application {
             //DB.CloseConnectionToDB();
 
         screensController = new ScreensController(primaryStage);
-
-
     }
 
     public static void main(String[] args) {
@@ -42,11 +40,6 @@ public class Main extends Application {
     }
     static public void PrintCharacter(){
         Print print = new Print();
-        //mycharacter.setCharName("Dungeon master");
-        //mycharacter.setCharPlayerName("DDGroup");
-        //mycharacter.setCharHitDice(+10);
-        //mycharacter.setCharRace(Enum.Race.DRAGONBORN);
-        System.out.println(mycharacter);
         print.printChar(mycharacter, DB);
     }
 }
