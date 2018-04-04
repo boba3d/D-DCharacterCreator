@@ -119,7 +119,13 @@ public class CharacterAppearnace_Controller extends ControlledScreen implements 
 
     @Override
     public void forwardFunction() {
-        System.out.println("Forward Test");
+        try {
+                Main.getDB().SaveCharacter(MyCharacter);
+                Main.setChar(null);
+            }catch (Exception e){
+                System.out.println(e);
+            }
+            Main.PrintCharacter();
     }
 
     @Override
