@@ -22,7 +22,7 @@ public class Print {
     public boolean printChar(Character myChar,CharacterDatabase chDB ){
         String fileName = myChar.getCharPlayerName();
         String home = System.getProperty("user.home");
-        String destination = new File(home+"/Downloads/D-DCharachterSheet-22"+ fileName +".pdf").toString();
+        String destination = new File(home+"/Downloads/D-DCharachterSheet-"+ fileName +".pdf").toString();
 
 
         try {

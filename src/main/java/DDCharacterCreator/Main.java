@@ -43,15 +43,18 @@ public class Main extends Application {
     public static Character getChar(){
         return mycharacter;
     }
+    public static void setChar(Character ch){
+        mycharacter = ch;
+    }
     public static CharacterDatabase getDB(){
         return DB;
     }
     static public void PrintCharacter(){
         Print print = new Print();
-        mycharacter.setCharName("Dungeon master");
-        mycharacter.setCharPlayerName("DDGroup");
-        mycharacter.setCharHitDice(+10);
-        mycharacter.setCharRace(Enum.Race.DRAGONBORN);
+        //mycharacter.setCharName("Dungeon master");
+        //mycharacter.setCharPlayerName("DDGroup");
+        //mycharacter.setCharHitDice(+10);
+        //mycharacter.setCharRace(Enum.Race.DRAGONBORN);
         print.printChar(mycharacter, DB);
     }
 }
