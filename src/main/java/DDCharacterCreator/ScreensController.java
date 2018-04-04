@@ -3,6 +3,7 @@ package DDCharacterCreator;
 import DDCharacterCreator.Controller.ControlledScreen;
 import DDCharacterCreator.Controller.MenuController;
 import DDCharacterCreator.Controller.NavigationMenuController;
+import DDCharacterCreator.Controller.SelectionController;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -27,15 +28,21 @@ public class ScreensController {
     //Pathnames are private, because this class is the only one accessing them
     public static final String AGEWEIGHTHEIGHT = "AgeHeightWeight";
     private final String AGEWEIGHTHEIGHTFILE = "/FXML/AgeHeightWeight.fxml";
+    public static final String BACKGROUND = "Background";
+    private final String BACKGROUNDFILE = "/FXML/Background.fxml";
     public static final String CHARAPPEARANCE = "CharAppearance";
     private final String CHARAPPEARANCEFILE = "/FXML/CharacterAppearance.fxml";
+    public static final String CLASS = "Class";
+    private final String CLASSFILE = "/FXML/Class.fxml";
     public static final String LEVEL = "Level";
     private final String LEVELFILE = "/FXML/Level.fxml";
     private final String MENUFILE = "/FXML/Menu.fxml"; //MENU not included, don't want to load just the UI by itself
     public static final String NAME = "Name";
     private final String NAMEFILE = "/FXML/Name.fxml";
-    public static final String SELECTION = "Selection";
-    private final String SELECTIONFILE = "/FXML/Selection.fxml";
+    public static final String RACE = "Race"; //Uses Selection as scene
+    private final String RACEFILE = "/FXML/Race.fxml";
+    //public static final String SELECTION = "Selection";
+    //private final String SELECTIONFILE = "/FXML/Selection.fxml";
     public static final String SPLASH = "Splash";
     private final String SPLASHFILE = "/FXML/Splash.fxml";
     public static final String WELCOME = "Welcome";
@@ -47,16 +54,21 @@ public class ScreensController {
     //First scene to display
     private static final String FIRSTSCENE = SPLASH;
 
+    //The scene last set
+    private String currentScene;
+
     ScreensController(Stage stage) {
         this.stage = stage;
         screens = new HashMap<>();
 
         //Put constant names with constant pathnames into HashMap
         addScene(AGEWEIGHTHEIGHT, AGEWEIGHTHEIGHTFILE);
+        addScene(BACKGROUND, BACKGROUNDFILE);
         addScene(CHARAPPEARANCE, CHARAPPEARANCEFILE);
+        addScene(CLASS, CLASSFILE);
         addScene(LEVEL, LEVELFILE);
         addScene(NAME, NAMEFILE);
-        addScene(SELECTION, SELECTIONFILE);
+        addScene(RACE, RACEFILE);
         addScene(SPLASH, SPLASHFILE);
         addScene(WELCOME, WELCOMEFILE);
 
@@ -90,6 +102,9 @@ public class ScreensController {
      * @return True if successfully loaded, false if exception thrown.
      */
     public boolean setScene(String name) {
+        String tempName = getCurrentScene();
+        setCurrentScene(name);
+
         try {
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource(getScene(name)));
             Parent root = fxmlLoader.load(); //Load the scene first so we may check its inheritance
@@ -104,11 +119,29 @@ public class ScreensController {
                 ((ControlledScreen) fxmlLoader.getController()).setScreenParent(this); //Set the screenParent of the scene to this one
             }
 
+/*
+            if (fxmlLoader.getController() instanceof SelectionController) {
+                ((SelectionController) fxmlLoader.getController()).initializeSelection(getCurrentScene());
+            }
+*/
+
             stage.setScene(new Scene(root, 600, 400)); //Finally, set the current scene in the stage to our root
             return true;
         } catch (IOException e) {
+            setCurrentScene(tempName);
             e.printStackTrace();
             return false;
         }
+    }
+
+    /* GETTERS */
+
+    public String getCurrentScene() {
+        return currentScene;
+    }
+
+    /* SETTERS */
+    public void setCurrentScene(String currentScene) {
+        this.currentScene = currentScene;
     }
 }

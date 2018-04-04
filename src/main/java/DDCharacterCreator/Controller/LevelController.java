@@ -1,5 +1,6 @@
 package DDCharacterCreator.Controller;
 
+import DDCharacterCreator.Utilities.Randomizer;
 import com.jfoenix.controls.JFXSlider;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -33,7 +34,14 @@ public class LevelController extends ControlledScreen implements Initializable, 
 
     @Override
     public void randomizeAll() {
-        System.out.println("Rand test");
+        randomizeLevel();
+    }
+
+    /**
+     * Sets the levelSlider to a random value.
+     */
+    public void randomizeLevel() {
+        levelSlider.setValue(Randomizer.randomize(levelSlider.getMin(), levelSlider.getMax()));
     }
 
     /**

@@ -151,7 +151,8 @@ public class Randomizer {
                 if(male) values = Enum.maleElfNames.values();
                 else values = Enum.femaleElfNames.values();
                 break;
-            case STOUT: case LIGHTFOOT:
+            case STOUTHALFLING:
+            case LIGHTFOOTHALFLING:
                 if(male) values = Enum.maleHalflingNames.values();
                 else values = Enum.femaleHalflingNames.values();
                 break;
@@ -251,7 +252,8 @@ public class Randomizer {
                 return randomize(80);
             case HUMAN:
                 return randomize(100);
-            case STOUT: case LIGHTFOOT:
+            case STOUTHALFLING:
+            case LIGHTFOOTHALFLING:
                 return randomize(250);
             case TIEFLING:
                 return randomize(125);
@@ -278,7 +280,8 @@ public class Randomizer {
                 return randomize(72, 96);
             case HUMAN: case TIEFLING:
                 return randomize(55, 78);
-            case STOUT: case LIGHTFOOT:
+            case STOUTHALFLING:
+            case LIGHTFOOTHALFLING:
                 return randomize(24, 48);
             case FORESTGNOME: case ROCKGNOME:
                 return randomize(36, 48);
@@ -303,7 +306,8 @@ public class Randomizer {
                 return randomize(200, 400);
             case HUMAN: case TIEFLING:
                 return randomize(120, 250);
-            case STOUT: case LIGHTFOOT:
+            case STOUTHALFLING:
+            case LIGHTFOOTHALFLING:
                 return randomize(20, 50);
             case FORESTGNOME: case ROCKGNOME:
                 return randomize(30, 50);

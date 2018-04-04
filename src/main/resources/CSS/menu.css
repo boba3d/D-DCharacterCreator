@@ -1,0 +1,9 @@
+.menuBackground {
+     -fx-background-image:url("../Images/menu_background.jpg");
+     -fx-background-size: cover;
+}
+
+.sceneBackground {
+     -fx-background-image:url("../Images/scene_background.jpg");
+     -fx-background-size: cover;
+}

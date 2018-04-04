@@ -17,11 +17,9 @@ public class NameController extends ControlledScreen implements MenuController {
 
     @Override
     public void forwardFunction() {
-        System.out.println("Forward Test");
         Main.getChar().setCharName(getCharacterName());
         Main.getChar().setCharPlayerName(getPlayerName());
-        //next scene
-            //getScreenParent().setScene(ScreensController.NAME);
+        getScreenParent().setScene(ScreensController.CLASS);
     }
 
     @Override

@@ -70,9 +70,9 @@ public class RandomizerTests {
             n = Randomizer.getCharName(Enum.Race.HALFORC, Enum.Gender.F);
             Enum.femaleHalfOrcNames.valueOf(n);
 
-            n = Randomizer.getCharName(Enum.Race.STOUT, Enum.Gender.M);
+            n = Randomizer.getCharName(Enum.Race.STOUTHALFLING, Enum.Gender.M);
             Enum.maleHalflingNames.valueOf(n);
-            n = Randomizer.getCharName(Enum.Race.STOUT, Enum.Gender.F);
+            n = Randomizer.getCharName(Enum.Race.STOUTHALFLING, Enum.Gender.F);
             Enum.femaleHalflingNames.valueOf(n);
 
             n = Randomizer.getCharName(Enum.Race.TIEFLING, Enum.Gender.M);

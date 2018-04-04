@@ -1,5 +1,7 @@
 package DDCharacterCreator.Utilities;
 
+import DDCharacterCreator.Enum;
+
 import java.text.DecimalFormat;
 
 public class Format {
@@ -59,5 +61,71 @@ public class Format {
      */
     public static String formatPounds(int pounds) {
         return pounds + " lb";
+    }
+
+
+    /**
+     * Gets all Backgrounds and their descriptions from Enum.Background, splits the array
+     * into an identifier and a description.
+     *
+     * @return returnArrays[0] is the array of getName(), returnArrays[1] is the array of Background info
+     */
+    public static String[][] formatBackgroundEnum() {
+        Enum.Background[] backgrounds = Enum.Background.values();
+        String[][] returnArrays = new String[2][backgrounds.length];
+
+        for (int i = 0; i < backgrounds.length; i++) {
+            returnArrays[0][i] = backgrounds[i].getName();
+            returnArrays[1][i] = "Number of Languages: " + backgrounds[i].getLanguages() +
+                    "\nNumber of Musical Instruments: " + backgrounds[i].getMusical_instruments() +
+                    "\nStarting Gold: " + backgrounds[i].getGold() +
+                    "\nEquipment: " + backgrounds[i].getEquipment();
+        }
+
+        return returnArrays;
+    }
+
+    /**
+     * Gets all Classes and their descriptions from Enum.Class, splits the array
+     * into an identifier and a description.
+     *
+     * @return returnArrays[0] is the array of toString(), returnArrays[1] is the array of getDescrip()
+     */
+    public static String[][] formatClassEnum() {
+        Enum.Class[] classes = Enum.Class.values();
+        String[][] returnArrays = new String[2][classes.length];
+
+        for (int i = 0; i < classes.length; i++) {
+            returnArrays[0][i] = classes[i].toString();
+            returnArrays[1][i] = classes[i].getDescrip();
+        }
+
+        return returnArrays;
+    }
+
+    /**
+     * Gets all Races and their descriptions from Enum.Race, splits the array
+     * into an identifier and a description.
+     *
+     * @return returnArrays[0] is the array of toString(), returnArrays[1] is the array of getDescrip()
+     */
+    public static String[][] formatRaceEnum() {
+        Enum.Race[] races = Enum.Race.values();
+        String[][] returnArrays = new String[2][races.length];
+
+        for (int i = 0; i < races.length; i++) {
+            returnArrays[0][i] = races[i].toString();
+            returnArrays[1][i] = "Size: " + races[i].getSize() +
+                    " Speed: " + races[i].getSpeed() +
+                    "\nSTR: " + races[i].getStr() +
+                    " DEX: " + races[i].getDex() +
+                    " CON: " + races[i].getCon() +
+                    " INT: " + races[i].getIntel() +
+                    " WIS: " + races[i].getWis() +
+                    " CHA: " + races[i].getCha() +
+                    "\nDescription: " + races[i].getDescrip();
+        }
+
+        return returnArrays;
     }
 }

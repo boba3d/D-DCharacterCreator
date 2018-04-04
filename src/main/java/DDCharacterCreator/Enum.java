@@ -222,8 +222,8 @@ public class Enum {
         CHARLATAN("Charlatan", 0, 0, 15, "Set of Fine Clothes, Disguise Kit, 1 Charlaton tool, Forgery Kit"),
         CRIMINAL("Criminal",0, 0, 15, "Set of dark common clothes including a hood and a crowbar, One type of gaming set, thieves’ tools"),
         ENTERTAINER("Entertainer", 0, 1, 15, "A Costume, Disguise kit, Favor of an admirer"),
-        FOLK_HERO("Folk Hero", 0, 0, 10, "Set of common clothes, One type of artisan’s tools, vehicles (land),  A shovel, An iron pot"),
-        GUILD_ARTISAN("Guild Artisan", 1, 0, 15, "Set of traveler’s clothes, One type of artisan’s tools, a letter of introduction from your guild"),
+        FOLKHERO("Folk Hero", 0, 0, 10, "Set of common clothes, One type of artisan’s tools, vehicles (land),  A shovel, An iron pot"),
+        GUILDARTISAN("Guild Artisan", 1, 0, 15, "Set of traveler’s clothes, One type of artisan’s tools, a letter of introduction from your guild"),
         HERMIT("Hermit", 1,0,5,"Set of common clothes, Herbalism kit, A scroll case stuffed full of notes from your studies or prayers, a Winter blanket"),
         NOBLE("Noble", 1, 0, 25,"Set of Fine Clothes, A Signet Ring, A Scroll of Pedigree, One type of gaming set"),
         OUTLANDER("Outlander", 1, 1, 10, "Set of traveler’s clothes, A staff, a hunting trap, a trophy from an animal you killed"),
@@ -243,6 +243,26 @@ public class Enum {
         this.musical_instruments=musical_instruments;
         this.gold=gold;
         this.equipment=equipment;
+        }
+
+        public String getName() {
+            return name;
+        }
+
+        public int getLanguages() {
+            return languages;
+        }
+
+        public int getMusical_instruments() {
+            return musical_instruments;
+        }
+
+        public int getGold() {
+            return gold;
+        }
+
+        public String getEquipment() {
+            return equipment;
         }
     }
 
@@ -304,9 +324,9 @@ public class Enum {
                 "Elves are a magical people of otherworldly grace, living in the world but not entirely part of it. They live in places of ethereal beauty, in the midst of ancient forests or in silvery spires glittering with faerie light, where soft music drifts through the air and gentle fragrances waft on the breeze. Elves love nature and magic, art and artistry, music and poetry, and the good things of the world.\n\n" + "As a wood elf, you have keen senses and intuition, and your fleet feet carry you quickly and stealthily through your native forests. This category includes the wild elves (grugach) of Greyhawk and the Kagonesti of Dragonlance, as well as the races called wood elves in Greyhawk and the Forgotten Realms. In Faerûn, wood elves (also called wild elves, green elves, or forest elves) are reclusive and distrusting of non-elves.\n\n" + "Wood elves’ skin tends to be copperish in hue, sometimes with traces of green. Their hair tends toward browns and blacks, but it is occasionally blond or copper-colored. Their eyes are green, brown, or hazel."),
         DARKELF("Dark Elf", "Medium", 30, 0, 2, 0, 0, 0, 1,
                 "Elves are a magical people of otherworldly grace, living in the world but not entirely part of it. They live in places of ethereal beauty, in the midst of ancient forests or in silvery spires glittering with faerie light, where soft music drifts through the air and gentle fragrances waft on the breeze. Elves love nature and magic, art and artistry, music and poetry, and the good things of the world.\n\n" + "Descended from an earlier subrace of dark-skinned elves, the drow were banished from the surface world for following the goddess Lolth down the path to evil and corruption. Now they have built their own civilization in the depths of the Underdark, patterened after the way of Lolth. Also called dark elves, the drow have black skin that resembles polished obsidian and stark white or pale yellow hair. They commonly have very pale eyes (so pale as to be mistaken for white) in shades of lilac, silver, pink, red, and blue. They tend to be smaller and thinner than most elves."),
-        LIGHTFOOT("Lightfoot Halfling", "Small", 25, 0, 2, 0, 0, 0, 1,
+        LIGHTFOOTHALFLING("Lightfoot Halfling", "Small", 25, 0, 2, 0, 0, 0, 1,
                 "The comforts of home are the goals of most halflings’ lives: a place to settle in peace and quiet, far from marauding monsters and clashing armies; a blazing fire and a generous meal; fine drink and fine conversation. Though some halflings live out their days in remote agricultural communities, others form nomadic bands that travel constantly, lured by the open road and the wide horizon to discover the wonders of new lands and peoples. But even these wanderers love peace, food, hearth, and home, though home might be a wagon jostling along a dirt road or a raft floating downriver.\n\n" + "As a lightfoot halfling, you can easily hide from notice, even using other people as cover. You’re inclined to be affable and get along well with others. In the Forgotten Realms, lightfoot halflings have spread the farthest and thus are the most common variety. Lightfoots are more prone to wanderlust than other halflings, and often dwell alongside other races or take up a nomadic life. In the world of Greyhawk, these halflings are called hairfeet or tallfellows."),
-        STOUT("Stout Halfling", "Small", 25, 0, 2, 1, 0, 0, 0,
+        STOUTHALFLING("Stout Halfling", "Small", 25, 0, 2, 1, 0, 0, 0,
                 "The comforts of home are the goals of most halflings’ lives: a place to settle in peace and quiet, far from marauding monsters and clashing armies; a blazing fire and a generous meal; fine drink and fine conversation. Though some halflings live out their days in remote agricultural communities, others form nomadic bands that travel constantly, lured by the open road and the wide horizon to discover the wonders of new lands and peoples. But even these wanderers love peace, food, hearth, and home, though home might be a wagon jostling along a dirt road or a raft floating downriver.\n\n" + "As a stout halfling, you’re hardier than average and have some resistance to poison. Some say that stouts have dwarven blood. In the Forgotten Realms, these halflings are called stronghearts, and they’re most common in the south."),
         HUMAN("Human", "Medium", 30, 1, 1, 1, 1, 1, 1,
                 "In the reckonings of most worlds, humans are the youngest of the common races, late to arrive on the world scene and short-lived in comparison to dwarves, elves, and dragons. Perhaps it is because of their shorter lives that they strive to achieve as much as they can in the years they are given. Or maybe they feel they have something to prove to the elder races, and that’s why they build their mighty empires on the foundation of conquest and trade. Whatever drives them, humans are the innovators, the achievers, and the pioneers of the worlds."),
@@ -316,9 +336,9 @@ public class Enum {
                 "A constant hum of busy activity pervades the warrens and neighborhoods where gnomes form their close-knit communities. Louder sounds punctuate the hum: a crunch of grinding gears here, a minor explosion there, a yelp of surprise or triumph, and especially bursts of laughter. Gnomes take delight in life, enjoying every moment of invention, exploration, investigation, creation, and play.\n\n" + "As a forest gnome, you have a natural knack for illusion and inherent quickness and stealth. In the worlds of D&D, forest gnomes are rare and secretive. They gather in hidden communities in sylvan forests, using illusions and trickery to conceal themselves from threats or to mask their escape should they be detected. Forest gnomes tend to be friendly with other good-spirited woodland folk, and they regard elves and good fey as their most important allies. These gnomes also befriend small forest animals and rely on them for information about threats that might prowl their lands."),
         ROCKGNOME("Rock Gnome", "Small", 25, 0, 0, 1, 2, 0, 0,
                 "A constant hum of busy activity pervades the warrens and neighborhoods where gnomes form their close-knit communities. Louder sounds punctuate the hum: a crunch of grinding gears here, a minor explosion there, a yelp of surprise or triumph, and especially bursts of laughter. Gnomes take delight in life, enjoying every moment of invention, exploration, investigation, creation, and play.\n\n" + "As a rock gnome, you have a natural inventiveness and hardiness beyond that of other gnomes. Most gnomes in the worlds of D&D are rock gnomes, including the tinker gnomes of the Dragonlance setting."),
-        HALFELF("Half-elf", "Medium", 30, 0, 0, 0, 0, 0, 2,
+        HALFELF("Half Elf", "Medium", 30, 0, 0, 0, 0, 0, 2,
                 "Walking in two worlds but truly belonging to neither, half-elves combine what some say are the best qualities of their elf and human parents: human curiosity, inventiveness, and ambition tempered by the refined senses, love of nature, and artistic tastes of the elves. Some half-elves live among humans, set apart by their emotional and physical differences, watching friends and loved ones age while time barely touches them. Others live with the elves, growing restless as they reach adulthood in the timeless elven realms, while their peers continue to live as children. Many half-elves, unable to fit into either society, choose lives of solitary wandering or join with other misfits and outcasts in the adventuring life."),
-        HALFORC("Half-orc", "Medium", 30, 2, 0, 1, 0, 0, 0,
+        HALFORC("Half Orc", "Medium", 30, 2, 0, 1, 0, 0, 0,
                 "Whether united under the leadership of a mighty warlock or having fought to a standstill after years of conflict, orc and human tribes sometimes form alliances, joining forces into a larger horde to the terror of civilized lands nearby. When these alliances are sealed by marriages, half-orcs are born. Some half-orcs rise to become proud chiefs of orc tribes, their human blood giving them an edge over their full-blooded orc rivals. Some venture into the world to prove their worth among humans and other more civilized races. Many of these become adventurers, achieving greatness for their mighty deeds and notoriety for their barbaric customs and savage fury."),
         TIEFLING("Tiefling", "Medium", 30, 0, 0, 0, 1, 0, 2,
                 "To be greeted with stares and whispers, to suffer violence and insult on the street, to see mistrust and fear in every eye: this is the lot of the tiefling. And to twist the knife, tieflings know that this is because a pact struck generations ago infused the essence of Asmodeus—overlord of the Nine Hells—into their bloodline. Their appearance and their nature are not their fault but the result of an ancient sin, for which they and their children and their children’s children will always be held accountable.");
@@ -443,11 +463,11 @@ public class Enum {
                 character.setCharStrength(+1);
                 character.setCharIntelligence(+1);
                 break;
-            case STOUT:
+            case STOUTHALFLING:
                 character.setCharDexterity(+2);
                 character.setCharConstitution(+1);
                 break;
-            case LIGHTFOOT:
+            case LIGHTFOOTHALFLING:
                 character.setCharDexterity(+2);
                 character.setCharCharisma(+1);
                 break;
@@ -518,13 +538,13 @@ public class Enum {
                 character.setCharIdeals(entertainerIdeals[temp]);
                 character.setCharBonds(entertainerBonds[temp]);
                 character.setCharFlaws(entertainerFlaws[temp]);
-            case FOLK_HERO:
+            case FOLKHERO:
                 temp = dice.Roll(4,1);
                 character.setCharPersonalityTraits(folkheroPT[temp]);
                 character.setCharIdeals(folkheroIdeals[temp]);
                 character.setCharBonds(folkheroBonds[temp]);
                 character.setCharFlaws(folkheroFlaws[temp]);
-            case GUILD_ARTISAN:
+            case GUILDARTISAN:
                 temp = dice.Roll(4,1);
                 character.setCharPersonalityTraits(guildartPT[temp]);
                 character.setCharIdeals(guildartIdeals[temp]);

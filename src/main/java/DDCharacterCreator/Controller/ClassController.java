@@ -1,5 +1,8 @@
 package DDCharacterCreator.Controller;
 
+import DDCharacterCreator.Enum;
+import DDCharacterCreator.Main;
+import DDCharacterCreator.ScreensController;
 import DDCharacterCreator.Utilities.Format;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXTextArea;
@@ -9,7 +12,7 @@ import javafx.fxml.Initializable;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class SelectionController extends ControlledScreen implements Initializable, MenuController {
+public class ClassController extends ControlledScreen implements Initializable, MenuController {
 
     /*
     TO DO:
@@ -29,7 +32,7 @@ public class SelectionController extends ControlledScreen implements Initializab
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        String[][] enumArray = Format.formatRaceEnum();
+        String[][] enumArray = Format.formatClassEnum();
         setOptions(enumArray[0]);
         setInfo(enumArray[1]);
         setSelected(0);
@@ -45,7 +48,8 @@ public class SelectionController extends ControlledScreen implements Initializab
 
     @Override
     public void forwardFunction() {
-        System.out.println("Forward Test");
+        Main.getChar().setCharClass(Enum.Class.valueOf(options[getSelected()].toUpperCase()));
+        getScreenParent().setScene(ScreensController.RACE);
     }
 
     @Override
