@@ -20,6 +20,11 @@ public class Print {
     Map<String, PdfFormField> fields;
 
     public boolean printChar(Character myChar,CharacterDatabase chDB ){
+        if(myChar == null){
+            System.out.println("character is null!");
+            return false;
+        }
+
         String fileName = myChar.getCharPlayerName();
         String home = System.getProperty("user.home");
         String destination = new File(home+"/Downloads/D-DCharachterSheet-"+ fileName +".pdf").toString();
