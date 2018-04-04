@@ -49,6 +49,7 @@ public class BackgroundController extends ControlledScreen implements Initializa
     @Override
     public void forwardFunction() {
         Main.getChar().setCharBackground(Enum.Background.valueOf(options[getSelected()].toUpperCase().replace(" ", "")));
+        Enum.checkBackground(Main.getChar());
         getScreenParent().setScene(ScreensController.AGEWEIGHTHEIGHT);
     }
 

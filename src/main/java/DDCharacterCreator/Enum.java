@@ -2,7 +2,6 @@ package DDCharacterCreator;
 
 import com.sun.deploy.uitoolkit.ToolkitStore;
 import com.sun.org.apache.regexp.internal.REDebugCompiler;
-import DDCharacterCreator.Utilities.Randomizer;
 
 
 /**
@@ -513,66 +512,78 @@ public class Enum {
 
     public static void checkBackground(Character character) {
         Dice dice = new Dice();
-        int temp = Randomizer.randomize(0, 3);
+        int temp;
         switch (character.getCharBackground()) {
             case ACOLYTE:
+                temp = dice.Roll(4,1);
                 character.setCharPersonalityTraits(acolytePT[temp]);
                 character.setCharIdeals(acolyteIdeals[temp]);
                 character.setCharBonds(acolyteBonds[temp]);
                 character.setCharFlaws(acolyteFlaws[temp]);
             case CHARLATAN:
+                temp = dice.Roll(4,1);
                 character.setCharPersonalityTraits(charlatanPT[temp]);
                 character.setCharIdeals(charlatanIdeals[temp]);
                 character.setCharBonds(charlatanBonds[temp]);
                 character.setCharFlaws(charlatanFlaws[temp]);
             case CRIMINAL:
+                temp = dice.Roll(4,1);
                 character.setCharPersonalityTraits(criminalPT[temp]);
                 character.setCharIdeals(criminalIdeals[temp]);
                 character.setCharBonds(criminalBonds[temp]);
                 character.setCharFlaws(criminalFlaws[temp]);
             case ENTERTAINER:
+                temp = dice.Roll(4,1);
                 character.setCharPersonalityTraits(entertainerPT[temp]);
                 character.setCharIdeals(entertainerIdeals[temp]);
                 character.setCharBonds(entertainerBonds[temp]);
                 character.setCharFlaws(entertainerFlaws[temp]);
             case FOLKHERO:
+                temp = dice.Roll(4,1);
                 character.setCharPersonalityTraits(folkheroPT[temp]);
                 character.setCharIdeals(folkheroIdeals[temp]);
                 character.setCharBonds(folkheroBonds[temp]);
                 character.setCharFlaws(folkheroFlaws[temp]);
             case GUILDARTISAN:
+                temp = dice.Roll(4,1);
                 character.setCharPersonalityTraits(guildartPT[temp]);
                 character.setCharIdeals(guildartIdeals[temp]);
                 character.setCharBonds(guildartBonds[temp]);
                 character.setCharFlaws(guildartFlaws[temp]);
             case HERMIT:
+                temp = dice.Roll(4,1);
                 character.setCharPersonalityTraits(hermitPT[temp]);
                 character.setCharIdeals(hermitIdeals[temp]);
                 character.setCharBonds(hermitBonds[temp]);
                 character.setCharFlaws(hermitFlaws[temp]);
             case NOBLE:
+                temp = dice.Roll(4,1);
                 character.setCharPersonalityTraits(noblePT[temp]);
                 character.setCharIdeals(nobleIdeals[temp]);
                 character.setCharBonds(nobleBonds[temp]);
                 character.setCharFlaws(nobleFlaws[temp]);
             case OUTLANDER:
+                temp = dice.Roll(4,1);
                 character.setCharPersonalityTraits(outlanderPT[temp]);
                 character.setCharIdeals(outlanderIdeals[temp]);
                 character.setCharBonds(outlanderBonds[temp]);
                 character.setCharFlaws(outlanderFlaws[temp]);
             case SAGE:
+                temp = dice.Roll(4,1);
                 character.setCharPersonalityTraits(sagePT[temp]);
                 character.setCharIdeals(sageIdeals[temp]);
                 character.setCharBonds(sageBonds[temp]);
                 character.setCharFlaws(sageFlaws[temp]);
                 break;
             case SAILOR:
+                temp = dice.Roll(4,1);
                 character.setCharPersonalityTraits(sailorPT[temp]);
                 character.setCharIdeals(sailorIdeals[temp]);
                 character.setCharBonds(sailorBonds[temp]);
                 character.setCharFlaws(sailorFlaws[temp]);
                 break;
             case SOLDIER:
+                temp = dice.Roll(4,1);
                 character.setCharPersonalityTraits(soldierPT[temp]);
                 character.setCharIdeals(soldierIdeals[temp]);
                 character.setCharBonds(soldierBonds[temp]);
