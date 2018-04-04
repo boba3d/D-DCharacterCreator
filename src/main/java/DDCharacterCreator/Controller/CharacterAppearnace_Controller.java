@@ -121,7 +121,6 @@ public class CharacterAppearnace_Controller extends ControlledScreen implements 
     public void forwardFunction() {
         try {
                 Main.getDB().SaveCharacter(MyCharacter);
-                Main.setChar(null);
             }catch (Exception e){
                 System.out.println(e);
             }
