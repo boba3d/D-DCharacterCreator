@@ -6,7 +6,7 @@ import javafx.stage.Stage;
 
 public class Main extends Application {
     private ScreensController screensController;
-    private static Character mycharacter;
+    public static Character mycharacter;
     private static CharacterDatabase DB;
 
     @Override
@@ -15,7 +15,6 @@ public class Main extends Application {
         //initialize character
             mycharacter = new Character();
             mycharacter.setCharSkills(new CharacterSkills());
-            //mycharacter.setCharRace(Enum.Race.WOODELF);
 
         //Start Database
             DB = new CharacterDatabase();
@@ -25,14 +24,6 @@ public class Main extends Application {
 
         screensController = new ScreensController(primaryStage);
 
-        //test save character
-            /*try {
-                DB.SaveCharacter(mycharacter);
-                mycharacter = null;
-                mycharacter = DB.fetchCharacter();
-            }catch (Exception e){
-                System.out.println(e);
-            }*/
 
     }
 
@@ -55,6 +46,7 @@ public class Main extends Application {
         //mycharacter.setCharPlayerName("DDGroup");
         //mycharacter.setCharHitDice(+10);
         //mycharacter.setCharRace(Enum.Race.DRAGONBORN);
+        System.out.println(mycharacter);
         print.printChar(mycharacter, DB);
     }
 }
