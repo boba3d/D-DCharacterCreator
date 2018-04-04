@@ -36,6 +36,7 @@ public class Print {
             form = PdfAcroForm.getAcroForm(pdfDoc, true);
         }catch (Exception e){
             System.out.println(e);
+            return false;
         }
 
         fields = form.getFormFields();
