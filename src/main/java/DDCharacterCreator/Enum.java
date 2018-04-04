@@ -1,9 +1,5 @@
 package DDCharacterCreator;
 
-import com.sun.deploy.uitoolkit.ToolkitStore;
-import com.sun.org.apache.regexp.internal.REDebugCompiler;
-
-
 /**
  * A class for managing the Logic for the character based off rules in 5e
  * @author Marsol Daman, Lauren Lingeman, Michael Maclean
@@ -436,7 +432,7 @@ public class Enum {
      * The appropriate stat boosts for each specific race.
      * @param character object: The current character object with Race already saved
      */
-    public void checkRace(Character character) {
+    public static void checkRace(Character character) {
 
         switch (character.getCharRace()) {
             case HIGHELF:
