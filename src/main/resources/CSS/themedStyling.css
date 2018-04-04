@@ -1,0 +1,29 @@
+.jfx-slider .track {
+     -fx-background-color: gold;
+}
+
+.jfx-slider .thumb {
+     -fx-background-color: gold;
+}
+
+.jfx-slider .colored-track {
+     -fx-background-color: gold;
+}
+
+.jfx-slider .animated-thumb {
+     -fx-background-color: gold;
+}
+
+.jfx-slider .slider-value {
+     -fx-fill: red;
+     -fx-stroke: red;
+}
+
+.jfx-text-area {
+     -fx-text-fill: gold;
+}
+
+.jfx-text-field {
+     -fx-text-inner-color: gold;
+     -fx-prompt-text-fill: red;
+}

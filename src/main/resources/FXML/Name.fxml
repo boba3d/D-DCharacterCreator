@@ -5,16 +5,17 @@
 <?import javafx.scene.layout.*?>
 
 <GridPane xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1"
+          stylesheets="@../CSS/themedStyling.css"
           fx:controller="DDCharacterCreator.Controller.NameController" >
     <children>
-        <JFXTextField fx:id="characterNameField" alignment="CENTER" focusColor="YELLOW" labelFloat="true"
+        <JFXTextField fx:id="characterNameField" alignment="CENTER" focusColor="GOLD" labelFloat="true"
                       promptText="Character Name" unFocusColor="RED" GridPane.halignment="CENTER"
                       GridPane.valignment="CENTER">
             <font>
                 <Font size="24.0"/>
             </font>
         </JFXTextField>
-        <JFXTextField fx:id="playerNameField" alignment="CENTER" focusColor="YELLOW" labelFloat="true"
+        <JFXTextField fx:id="playerNameField" alignment="CENTER" focusColor="GOLD" labelFloat="true"
                       promptText="Player Name" unFocusColor="RED" GridPane.rowIndex="2">
             <font>
                 <Font size="24.0"/>

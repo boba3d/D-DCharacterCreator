@@ -6,7 +6,8 @@
 <?import javafx.scene.layout.*?>
 
 <GridPane xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1"
-          fx:controller="DDCharacterCreator.Controller.AgeHeightLevelWeightController">
+          stylesheets="@../CSS/themedStyling.css"
+          fx:controller="DDCharacterCreator.Controller.AgeHeightWeightController">
     <children>
         <JFXSlider fx:id="ageSlider" indicatorPosition="RIGHT" orientation="VERTICAL" GridPane.halignment="CENTER"
                    GridPane.rowIndex="1" GridPane.valignment="CENTER"/>

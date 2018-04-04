@@ -1,6 +1,7 @@
 package DDCharacterCreator.Controller;
 
 import DDCharacterCreator.Main;
+import DDCharacterCreator.ScreensController;
 import DDCharacterCreator.Utilities.Randomizer;
 import com.jfoenix.controls.JFXSlider;
 import javafx.fxml.FXML;
@@ -9,7 +10,7 @@ import javafx.fxml.Initializable;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class AgeHeightLevelWeightController extends ControlledScreen implements Initializable, MenuController {
+public class AgeHeightWeightController extends ControlledScreen implements Initializable, MenuController {
 
     /*
     TO DO:
@@ -40,14 +41,13 @@ public class AgeHeightLevelWeightController extends ControlledScreen implements 
         Main.getChar().setCharAge((int) getAge());
         Main.getChar().setCharHeight((int) getHeight());
         Main.getChar().setCharWeight((int) getWeight());
-        System.out.println("Forward Test");
+        getScreenParent().setScene(ScreensController.CHARAPPEARANCE);
     }
 
     @Override
     public void randomizeAll() {
         randomizeAge();
         randomizeHeight();
-        //randomizeLevel();
         randomizeWeight();
     }
 

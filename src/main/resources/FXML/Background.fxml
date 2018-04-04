@@ -8,6 +8,7 @@
 <?import javafx.scene.text.Font?>
 
 <GridPane xmlns="http://javafx.com/javafx/8.0.101" xmlns:fx="http://javafx.com/fxml/1"
+          stylesheets="@../CSS/themedStyling.css"
           fx:controller="DDCharacterCreator.Controller.BackgroundController">
     <children>
         <GridPane>
