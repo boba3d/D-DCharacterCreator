@@ -9,7 +9,8 @@
           fx:controller="DDCharacterCreator.Controller.AgeHeightWeightController">
     <children>
         <JFXSlider fx:id="ageSlider" indicatorPosition="RIGHT" orientation="VERTICAL" GridPane.halignment="CENTER"
-                   GridPane.rowIndex="1" GridPane.valignment="CENTER"/>
+                   GridPane.rowIndex="1" GridPane.valignment="CENTER">
+        </JFXSlider>
         <JFXSlider fx:id="heightSlider" indicatorPosition="RIGHT" orientation="VERTICAL" GridPane.columnIndex="2"
                    GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER"/>
         <JFXSlider fx:id="weightSlider" orientation="VERTICAL" GridPane.columnIndex="4" GridPane.halignment="CENTER"
@@ -17,19 +18,19 @@
         <Label text="Age" textAlignment="CENTER" textFill="GOLD" GridPane.halignment="CENTER"
                GridPane.valignment="CENTER">
             <font>
-                <Font size="18.0"/>
+                <Font size="30.0"/>
             </font>
         </Label>
         <Label text="Height" textAlignment="CENTER" textFill="GOLD" GridPane.columnIndex="2"
                GridPane.halignment="CENTER" GridPane.valignment="CENTER">
             <font>
-                <Font size="18.0"/>
+                <Font size="30.0"/>
             </font>
         </Label>
         <Label text="Weight" textAlignment="CENTER" textFill="GOLD" GridPane.columnIndex="4"
                GridPane.halignment="CENTER" GridPane.valignment="CENTER">
             <font>
-                <Font size="18.0"/>
+                <Font size="30.0"/>
             </font>
         </Label>
     </children>

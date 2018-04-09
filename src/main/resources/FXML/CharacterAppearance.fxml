@@ -4,6 +4,7 @@
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
 <BorderPane fx:id="AppearanceBorderPane" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="DDCharacterCreator.Controller.CharacterAppearnace_Controller">
         <center>
                     <GridPane fx:id="PictureGrid" alignment="CENTER" gridLinesVisible="false" hgap="5.0" vgap="5.0">
@@ -21,6 +22,9 @@
                     </GridPane>
         </center>
         <bottom>
-            <JFXButton fx:id="btnUploadAppearance" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#uploadAppearance" style="-fx-background-color: gold;" text="Upload Custom Appearance" wrapText="true" BorderPane.alignment="CENTER" />
+            <JFXButton fx:id="btnUploadAppearance" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#uploadAppearance" style="-fx-background-color: gold;" text="Upload Custom Appearance" wrapText="true" BorderPane.alignment="CENTER" >
+                <font>
+                    <Font size="30.0"/>
+                </font></JFXButton>
         </bottom>
 </BorderPane>

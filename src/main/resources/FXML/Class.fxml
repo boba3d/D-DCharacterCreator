@@ -28,15 +28,27 @@
                 <JFXButton fx:id="selectLeftButton" buttonType="RAISED" contentDisplay="TOP" focusTraversable="false"
                            maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" ripplerFill="RED"
                            style="-fx-background-color: rgba(0, 0, 0, 0); -fx-border-color: gold; -fx-background-radius: 100; -fx-border-radius: 100;"
-                           textAlignment="CENTER" textFill="GOLD" GridPane.columnIndex="2"/>
+                           textAlignment="CENTER" textFill="GOLD" GridPane.columnIndex="2">
+                            <font>
+                                 <Font size="30.0"/>
+                            </font>
+            </JFXButton>
                 <JFXButton fx:id="selectMiddleButton" buttonType="RAISED" contentDisplay="TOP" focusTraversable="false"
                            maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" ripplerFill="RED"
                            style="-fx-background-color: rgba(0, 0, 0, 0); -fx-border-color: gold; -fx-background-radius: 100; -fx-border-radius: 100;"
-                           textAlignment="CENTER" textFill="GOLD" GridPane.columnIndex="4"/>
+                           textAlignment="CENTER" textFill="GOLD" GridPane.columnIndex="4">
+                    <font>
+                        <Font size="30.0"/>
+                    </font>
+                </JFXButton>
                 <JFXButton fx:id="selectRightButton" buttonType="RAISED" contentDisplay="TOP" focusTraversable="false"
                            maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" ripplerFill="RED"
                            style="-fx-background-color: rgba(0, 0, 0, 0); -fx-border-color: gold; -fx-background-radius: 100; -fx-border-radius: 100;"
-                           textAlignment="CENTER" textFill="GOLD" GridPane.columnIndex="6"/>
+                           textAlignment="CENTER" textFill="GOLD" GridPane.columnIndex="6">
+                    <font>
+                        <Font size="30.0"/>
+                    </font>
+                </JFXButton>
             </children>
             <columnConstraints>
                 <ColumnConstraints hgrow="SOMETIMES" percentWidth="10.0"/>
@@ -54,7 +66,11 @@
             </rowConstraints>
         </GridPane>
         <JFXTextArea fx:id="infoBox" editable="false" focusColor="rgba(0, 0, 0, 0)" focusTraversable="false" text="Text"
-                     unFocusColor="rgba(0, 0, 0, 0)" GridPane.rowIndex="2"/>
+                     unFocusColor="rgba(0, 0, 0, 0)" GridPane.rowIndex="2">
+            <font>
+                <Font size="24.0"/>
+            </font>
+        </JFXTextArea>
     </children>
     <columnConstraints>
         <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0"/>
