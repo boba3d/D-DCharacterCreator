@@ -16,4 +16,6 @@ public interface MenuController {
      * everything on the current page.
      */
     void randomizeAll();
+
+
 }
