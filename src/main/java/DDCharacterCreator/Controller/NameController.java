@@ -25,13 +25,6 @@ public class NameController extends ControlledScreen implements MenuController {
         System.out.println("Rand test");
     }
 
-    /**
-     * Test function.
-     */
-    public void printValues() {
-        System.out.println("Character Name: " + getCharacterName() + "\n" +
-                "Player Name: " + getPlayerName());
-    }
 
     /* GETTERS */
 

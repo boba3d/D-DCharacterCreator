@@ -17,9 +17,8 @@ public class Main extends Application {
         //Start Database
             DB = new CharacterDatabase();
             DB.OpenConnectionToDB();
-            //DB.addImage("woodelf", "characters_woodelf_woodelf1","https://s3.us-east-2.amazonaws.com/ddcharactorcreator/characters/woodelf/WE1.jpg");
-
         new ScreensController(primaryStage);
+
     }
 
     public static void main(String[] args) {

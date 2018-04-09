@@ -44,9 +44,9 @@ public class CharacterAppearnace_Controller extends ControlledScreen implements 
     @FXML private JFXButton btnUploadAppearance;
     @FXML private BorderPane AppearanceBorderPane;
 
-    Character MyCharacter;
-    Boolean NodeSelected = false;
-    Object NodeSource;
+    private Character MyCharacter;
+    private Boolean NodeSelected = false;
+    private Object NodeSource;
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -58,14 +58,12 @@ public class CharacterAppearnace_Controller extends ControlledScreen implements 
         if(dbimg.size() != 0) {
             //add all objects to grid
             for (int i = 0; i < 4; i++) {
-                for (int j = 0; j < 3; j++) {
                     if (imgIter.hasNext()) {
                         String URL = imgIter.next();
                         Image image = new Image(URL);
                         ImageView pic = new ImageView();
                         pic.setPreserveRatio(true);
-                        pic.setFitWidth(125);
-                        pic.setFitHeight(250);
+                        pic.setFitWidth(400);
                         pic.setImage(image);
                         pic.setUserData(URL);
                         pic.setOnMouseClicked(event -> {
@@ -77,10 +75,9 @@ public class CharacterAppearnace_Controller extends ControlledScreen implements 
                         });
                         GridPane.setHalignment(pic, HPos.CENTER);
                         GridPane.setValignment(pic, VPos.CENTER);
-                        PictureGrid.add(pic, j, i);
+                        PictureGrid.add(pic, i, 0);
                     }
                 }
-            }
         }else{
             PictureGrid.setVisible(false);
             Label NoPictureText = new Label("No character appearances found");
@@ -131,8 +128,8 @@ public class CharacterAppearnace_Controller extends ControlledScreen implements 
             FileChooser imgPicker = new FileChooser();
             imgPicker.getExtensionFilters().addAll(
                     new FileChooser.ExtensionFilter("JPEG", "*.jpg, *.jpeg"),
-                    new FileChooser.ExtensionFilter("PNG", "*.png")
-            );
+                    new FileChooser.ExtensionFilter("PNG", "*.png"),
+                    new FileChooser.ExtensionFilter("TIF", "*.tif"));
             imgPicker.setTitle("Select custom appearance");
             File file = imgPicker.showOpenDialog(new Stage());
         //handle file

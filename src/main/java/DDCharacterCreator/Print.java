@@ -14,6 +14,7 @@ import java.awt.print.PrinterJob;
 import java.io.*;
 
 
+import java.net.URI;
 import java.net.URL;
 import java.util.Map;
 
@@ -280,8 +281,6 @@ public class Print {
                 e.printStackTrace();
             }
         }
-        //fields.get("Symbol_Picture_af_image").setValue();
-        //fields.get("Symbol_Name").setValue();
     }
 
     private void PrintPDF(String Destination) {

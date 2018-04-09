@@ -10,26 +10,19 @@
 
 <BorderPane fx:id="AppearanceBorderPane" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="DDCharacterCreator.Controller.CharacterAppearnace_Controller">
         <center>
-            <ScrollPane fitToWidth="true" BorderPane.alignment="CENTER">
-                <content>
-                    <GridPane fx:id="PictureGrid" alignment="CENTER" gridLinesVisible="true" hgap="5.0" vgap="5.0">
+                    <GridPane fx:id="PictureGrid" alignment="CENTER" gridLinesVisible="false" hgap="5.0" vgap="5.0">
                                         <columnConstraints>
-                                            <ColumnConstraints fillWidth="true" hgrow="SOMETIMES" />
                                             <ColumnConstraints fillWidth="true" hgrow="SOMETIMES" />
                                             <ColumnConstraints fillWidth="true" hgrow="SOMETIMES" />
                                         </columnConstraints>
                                         <rowConstraints>
                                             <RowConstraints fillHeight="true" vgrow="ALWAYS" />
-                                            <RowConstraints fillHeight="true" vgrow="ALWAYS" />
-                                            <RowConstraints fillHeight="true" vgrow="ALWAYS" />
-                                            <RowConstraints fillHeight="true" vgrow="ALWAYS" />
+
                                         </rowConstraints>
                                         <padding>
                                             <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                                         </padding>
                     </GridPane>
-                </content>
-            </ScrollPane>
         </center>
         <bottom>
             <JFXButton fx:id="btnUploadAppearance" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#uploadAppearance" style="-fx-background-color: gold;" text="Upload Custom Appearance" wrapText="true" BorderPane.alignment="CENTER" />
