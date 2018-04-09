@@ -42,13 +42,9 @@ public class ClassController extends ControlledScreen implements Initializable, 
     }
 
     @Override
-    public void backFunction() {
-        System.out.println("Back Test");
-    }
-
-    @Override
     public void forwardFunction() {
         Main.getChar().setCharClass(Enum.Class.valueOf(options[getSelected()].toUpperCase()));
+        Enum.checkClass(Main.getChar());
         getScreenParent().setScene(ScreensController.RACE);
     }
 

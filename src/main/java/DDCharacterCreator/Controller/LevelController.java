@@ -23,11 +23,6 @@ public class LevelController extends ControlledScreen implements Initializable, 
     }
 
     @Override
-    public void backFunction() {
-        System.out.println("Back Test");
-    }
-
-    @Override
     public void forwardFunction() {
         System.out.println("Forward Test");
     }

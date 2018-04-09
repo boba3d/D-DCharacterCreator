@@ -42,13 +42,9 @@ public class RaceController extends ControlledScreen implements Initializable, M
     }
 
     @Override
-    public void backFunction() {
-        System.out.println("Back Test");
-    }
-
-    @Override
     public void forwardFunction() {
         Main.getChar().setCharRace(Enum.Race.valueOf(options[getSelected()].toUpperCase().replace(" ", "")));
+        Enum.checkRace(Main.getChar());
         getScreenParent().setScene(ScreensController.BACKGROUND);
     }
 

@@ -7,11 +7,6 @@ package DDCharacterCreator.Controller;
 public interface MenuController {
 
     /**
-     * The designated function to be called when backButton is pressed.
-     */
-    void backFunction();
-
-    /**
      * The designated function to be called when forwardButton is pressed.
      */
     void forwardFunction();

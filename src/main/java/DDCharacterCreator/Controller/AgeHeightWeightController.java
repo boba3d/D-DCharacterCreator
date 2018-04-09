@@ -32,11 +32,6 @@ public class AgeHeightWeightController extends ControlledScreen implements Initi
     }
 
     @Override
-    public void backFunction() {
-        System.out.println("Back Test");
-    }
-
-    @Override
     public void forwardFunction() {
         Main.getChar().setCharAge((int) getAge());
         Main.getChar().setCharHeight((int) getHeight());

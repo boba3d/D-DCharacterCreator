@@ -110,11 +110,6 @@ public class CharacterAppearnace_Controller extends ControlledScreen implements 
     }
 
     @Override
-    public void backFunction() {
-        System.out.println("Back Test");
-    }
-
-    @Override
     public void forwardFunction() {
         try {
                 Main.getDB().SaveCharacter(MyCharacter);

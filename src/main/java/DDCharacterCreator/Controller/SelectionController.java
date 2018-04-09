@@ -37,12 +37,6 @@ public class SelectionController extends ControlledScreen implements Initializab
         selectBackButton.setOnAction(e -> setSelected(getSelected() - 1));
         selectForwardButton.setOnAction(e -> setSelected(getSelected() + 1));
     }
-
-    @Override
-    public void backFunction() {
-        System.out.println("Back Test");
-    }
-
     @Override
     public void forwardFunction() {
         System.out.println("Forward Test");

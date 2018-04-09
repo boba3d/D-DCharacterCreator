@@ -42,7 +42,7 @@ public class NavigationMenuController extends ControlledScreen {
         this.nodeFXMLLoader = nodeFXMLLoader; //Allows us to access the FXMLLoader
         borderPane.setCenter(this.nodeFXMLLoader.load()); //Loads the scene, simultaneously putting it in the menu scene
         nodeController = this.nodeFXMLLoader.getController(); //Gives access to the controller of the scene without typing a paragraph
-        backButton.setOnAction(f -> nodeController.backFunction()); //Sets the backButton function
+        //backButton.setOnAction(f -> nodeController.backFunction()); //Sets the backButton function
         forwardButton.setOnAction(f -> nodeController.forwardFunction()); //Sets the forwardButton function
         //randomButton.setOnAction(f -> nodeController.randomizeAll()); // Sets the randomButton function
     }

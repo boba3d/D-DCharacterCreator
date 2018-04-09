@@ -11,16 +11,14 @@ public class NameController extends ControlledScreen implements MenuController {
     public JFXTextField characterNameField, playerNameField;
 
     @Override
-    public void backFunction() {
-        System.out.println("Back Test");
-    }
-
-    @Override
     public void forwardFunction() {
+        if(!getCharacterName().isEmpty() && !getPlayerName().isEmpty()){
         Main.mycharacter.setCharName(getCharacterName());
         Main.mycharacter.setCharPlayerName(getPlayerName());
         getScreenParent().setScene(ScreensController.CLASS);
+        }
     }
+
 
     @Override
     public void randomizeAll() {

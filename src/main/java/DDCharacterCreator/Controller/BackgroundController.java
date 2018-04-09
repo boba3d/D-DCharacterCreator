@@ -42,11 +42,6 @@ public class BackgroundController extends ControlledScreen implements Initializa
     }
 
     @Override
-    public void backFunction() {
-        System.out.println("Back Test");
-    }
-
-    @Override
     public void forwardFunction() {
         Main.getChar().setCharBackground(Enum.Background.valueOf(options[getSelected()].toUpperCase().replace(" ", "")));
         Enum.checkBackground(Main.getChar());
