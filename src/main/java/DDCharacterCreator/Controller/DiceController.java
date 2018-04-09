@@ -5,7 +5,9 @@ import DDCharacterCreator.Character;
 import DDCharacterCreator.Dice;
 import DDCharacterCreator.Main;
 import DDCharacterCreator.ScreensController;
+import DDCharacterCreator.Utilities.Randomizer;
 import com.jfoenix.controls.JFXButton;
+import com.jfoenix.controls.JFXSlider;
 import com.jfoenix.controls.JFXTextArea;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
@@ -18,10 +20,12 @@ import java.util.ResourceBundle;
 
 public class DiceController extends ControlledScreen implements Initializable, MenuController{
 
-    @FXML
-    public JFXTextArea DiceBox,RollBox;
-    @FXML
-    public JFXButton diceButton;
+    @FXML public JFXTextArea DiceBox,RollBox;
+    @FXML public JFXButton diceButton;
+    @FXML public JFXSlider levelSlider;
+    final private int MINLEVEL = 1;
+    final private int MAXLEVEL = 10;
+
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -30,16 +34,34 @@ public class DiceController extends ControlledScreen implements Initializable, M
             @Override
             public void handle(javafx.event.ActionEvent event) {
                 rollDie(Main.getChar());
-                RollBox.setText("Your stats are:!\n"+"Strength: "+Main.getChar().getCharStrength()+"\nDexterity:"+Main.getChar().getCharDexterity()+"Constitution: "+Main.getChar().getCharConstitution()+"Intelligence: "+Main.getChar().getCharIntelligence()+"Wisdom: "+Main.getChar().getCharWisdom()+"Charisma: "+Main.getChar().getCharCharisma());
+                RollBox.setText("Your stats are: \n"
+                        +"Strength: "+Main.getChar().getCharStrength()
+                        +"\nDexterity: "+Main.getChar().getCharDexterity()
+                        +"\nConstitution: "+Main.getChar().getCharConstitution()
+                        +"\nIntelligence: "+Main.getChar().getCharIntelligence()
+                        +"\nWisdom: "+Main.getChar().getCharWisdom()
+                        +"\nCharisma: "+Main.getChar().getCharCharisma());
             }
         });
+        levelSlider.setMin(MINLEVEL);
+        levelSlider.setMax(MAXLEVEL);
+        levelSlider.setValue((MINLEVEL + MAXLEVEL)/2);
     }
     @Override
-    public void forwardFunction() { getScreenParent().setScene(ScreensController.CLASS); }
+    public void forwardFunction() {
+        Main.getChar().setCharLevel((int) levelSlider.getValue());
+
+        getScreenParent().setScene(ScreensController.CLASS);
+    }
 
     @Override
     public void randomizeAll() {
         System.out.println("Rand test");
+
+        /*public void randomizeLevel() {
+            levelSlider.setValue(Randomizer.randomize(levelSlider.getMin(), levelSlider.getMax()));
+        }*/
+
     }
     /**
      * Test function.

@@ -27,7 +27,7 @@ public class Dice {
         int ans = 0;
         if(faces < 2) throw new IllegalArgumentException("Must be more than one face!");
         if(dieCount < 0) throw new IllegalArgumentException("Die count must be non-negative!");
-        for(int i = 0; i <= dieCount; i++)
+        for(int i = 0; i <dieCount; i++)
             ans += r.nextInt(faces) + 1; // from 1 to faces
         return ans;
     }

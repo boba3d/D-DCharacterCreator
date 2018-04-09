@@ -7,32 +7,44 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.text.Font?>
 
+<?import com.jfoenix.controls.JFXSlider?>
+<?import javafx.scene.control.Label?>
 <GridPane stylesheets="@../CSS/themedStyling.css" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="DDCharacterCreator.Controller.DiceController">
-    <children>
-        <GridPane>
-            <children>
 
-            <JFXTextArea fx:id="DiceBox" editable="False" focusColor="rgba(0, 0, 0, 0)" focusTraversable="false" text="DICE ROLLS" unFocusColor="rgba(0, 0, 0, 0)" GridPane.rowIndex="2" />
-            </children>
-         <columnConstraints>
-            <ColumnConstraints />
-         </columnConstraints>
+    <JFXTextArea fx:id="DiceBox" editable="False" focusColor="rgba(0, 0, 0, 0)" focusTraversable="false" text="DICE ROLLS" unFocusColor="rgba(0, 0, 0, 0)" GridPane.rowIndex="1" GridPane.columnIndex="0">
+        <font>
+            <Font size="24.0"/>
+        </font>
+    </JFXTextArea>
 
-        </GridPane>
-
-        <JFXButton fx:id="diceButton" buttonType="RAISED" focusTraversable="false" ripplerFill="RED" style="-fx-background-color: rgba(0, 0, 0, 0); -fx-border-color: gold; -fx-background-radius: 100; -fx-border-radius: 100;" text="&lt;" textAlignment="CENTER" textFill="GOLD" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER">
+        <JFXButton fx:id="diceButton" buttonType="RAISED" focusTraversable="false" ripplerFill="RED" style="-fx-background-color: rgba(0, 0, 0, 0); -fx-border-color: gold; -fx-background-radius: 100; -fx-border-radius: 100;" text="Roll dice" textAlignment="CENTER" textFill="GOLD" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER" GridPane.columnIndex="0">
             <font>
-                <Font size="12.0" />
+                <Font size="32.0" />
             </font>
         </JFXButton>
 
-        <JFXTextArea fx:id="RollBox" editable="False" focusColor="rgba(0, 0, 0, 0)" focusTraversable="false" text="DICE ROLLS" unFocusColor="rgba(0, 0, 0, 0)" GridPane.rowIndex="2" />
-    </children>
+    <JFXTextArea fx:id="RollBox" editable="False" focusColor="rgba(0, 0, 0, 0)" focusTraversable="false" text="DICE ROLLS" unFocusColor="rgba(0, 0, 0, 0)" GridPane.rowIndex="3" GridPane.columnIndex="0">
+        <font>
+            <Font size="24.0"/>
+        </font>
+    </JFXTextArea>
+
+    <JFXSlider fx:id="levelSlider" indicatorPosition="RIGHT" orientation="VERTICAL" GridPane.halignment="CENTER"
+               GridPane.rowIndex="1" GridPane.rowSpan="3" GridPane.valignment="CENTER" GridPane.columnIndex="1">
+    </JFXSlider>
+    <Label text="Level" textAlignment="CENTER" textFill="GOLD" GridPane.halignment="CENTER"
+           GridPane.valignment="CENTER" GridPane.rowIndex="0" GridPane.columnIndex="1">
+        <font>
+            <Font size="32.0"/>
+        </font>
+    </Label>
     <columnConstraints>
-        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        <ColumnConstraints hgrow="SOMETIMES" percentWidth="70.0" />
+        <ColumnConstraints hgrow="SOMETIMES" percentWidth="30.0" />
     </columnConstraints>
     <rowConstraints>
-        <RowConstraints percentHeight="45.0" />
+        <RowConstraints percentHeight="10.0" />
+        <RowConstraints percentHeight="35.0" />
         <RowConstraints percentHeight="10.0" />
         <RowConstraints percentHeight="45.0" />
     </rowConstraints>

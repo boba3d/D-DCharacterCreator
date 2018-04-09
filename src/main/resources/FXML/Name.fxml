@@ -11,13 +11,13 @@
                       promptText="Character Name" unFocusColor="RED" GridPane.halignment="CENTER"
                       GridPane.valignment="CENTER">
             <font>
-                <Font size="24.0"/>
+                <Font size="32.0"/>
             </font>
         </JFXTextField>
         <JFXTextField fx:id="playerNameField" alignment="CENTER" focusColor="GOLD" labelFloat="true"
                       promptText="Player Name" unFocusColor="RED" GridPane.rowIndex="2">
             <font>
-                <Font size="24.0"/>
+                <Font size="32.0"/>
             </font>
         </JFXTextField>
     </children>
