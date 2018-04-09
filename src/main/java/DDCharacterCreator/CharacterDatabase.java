@@ -60,6 +60,49 @@ public class CharacterDatabase {
         return true;
     }
 
+    public void addAllImages(){
+        addImage("darkelf", "characters_darkelf_darkelf2","https://s3.us-east-2.amazonaws.com/ddcharactorcreator/characters/darkelf/dark-elf-female.jpg");
+
+        addImage("highelf", "characters_highelf_highelf1","https://s3.us-east-2.amazonaws.com/ddcharactorcreator/characters/highelf/high-elf-female.jpg");
+        addImage("highelf", "characters_highelf_highelf2","https://s3.us-east-2.amazonaws.com/ddcharactorcreator/characters/highelf/high-elf-male.jpg");
+
+        addImage("woodelf", "characters_woodelf_woodelf1","https://s3.us-east-2.amazonaws.com/ddcharactorcreator/characters/woodelf/wood-elf-female.jpg");
+        addImage("woodelf", "characters_woodelf_woodelf2","https://s3.us-east-2.amazonaws.com/ddcharactorcreator/characters/woodelf/wood-elf-male.jpg");
+
+        addImage("halfelf", "characters_halfelf_halfelf1","https://s3.us-east-2.amazonaws.com/ddcharactorcreator/characters/halfelf/half-elf-female.jpg");
+        addImage("halfelf", "characters_halfelf_halfelf2","https://s3.us-east-2.amazonaws.com/ddcharactorcreator/characters/halfelf/half-elf-male.jpg");
+
+        addImage("human", "characters_human_human1","https://s3.us-east-2.amazonaws.com/ddcharactorcreator/characters/human/human-calishite-female.jpg");
+        addImage("human", "characters_human_human2","https://s3.us-east-2.amazonaws.com/ddcharactorcreator/characters/human/human-calishite-male.jpg");
+
+        addImage("stouthalfling", "characters_stouthalfling_stouthalfling1","https://s3.us-east-2.amazonaws.com/ddcharactorcreator/characters/stout/stout-halfling-female.jpg");
+        addImage("stouthalfling", "characters_stouthalfling_stouthalfling2","https://s3.us-east-2.amazonaws.com/ddcharactorcreator/characters/stout/stout-halfling-male.jpg");
+
+        addImage("lightfoothalfling", "characters_lightfoothalfling_lightfoothalfling1","https://s3.us-east-2.amazonaws.com/ddcharactorcreator/characters/lightfoot/Lightfoot-Halfling-male.jpg");
+        addImage("lightfoothalfling", "characters_lightfoothalfling_lightfoothalfling2","https://s3.us-east-2.amazonaws.com/ddcharactorcreator/characters/lightfoot/lightfoot-halfling-female.jpg");
+
+        addImage("halforc", "characters_halforc_halforc1","https://s3.us-east-2.amazonaws.com/ddcharactorcreator/characters/half-orc-female.jpg");
+        addImage("halforc", "characters_halforc_halforc2","https://s3.us-east-2.amazonaws.com/ddcharactorcreator/characters/half-orc-male.jpg");
+
+        addImage("rockgnome", "characters_rockgnome_rockgnome1","https://s3.us-east-2.amazonaws.com/ddcharactorcreator/characters/rock-gnome-female.jpg");
+        addImage("rockgnome", "characters_rockgnome_rockgnome2","https://s3.us-east-2.amazonaws.com/ddcharactorcreator/characters/rock-gnome-male.jpg");
+
+        addImage("forestgnome", "characters_forestgnome_forestgnome1","https://s3.us-east-2.amazonaws.com/ddcharactorcreator/characters/forest-gnome-female.jpg");
+        addImage("forestgnome", "characters_forestgnome_forestgnome2","https://s3.us-east-2.amazonaws.com/ddcharactorcreator/characters/forest-gnome-male.jpg");
+
+        addImage("tiefling", "characters_tiefling_tiefling1","https://s3.us-east-2.amazonaws.com/ddcharactorcreator/characters/tiefling-female.jpg");
+        addImage("tiefling", "characters_tiefling_tiefling2","https://s3.us-east-2.amazonaws.com/ddcharactorcreator/characters/tiefling-male.jpg");
+
+        addImage("hilldwarf", "characters_hilldwarf_hilldwarf1","https://s3.us-east-2.amazonaws.com/ddcharactorcreator/characters/hill-dwarf-female.jpg");
+        addImage("hilldwarf", "characters_hilldwarf_hilldwarf2","https://s3.us-east-2.amazonaws.com/ddcharactorcreator/characters/hill-dwarf-male.jpg");
+
+        addImage("mountaindwarf", "characters_mountaindwarf_mountaindwarf1","https://s3.us-east-2.amazonaws.com/ddcharactorcreator/characters/mountain-dwarf-female.jpg");
+        addImage("mountaindwarf", "characters_mountaindwarf_mountaindwarf2","https://s3.us-east-2.amazonaws.com/ddcharactorcreator/characters/mountain-dwarf-male.jpg");
+
+        addImage("dragonborn", "characters_dragonborn_dragonborn1","https://s3.us-east-2.amazonaws.com/ddcharactorcreator/characters/dragonborn-female.jpg");
+        addImage("dragonborn", "characters_dragonborn_dragonborn2","https://s3.us-east-2.amazonaws.com/ddcharactorcreator/characters/dragonborn-male.jpg");
+    }
+
     public LinkedList<String> getImages(Character myChar){
         LinkedList<String> imgList = new LinkedList<>();
         String race = myChar.getCharRace().name().toLowerCase();
