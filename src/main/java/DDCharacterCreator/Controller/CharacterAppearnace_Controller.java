@@ -5,6 +5,7 @@ import DDCharacterCreator.Main;
 import DDCharacterCreator.ScreensController;
 import com.jfoenix.controls.JFXButton;
 import com.sun.org.apache.xpath.internal.operations.Bool;
+import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -13,9 +14,15 @@ import javafx.geometry.HPos;
 import javafx.geometry.VPos;
 import javafx.scene.Node;
 import javafx.scene.control.Button;
+import javafx.scene.control.ColorPicker;
+import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.GridPane;
+import javafx.scene.paint.Color;
+import javafx.scene.text.Font;
+import javafx.scene.text.Text;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 
@@ -28,11 +35,14 @@ import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.ResourceBundle;
 
+import static javax.swing.text.html.CSS.Attribute.COLOR;
+
 
 public class CharacterAppearnace_Controller extends ControlledScreen implements Initializable, MenuController{
 
     @FXML private GridPane PictureGrid;
     @FXML private JFXButton btnUploadAppearance;
+    @FXML private BorderPane AppearanceBorderPane;
 
     Character MyCharacter;
     Boolean NodeSelected = false;
@@ -45,51 +55,38 @@ public class CharacterAppearnace_Controller extends ControlledScreen implements 
 
         LinkedList<String> dbimg = Main.getDB().getImages(MyCharacter);
         Iterator<String> imgIter = dbimg.iterator();
-
-        //add all objects to grid
-        for(int i =0; i <4; i++){
-            for(int j =0; j < 3; j++){
-                if(imgIter.hasNext()) {
-                    String URL = imgIter.next();
-                    Image image = new Image(URL);
-                    ImageView pic = new ImageView();
-                    pic.setPreserveRatio(true);
-                    pic.setFitWidth(125);
-                    pic.setFitHeight(250);
-                    pic.setImage(image);
-                    pic.setUserData(URL);
-                    pic.setOnMouseClicked(event -> {
-                        ProcessImage(event.getSource());
-                        for (Node node : PictureGrid.getChildren()) {
+        if(dbimg.size() != 0) {
+            //add all objects to grid
+            for (int i = 0; i < 4; i++) {
+                for (int j = 0; j < 3; j++) {
+                    if (imgIter.hasNext()) {
+                        String URL = imgIter.next();
+                        Image image = new Image(URL);
+                        ImageView pic = new ImageView();
+                        pic.setPreserveRatio(true);
+                        pic.setFitWidth(125);
+                        pic.setFitHeight(250);
+                        pic.setImage(image);
+                        pic.setUserData(URL);
+                        pic.setOnMouseClicked(event -> {
+                            ProcessImage(event.getSource());
+                            for (Node node : PictureGrid.getChildren()) {
                                 node.setOpacity(0.2);
-                        }
-                        pic.setOpacity(1.0);
-                    });
-                    pic.setOnMouseEntered((javafx.scene.input.MouseEvent t) -> {
-                        if(NodeSource != t.getSource()) {
-                            if (NodeSelected) {
-                                pic.setOpacity(1.0);
-                            } else {
-                                pic.setOpacity(0.2);
                             }
-                        }
-                    });
-
-                    pic.setOnMouseExited((javafx.scene.input.MouseEvent t) -> {
-                        if(NodeSource != t.getSource()) {
-                            if (NodeSelected) {
-                                pic.setOpacity(0.2);
-                            } else {
-                                pic.setOpacity(1.0);
-                            }
-                        }
-                    });
-
-                    PictureGrid.setHalignment(pic, HPos.CENTER);
-                    PictureGrid.setValignment(pic, VPos.CENTER);
-                    PictureGrid.add(pic, j, i);
+                            pic.setOpacity(1.0);
+                        });
+                        GridPane.setHalignment(pic, HPos.CENTER);
+                        GridPane.setValignment(pic, VPos.CENTER);
+                        PictureGrid.add(pic, j, i);
+                    }
                 }
             }
+        }else{
+            PictureGrid.setVisible(false);
+            Label NoPictureText = new Label("No character appearances found");
+            NoPictureText.setFont(Font.font("Arial", 24));
+            NoPictureText.setTextFill(Color.GOLD);
+            AppearanceBorderPane.setCenter(NoPictureText);
         }
         btnUploadAppearance.setOnMouseEntered((javafx.scene.input.MouseEvent t) -> {
             if(NodeSource != t.getSource()) {
@@ -125,6 +122,7 @@ public class CharacterAppearnace_Controller extends ControlledScreen implements 
                 System.out.println(e);
             }
             Main.PrintCharacter();
+        Platform.exit();
     }
 
     @Override
