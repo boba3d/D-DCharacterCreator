@@ -99,9 +99,10 @@ public class Format {
             returnArrays[0][i] = classes[i].toString();
             returnArrays[1][i] = classes[i].getDescrip();
         }
-
         return returnArrays;
     }
+
+
 
     /**
      * Gets all Races and their descriptions from Enum.Race, splits the array

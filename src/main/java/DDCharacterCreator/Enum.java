@@ -640,6 +640,10 @@ public class Enum {
                 break;
         }
     }
+    /** Let's roll the Die!
+     *
+     */
+
     /**
      * Once the class is selected, this function will modify the character object's skills, hit die, and saving throws
      * with the appropriate data for each specific class.

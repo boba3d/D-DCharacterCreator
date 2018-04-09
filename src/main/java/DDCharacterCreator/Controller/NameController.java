@@ -17,7 +17,7 @@ public class NameController extends ControlledScreen implements MenuController {
                 Main.mycharacter.setCharName(getCharacterName());
             if (getPlayerName().length() < 15)
                 Main.mycharacter.setCharPlayerName(getPlayerName());
-            getScreenParent().setScene(ScreensController.CLASS);
+            getScreenParent().setScene(ScreensController.DICE);
         }
     }
     @Override

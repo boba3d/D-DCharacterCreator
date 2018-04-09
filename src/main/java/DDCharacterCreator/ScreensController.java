@@ -48,6 +48,9 @@ public class ScreensController {
     public static final String WELCOME = "Welcome";
     private final String WELCOMEFILE = "/FXML/Welcome.fxml";
 
+    public static final String DICE = "Dice Rolls";
+    private final String DICEFILE = "/FXML/Dice.fxml";
+
     //Icon image
     private static final String ICONFILE = "/SplashPicture.png";
 
@@ -71,6 +74,7 @@ public class ScreensController {
         addScene(RACE, RACEFILE);
         addScene(SPLASH, SPLASHFILE);
         addScene(WELCOME, WELCOMEFILE);
+        addScene(DICE, DICEFILE);
 
         stage.setTitle("D&D character creator");
         stage.getIcons().add(new Image(ICONFILE));
