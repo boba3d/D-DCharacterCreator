@@ -38,9 +38,13 @@ public class CharacterDatabase {
     }
 
     public boolean CloseConnectionToDB() throws NullPointerException{
-        bucket.close();
-        bucket = null;
-        return true;
+        if(bucket !=null) {
+            bucket.close();
+            bucket = null;
+            return true;
+        }else{
+            return false;
+        }
     }
 
 

@@ -223,11 +223,17 @@ public class Print {
             fields.get("HitPointMaximum").setValue(myChar.getCharHitPointMaximum().toString());
         }
         if (myChar.getCharHitDice() != null) {
-            fields.get("HitDice").setValue(myChar.getCharHitDice().toString());
+            fields.get("HitDice").setValue("D" + myChar.getCharHitDice().toString());
         }
 
         //lower part first page
         //fields.get("PassiveWisdom").setValue();
+
+        if (myChar.getCharEquipment() != null) {
+            fields.get("Equipment").setFontSize(11);
+            fields.get("Equipment").setValue(myChar.getCharEquipment());
+        }
+
         if (myChar.getCharCP() != null) {
             fields.get("Equipment_CP").setValue(myChar.getCharCP().toString());
         }
@@ -248,7 +254,6 @@ public class Print {
             if (myChar.getCharPersonalityTraits() != null){
                 fields.get("PersonalityTraits").setFontSize(11);
                 fields.get("PersonalityTraits").setValue(myChar.getCharPersonalityTraits());
-                //fields.get("PersonalityTraits").setValue("********************************************************************************************************************************");
             }
             if(myChar.getCharIdeals() != null){
                 fields.get("Ideals").setFontSize(11);
