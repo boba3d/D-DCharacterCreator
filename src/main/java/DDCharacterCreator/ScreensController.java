@@ -125,7 +125,7 @@ public class ScreensController {
             }
 */
 
-            stage.setScene(new Scene(root, 600, 400)); //Finally, set the current scene in the stage to our root
+            stage.setScene(new Scene(root, 1280, 800)); //Finally, set the current scene in the stage to our root
             return true;
         } catch (IOException e) {
             setCurrentScene(tempName);

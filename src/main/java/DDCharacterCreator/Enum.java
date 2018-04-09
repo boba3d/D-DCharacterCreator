@@ -618,6 +618,7 @@ public class Enum {
                 character.setCharFlaws(sageFlaws[temp]);
                 character.setCharEquipment(Background.SAGE.equipment);
                 character.setCharGP(Background.SAGE.gold);
+
                 break;
             case SAILOR:
                 temp = dice.Roll(3,1);
