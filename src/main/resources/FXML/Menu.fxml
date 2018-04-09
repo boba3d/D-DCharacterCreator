@@ -34,7 +34,6 @@
                     <children>
                         <AnchorPane GridPane.columnIndex="1" GridPane.rowIndex="1">
                             <children>
-                                <JFXHamburger onMouseClicked="#openNavBar" GridPane.halignment="LEFT" GridPane.hgrow="NEVER" GridPane.valignment="TOP" GridPane.vgrow="NEVER" />
                             </children>
                         </AnchorPane>
                     </children>

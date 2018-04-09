@@ -160,7 +160,7 @@ public class RandomizerTests {
         String[] bg;
         Integer n;
 
-        for(int i = 0; i < 10; i++){
+        /*for(int i = 0; i < 10; i++){
             bg = Randomizer.getPersonality();
             System.out.println(bg[0]);
             n = Arrays.asList(Enum.backgrounds).indexOf(bg);
@@ -169,6 +169,6 @@ public class RandomizerTests {
             Assert.assertSame(bg[2].split("\n"), Enum.ideals[n]);
             Assert.assertSame(bg[3].split("\n"), Enum.bonds[n]);
             Assert.assertSame(bg[4].split("\n"), Enum.flaws[n]);
-        }
+        }*/
     }
 }
