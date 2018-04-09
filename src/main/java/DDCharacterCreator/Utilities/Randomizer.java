@@ -2,6 +2,8 @@ package DDCharacterCreator.Utilities;
 
 import java.util.Arrays;
 import java.util.Random;
+
+import DDCharacterCreator.CharacterSkills;
 import DDCharacterCreator.Enum;
 import DDCharacterCreator.Dice;
 import DDCharacterCreator.Character;
@@ -16,7 +18,7 @@ public class Randomizer {
     final private static double K = 100.00;
     private static long seed = System.nanoTime();
     private static Random random;
-    private static Dice dice = new Dice();
+    public static Dice dice = new Dice();
 
     /**
      * Initializes random with a given seed.
@@ -327,22 +329,6 @@ public class Randomizer {
         return Enum.EyeColor.values()[randomize(Enum.EyeColor.values().length - 1)];
     }
 
-    /**
-     * Generate personality information about the character.
-     * (Marsol already did this, albeit in a lot more code, oops)
-     * @return A string array formatted: [Background, Traits, Ideals, Bonds, Flaws]
-     */
-    public static String[] getPersonality(){
-        String[] ret = new String[5];
-        Integer bg = randomize(Enum.backgrounds.length);
-
-        ret[0] = Enum.backgrounds[bg];
-        ret[1] = String.join("\n", Enum.traits[bg]);
-        ret[2] = String.join("\n", Enum.ideals[bg]);
-        ret[3] = String.join("\n", Enum.bonds[bg]);
-        ret[4] = String.join("\n", Enum.flaws[bg]);
-        return ret;
-    }
 
     /**
      * @return A randomly generated character sheet.
@@ -371,6 +357,9 @@ public class Randomizer {
         c.setCharInitiative(c.getCharDexterity());
         c.setCharSpeed(c.getCharRace().getSpeed());
         c.setCharHitPointMaximum(Enum.getHitPoints(c.getCharClass(),  c.getCharLevel(), c.getCharConstitution()));
+        CharacterSkills skills = new CharacterSkills();
+        // TODO set skills
+        c.setCharSkills(skills);
 
         // appearance
         c.setCharAge(getAge(c.getCharRace()));
@@ -378,14 +367,9 @@ public class Randomizer {
         c.setCharWeight(getWeight(c.getCharRace()));
         c.setCharEyeColor(getEyeColor());
 
-        String[] personality = getPersonality();
-        c.setCharBackground(Enum.Background.valueOf(personality[0]));
-        c.setCharIdeals(personality[1]);
-        c.setCharBonds(personality[2]);
-        c.setCharFlaws(personality[3]);
-
-        Enum.checkBackground(c);
         Enum.checkClass(c);
+        Enum.checkRace(c);
+        Enum.checkBackground(c);
         return c;
     }
 
