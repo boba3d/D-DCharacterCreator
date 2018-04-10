@@ -2,8 +2,9 @@ package DDCharacterCreator.Controller;
 
 import DDCharacterCreator.Main;
 import DDCharacterCreator.ScreensController;
-import DDCharacterCreator.Utilities.Randomizer;
+import DDCharacterCreator.Utilities.*;
 import com.jfoenix.controls.JFXSlider;
+import javafx.beans.binding.Bindings;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 
@@ -12,23 +13,91 @@ import java.util.ResourceBundle;
 
 public class AgeHeightWeightController extends ControlledScreen implements Initializable, MenuController {
 
-    /*
-    TO DO:
-    * Slider value shows double value for height/weight and unit (years, in -> ft'in"/m, lbs/kg)
-    * Auto-grab min/max values from race
-     */
-
-    final private int MINLEVEL = 1;
-    final private int MAXLEVEL = 25;
-
     @FXML
-    public JFXSlider ageSlider, heightSlider, levelSlider, weightSlider;
+    public JFXSlider ageSlider, heightSlider, weightSlider;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         //Grab Character, get race min/max for age height and weight. Set.
-        //levelSlider.setMin(MINLEVEL);
-        //levelSlider.setMax(MAXLEVEL);
+        ageSlider.setMin(1);
+
+        switch(Main.getChar().getCharRace()){
+            case WOODELF: case DARKELF: case HIGHELF:
+                ageSlider.setMax(750);
+                heightSlider.setMin(48);
+                heightSlider.setMax(84);
+                weightSlider.setMin(80);
+                weightSlider.setMax(180);
+                break;
+            case HALFELF:
+                ageSlider.setMax(180);
+                heightSlider.setMin(48);
+                heightSlider.setMax(84);
+                weightSlider.setMin(80);
+                weightSlider.setMax(180);
+                break;
+            case DRAGONBORN:
+                ageSlider.setMax(80);
+                heightSlider.setMin(72);
+                heightSlider.setMax(96);
+                weightSlider.setMin(200);
+                weightSlider.setMax(400);
+                break;
+            case HUMAN:
+                ageSlider.setMax(100);
+                heightSlider.setMin(55);
+                heightSlider.setMax(78);
+                weightSlider.setMin(120);
+                weightSlider.setMax(250);
+                break;
+            case STOUTHALFLING: case LIGHTFOOTHALFLING:
+                ageSlider.setMax(250);
+                heightSlider.setMin(24);
+                heightSlider.setMax(48);
+                weightSlider.setMin(20);
+                weightSlider.setMax(50);
+                break;
+            case TIEFLING:
+                ageSlider.setMax(125);
+                heightSlider.setMin(55);
+                heightSlider.setMax(78);
+                weightSlider.setMin(120);
+                weightSlider.setMax(250);
+                break;
+            case FORESTGNOME: case ROCKGNOME:
+                ageSlider.setMax(500);
+                heightSlider.setMin(36);
+                heightSlider.setMax(48);
+                weightSlider.setMin(30);
+                weightSlider.setMax(50);
+                break;
+            case HILLDWARF: case MOUNTAINDWARF:
+                ageSlider.setMax(350);
+                heightSlider.setMin(48);
+                heightSlider.setMax(60);
+                weightSlider.setMin(120);
+                weightSlider.setMax(180);
+                break;
+            case HALFORC:
+                ageSlider.setMax(75);
+                heightSlider.setMin(60);
+                heightSlider.setMax(84);
+                weightSlider.setMin(150);
+                weightSlider.setMax(300);
+                break;
+            default:
+                ageSlider.setMax(100);
+                heightSlider.setMin(36);
+                heightSlider.setMax(108);
+                weightSlider.setMin(50);
+                weightSlider.setMax(400);
+                break;
+        }
+
+        // set indicators
+        heightSlider.setValueFactory(s -> Bindings.createStringBinding(() -> Format.convertInchesToFtIn((int)s.getValue())));
+        weightSlider.setValueFactory(s -> Bindings.createStringBinding(() -> Format.formatPounds((int)s.getValue())));
+        ageSlider.setValueFactory(s -> Bindings.createStringBinding(() -> (int)s.getValue() + " years"));
     }
 
     @Override
@@ -47,31 +116,24 @@ public class AgeHeightWeightController extends ControlledScreen implements Initi
     }
 
     /**
-     * Sets the ageSlider to a random value.
+     * Set the age slider to a random age based on the selected race
      */
-    public void randomizeAge() {
-        ageSlider.setValue(Randomizer.randomize(ageSlider.getMin(), ageSlider.getMax()));
+    public void randomizeAge(){
+        ageSlider.setValue(Randomizer.getAge(Main.getChar().getCharRace()));
     }
 
     /**
-     * Sets the heightSlider to a random value.
+     * Set the height slider to a random height based on the selected race
      */
-    public void randomizeHeight() {
-        heightSlider.setValue(Randomizer.randomize(heightSlider.getMin(), heightSlider.getMax()));
+    public void randomizeHeight(){
+        heightSlider.setValue(Randomizer.getHeight(Main.getChar().getCharRace()));
     }
 
     /**
-     * Sets the levelSlider to a random value.
+     * Set the weight slider to a random weight based on the selected race
      */
-    public void randomizeLevel() {
-        //levelSlider.setValue(Randomizer.randomize(levelSlider.getMin(), levelSlider.getMax()));
-    }
-
-    /**
-     * Sets the weightSlider to a random value.
-     */
-    public void randomizeWeight() {
-        weightSlider.setValue(Randomizer.randomize(weightSlider.getMin(), weightSlider.getMax()));
+    public void randomizeWeight(){
+        weightSlider.setValue(Randomizer.getWeight(Main.getChar().getCharRace()));
     }
 
     /* GETTERS */
@@ -84,46 +146,7 @@ public class AgeHeightWeightController extends ControlledScreen implements Initi
         return heightSlider.getValue();
     }
 
-    public int getLevel() {
-        //return (int) levelSlider.getValue();
-        return 0;
-    }
-
     public double getWeight() {
         return weightSlider.getValue();
-    }
-
-    /* SETTERS */
-
-    public void setMinAge(double minAge) {
-        ageSlider.setMin(minAge);
-    }
-
-    public void setMaxAge(double maxAge) {
-        ageSlider.setMax(maxAge);
-    }
-
-    public void setMinHeight(double minHeight) {
-        heightSlider.setMin(minHeight);
-    }
-
-    public void setMaxHeight(double maxHeight) {
-        heightSlider.setMax(maxHeight);
-    }
-
-    public void setMinLevel(int minLevel) {
-        //levelSlider.setMin(minLevel);
-    }
-
-    public void setMaxLevel(int maxLevel) {
-        //levelSlider.setMax(maxLevel);
-    }
-
-    public void setMinWeight(double minWeight) {
-        weightSlider.setMin(minWeight);
-    }
-
-    public void setMaxWeight(double maxWeight) {
-        weightSlider.setMax(maxWeight);
     }
 }

@@ -2,6 +2,7 @@ package DDCharacterCreator.Controller;
 
 import DDCharacterCreator.Enum;
 import DDCharacterCreator.Main;
+import DDCharacterCreator.Utilities.Randomizer;
 import DDCharacterCreator.ScreensController;
 import DDCharacterCreator.Utilities.Format;
 import com.jfoenix.controls.JFXButton;
@@ -15,11 +16,13 @@ import java.util.ResourceBundle;
 public class RaceController extends ControlledScreen implements Initializable, MenuController {
 
     /*
-    TO DO:
+    TODO:
     * Pre-formatting class: takes in description in attributes,
       makes them look nice
     * Sub-controllers (maybe?) -> backgroundController, classController, raceController
     * Sub-controllers auto-import data
+    * Select the correct race when the race has already been selected
+    * Choose an option that's not the middle
      */
 
     @FXML
@@ -29,6 +32,7 @@ public class RaceController extends ControlledScreen implements Initializable, M
     private int selected; //The option selected
     private String[] info; //The PREFORMATTED information coinciding to the respective option.
     private String[] options; //An array of names for the options (i.e. Human, Orc, Elf)
+    private boolean disableRandom;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -39,6 +43,14 @@ public class RaceController extends ControlledScreen implements Initializable, M
 
         selectBackButton.setOnAction(e -> setSelected(getSelected() - 1));
         selectForwardButton.setOnAction(e -> setSelected(getSelected() + 1));
+
+        // We need this for the character name random button..
+        // If it has already been selected, disable random and display the choice
+        if (Main.getChar().getCharRace() != null) {
+            disableRandom = true;
+            setSelected(getSelected(Main.getChar().getCharRace()));
+        }
+        // TODO disable the randomize button
     }
 
     @Override
@@ -50,7 +62,20 @@ public class RaceController extends ControlledScreen implements Initializable, M
 
     @Override
     public void randomizeAll() {
-        System.out.println("Rand test");
+        if(!disableRandom)
+            randomizeRace();
+    }
+
+    public void randomizeRace(){
+        Enum.Race r = Randomizer.getCharRace();
+        setSelected(getSelected(r));
+    }
+
+    private int getSelected(Enum.Race r) {
+        for(Integer i = 0; i < options.length; i++)
+            if (options[i].toUpperCase().replace(" ", "").equals(r.name()))
+                return i;
+        return 0; // hill dwarf city
     }
 
     /* GETTERS */

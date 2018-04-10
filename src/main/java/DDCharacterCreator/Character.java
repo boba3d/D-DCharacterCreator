@@ -61,7 +61,7 @@ public class Character implements Serializable{
         private String charPersonalityTraits;
         private String charIdeals;
         private String charBonds;
-        private String charFlaws; 
+        private String charFlaws;
 
         //**************************************************************** GETTER AND SETTERS ***************************************
 

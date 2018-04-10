@@ -1,5 +1,6 @@
 package DDCharacterCreator;
 
+import DDCharacterCreator.Utilities.Randomizer;
 import com.sun.deploy.uitoolkit.ToolkitStore;
 import com.sun.org.apache.regexp.internal.REDebugCompiler;
 
@@ -594,7 +595,7 @@ public class Enum {
      */
 
     public static void checkBackground(Character character) {
-        Dice dice = new Dice();
+        Dice dice = Randomizer.dice;
         int temp;
         switch (character.getCharBackground()) {
             case ACOLYTE:
@@ -861,7 +862,7 @@ public class Enum {
         if(level < 1 || constitution < 1) return -1;
 
         Integer modifier = getModifier(constitution);
-        Dice dice = new Dice(System.nanoTime());
+        Dice dice = Randomizer.dice;
 
         switch(cclass){
             case BARBARIAN:

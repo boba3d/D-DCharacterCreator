@@ -231,10 +231,9 @@ public class Randomizer {
      * @return A random ability score.
      */
     public static Integer getAbilityScore(){
-        Dice d = new Dice(seed);
         Integer[] rolls = new Integer[4];
         for(int i = 0; i < 4; i++)
-            rolls[i] = d.Roll(6, 1);
+            rolls[i] = dice.Roll(6, 1);
         Arrays.sort(rolls);
         return rolls[1]+rolls[2]+rolls[3];
     }
