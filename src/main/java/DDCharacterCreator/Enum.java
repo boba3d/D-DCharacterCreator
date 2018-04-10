@@ -9,7 +9,7 @@ import com.sun.org.apache.regexp.internal.REDebugCompiler;
  * @author Marsol Daman, Lauren Lingeman, Michael Maclean
  * @version 1.0
  * @since 1.0
- * TODO Finish spells, cantrips, features & traits, character backstory, allies & organizations, Additional Features & traits
+ * TODO
  */
 public class Enum {
     public enum EyeColor {
@@ -214,6 +214,8 @@ public class Enum {
             return descrip;
         }
     }
+
+    //
 
     // Enum data type with the backgrounds
     // Name, # of languages,, # of Musical Instruments, Starting Gold, Equipment
@@ -430,6 +432,44 @@ public class Enum {
             return salign;
         }
     }
+    /**
+     * Sorts the Stats to all of the character's skills
+     * @param character object: The current character object with Race already saved
+     */
+    public static void checkStats(Character character){
+        CharacterSkills characterSkills = new CharacterSkills();
+        characterSkills.setCharAcrobatics(character.getCharDexterity());
+        characterSkills.setCharAnimalHandling(character.getCharWisdom());
+        characterSkills.setCharArcana(character.getCharIntelligence());
+        characterSkills.setCharAthletics(character.getCharStrength());
+        characterSkills.setCharDeception(character.getCharCharisma());
+        characterSkills.setCharHistory(character.getCharIntelligence());
+        characterSkills.setCharInsight(character.getCharWisdom());
+        characterSkills.setCharIntimidation(character.getCharCharisma());
+        characterSkills.setCharInvestigation(character.getCharIntelligence());
+        characterSkills.setCharMedicine(character.getCharWisdom());
+        characterSkills.setCharNature(character.getCharIntelligence());
+        characterSkills.setCharPerception(character.getCharWisdom());
+        characterSkills.setCharPerformance(character.getCharCharisma());
+        characterSkills.setCharPersuasion(character.getCharCharisma());
+        characterSkills.setCharReligion(character.getCharIntelligence());
+        characterSkills.setCharSleightOfHand(character.getCharDexterity());
+        characterSkills.setCharStealth(character.getCharDexterity());
+        characterSkills.setCharSurvival(character.getCharWisdom());
+        character.setCharInitiative(character.getCharDexterity());
+        character.setCharSkills(characterSkills);
+
+    }
+    /*
+    /**
+     * Sets the proficiency bonus based on level
+     * @param character object: The current character object with Race already saved
+
+     public static void checkStats(Character character){
+        if(character.getCharLevel()<5)
+            character.setCharP
+     }
+     */
 
     /**
      * Once the Race is selected, this function will modify the character object's skills with
@@ -443,20 +483,28 @@ public class Enum {
                 character.setCharDexterity(+2);
                 character.setCharIntelligence(+1);
                 character.setCharSpeed(30);
+                character.setCharEyeColor(EyeColor.YELLOW);
+                character.setCharAlignment(Alignment.NEUTRALGOOD);
                 break;
             case DARKELF:
                 character.setCharDexterity(+2);
                 character.setCharWisdom(+1);
                 character.setCharSpeed(30);
+                character.setCharEyeColor(EyeColor.RED);
+                character.setCharAlignment(Alignment.CHAOTICEVIL);
                 break;
             case WOODELF:
                 character.setCharDexterity(+2);
                 character.setCharCharisma(+1);
                 character.setCharSpeed(30);
+                character.setCharEyeColor(EyeColor.GREEN);
+                character.setCharAlignment(Alignment.LAWFULNEUTRAL);
                 break;
             case HALFELF:
                 character.setCharCharisma(+2);
                 character.setCharSpeed(30);
+                character.setCharEyeColor(EyeColor.GREEN);
+                character.setCharAlignment(Alignment.CHAOTICNEUTRAL);
                 break;
             case HUMAN:
                 character.setCharDexterity(+1);
@@ -466,51 +514,71 @@ public class Enum {
                 character.setCharStrength(+1);
                 character.setCharIntelligence(+1);
                 character.setCharSpeed(30);
+                character.setCharEyeColor(EyeColor.BROWN);
+                character.setCharAlignment(Alignment.TRUENEUTRAL);
                 break;
             case STOUTHALFLING:
                 character.setCharDexterity(+2);
                 character.setCharConstitution(+1);
                 character.setCharSpeed(25);
+                character.setCharEyeColor(EyeColor.ORANGE);
+                character.setCharAlignment(Alignment.TRUENEUTRAL);
                 break;
             case LIGHTFOOTHALFLING:
                 character.setCharDexterity(+2);
                 character.setCharCharisma(+1);
                 character.setCharSpeed(25);
+                character.setCharEyeColor(EyeColor.BROWN);
+                character.setCharAlignment(Alignment.TRUENEUTRAL);
                 break;
             case HALFORC:
                 character.setCharStrength(+2);
                 character.setCharConstitution(+1);
                 character.setCharSpeed(30);
+                character.setCharEyeColor(EyeColor.BLACK);
+                character.setCharAlignment(Alignment.LAWFULEVIL);
                 break;
             case ROCKGNOME:
                 character.setCharIntelligence(+2);
                 character.setCharConstitution(+1);
                 character.setCharSpeed(25);
+                character.setCharEyeColor(EyeColor.BROWN);
+                character.setCharAlignment(Alignment.CHAOTICGOOD);
                 break;
             case FORESTGNOME:
                 character.setCharIntelligence(+2);
                 character.setCharDexterity(+1);
                 character.setCharSpeed(25);
+                character.setCharEyeColor(EyeColor.GREEN);
+                character.setCharAlignment(Alignment.LAWFULGOOD);
                 break;
             case TIEFLING:
                 character.setCharIntelligence(+2);
                 character.setCharCharisma(+1);
                 character.setCharSpeed(30);
+                character.setCharEyeColor(EyeColor.RED);
+                character.setCharAlignment(Alignment.CHAOTICGOOD);
                 break;
             case HILLDWARF:
                 character.setCharConstitution(+2);
                 character.setCharWisdom(+1);
                 character.setCharSpeed(25);
+                character.setCharEyeColor(EyeColor.GREY);
+                character.setCharAlignment(Alignment.LAWFULNEUTRAL);
                 break;
             case MOUNTAINDWARF:
                 character.setCharStrength(+2);
                 character.setCharConstitution(+2);
                 character.setCharSpeed(25);
+                character.setCharEyeColor(EyeColor.BROWN);
+                character.setCharAlignment(Alignment.LAWFULGOOD);
                 break;
             case DRAGONBORN:
                 character.setCharStrength(+2);
                 character.setCharCharisma(+1);
                 character.setCharSpeed(30);
+                character.setCharEyeColor(EyeColor.YELLOW);
+                character.setCharAlignment(Alignment.LAWFULGOOD);
                 break;
 
         }
@@ -535,6 +603,11 @@ public class Enum {
                 character.setCharFlaws(acolyteFlaws[temp]);
                 character.setCharEquipment(Background.ACOLYTE.equipment);
                 character.setCharGP(Background.ACOLYTE.gold);
+                character.setCharPP(0);
+                character.setCharPP(0);
+                character.setCharSP(0);
+                character.setCharEP(0);
+                character.setCharCP(0);
                 break;
             case CHARLATAN:
                 temp = dice.Roll(3,1);
@@ -544,6 +617,11 @@ public class Enum {
                 character.setCharFlaws(charlatanFlaws[temp]);
                 character.setCharEquipment(Background.CHARLATAN.equipment);
                 character.setCharGP(Background.CHARLATAN.gold);
+                character.setCharPP(0);
+                character.setCharPP(0);
+                character.setCharSP(0);
+                character.setCharEP(0);
+                character.setCharCP(0);
                 break;
             case CRIMINAL:
                 temp = dice.Roll(3,1);
@@ -553,6 +631,11 @@ public class Enum {
                 character.setCharFlaws(criminalFlaws[temp]);
                 character.setCharEquipment(Background.CRIMINAL.equipment);
                 character.setCharGP(Background.CRIMINAL.gold);
+                character.setCharPP(0);
+                character.setCharPP(0);
+                character.setCharSP(0);
+                character.setCharEP(0);
+                character.setCharCP(0);
                 break;
             case ENTERTAINER:
                 temp = dice.Roll(3,1);
@@ -562,6 +645,11 @@ public class Enum {
                 character.setCharFlaws(entertainerFlaws[temp]);
                 character.setCharEquipment(Background.ENTERTAINER.equipment);
                 character.setCharGP(Background.ENTERTAINER.gold);
+                character.setCharPP(0);
+                character.setCharPP(0);
+                character.setCharSP(0);
+                character.setCharEP(0);
+                character.setCharCP(0);
                 break;
 
             case FOLKHERO:
@@ -572,6 +660,11 @@ public class Enum {
                 character.setCharFlaws(folkheroFlaws[temp]);
                 character.setCharEquipment(Background.FOLKHERO.equipment);
                 character.setCharGP(Background.FOLKHERO.gold);
+                character.setCharPP(0);
+                character.setCharPP(0);
+                character.setCharSP(0);
+                character.setCharEP(0);
+                character.setCharCP(0);
                 break;
 
             case GUILDARTISAN:
@@ -582,6 +675,11 @@ public class Enum {
                 character.setCharFlaws(guildartFlaws[temp]);
                 character.setCharEquipment(Background.GUILDARTISAN.equipment);
                 character.setCharGP(Background.GUILDARTISAN.gold);
+                character.setCharPP(0);
+                character.setCharPP(0);
+                character.setCharSP(0);
+                character.setCharEP(0);
+                character.setCharCP(0);
                 break;
             case HERMIT:
                 temp = dice.Roll(3,1);
@@ -591,6 +689,11 @@ public class Enum {
                 character.setCharFlaws(hermitFlaws[temp]);
                 character.setCharEquipment(Background.HERMIT.equipment);
                 character.setCharGP(Background.HERMIT.gold);
+                character.setCharPP(0);
+                character.setCharPP(0);
+                character.setCharSP(0);
+                character.setCharEP(0);
+                character.setCharCP(0);
                 break;
             case NOBLE:
                 temp = dice.Roll(3,1);
@@ -600,6 +703,10 @@ public class Enum {
                 character.setCharFlaws(nobleFlaws[temp]);
                 character.setCharEquipment(Background.NOBLE.equipment);
                 character.setCharGP(Background.NOBLE.gold);
+                character.setCharPP(0);
+                character.setCharSP(0);
+                character.setCharEP(0);
+                character.setCharCP(0);
                 break;
             case OUTLANDER:
                 temp = dice.Roll(3,1);
@@ -609,6 +716,10 @@ public class Enum {
                 character.setCharFlaws(outlanderFlaws[temp]);
                 character.setCharEquipment(Background.OUTLANDER.equipment);
                 character.setCharGP(Background.OUTLANDER.gold);
+                character.setCharPP(0);
+                character.setCharSP(0);
+                character.setCharEP(0);
+                character.setCharCP(0);
                 break;
             case SAGE:
                 temp = dice.Roll(3,1);
@@ -618,7 +729,10 @@ public class Enum {
                 character.setCharFlaws(sageFlaws[temp]);
                 character.setCharEquipment(Background.SAGE.equipment);
                 character.setCharGP(Background.SAGE.gold);
-
+                character.setCharPP(0);
+                character.setCharSP(0);
+                character.setCharEP(0);
+                character.setCharCP(0);
                 break;
             case SAILOR:
                 temp = dice.Roll(3,1);
@@ -628,6 +742,10 @@ public class Enum {
                 character.setCharFlaws(sailorFlaws[temp]);
                 character.setCharEquipment(Background.SAILOR.equipment);
                 character.setCharGP(Background.SAILOR.gold);
+                character.setCharPP(0);
+                character.setCharSP(0);
+                character.setCharEP(0);
+                character.setCharCP(0);
                 break;
             case SOLDIER:
                 temp = dice.Roll(3,1);
@@ -637,12 +755,14 @@ public class Enum {
                 character.setCharFlaws(soldierFlaws[temp]);
                 character.setCharEquipment(Background.SOLDIER.equipment);
                 character.setCharGP(Background.SOLDIER.gold);
+                character.setCharPP(0);
+                character.setCharSP(0);
+                character.setCharEP(0);
+                character.setCharCP(0);
                 break;
         }
     }
-    /** Let's roll the Die!
-     *
-     */
+
 
     /**
      * Once the class is selected, this function will modify the character object's skills, hit die, and saving throws
@@ -689,6 +809,13 @@ public class Enum {
                 break;
         }
     }
+    /**
+     * Once the class is selected, this function will modify the character object's skills, hit die, and saving throws
+     * with the appropriate data for each specific class.
+     * @param character object: The current character object
+     */
+
+
 
     /**
      * Calculate experience points from the 5e Character Advancement table.

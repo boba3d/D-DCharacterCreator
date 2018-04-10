@@ -3,18 +3,15 @@ package DDCharacterCreator.Controller;
 
 import DDCharacterCreator.Character;
 import DDCharacterCreator.Dice;
+import DDCharacterCreator.Enum;
 import DDCharacterCreator.Main;
 import DDCharacterCreator.ScreensController;
-import DDCharacterCreator.Utilities.Randomizer;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXSlider;
 import com.jfoenix.controls.JFXTextArea;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.net.URL;
 import java.util.ResourceBundle;
 
@@ -29,7 +26,7 @@ public class DiceController extends ControlledScreen implements Initializable, M
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        setInfoBoxText("Dice Rolls for Stats!\n "+"Here we will roll 6 sets of 4-Sided Die!");
+        setInfoBoxText("Dice Rolls for Stats!\n "+"Here we will roll 3 6-Sided Die six times!");
         diceButton.setOnAction(new EventHandler<javafx.event.ActionEvent>() {
             @Override
             public void handle(javafx.event.ActionEvent event) {
@@ -50,7 +47,7 @@ public class DiceController extends ControlledScreen implements Initializable, M
     @Override
     public void forwardFunction() {
         Main.getChar().setCharLevel((int) levelSlider.getValue());
-
+        Enum.checkStats(Main.getChar());
         getScreenParent().setScene(ScreensController.CLASS);
     }
 
@@ -70,6 +67,7 @@ public class DiceController extends ControlledScreen implements Initializable, M
     public void setInfoBoxText(String text) {
         DiceBox.setText(text);
     }
+
     public void rollDie(Character character){
         Dice die = new Dice();
         double temp;
