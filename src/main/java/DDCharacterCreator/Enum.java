@@ -474,111 +474,112 @@ public class Enum {
     /**
      * Once the Race is selected, this function will modify the character object's skills with
      * The appropriate stat boosts for each specific race.
-     * @param character object: The current character object with Race already saved
+     * @param c object: The current character object with Race already saved
      */
-    public static void checkRace(Character character) {
+    public static void checkRace(Character c) {
+        CharacterSkills s = new CharacterSkills();
 
-        switch (character.getCharRace()) {
+        switch (c.getCharRace()) {
             case HIGHELF:
-                character.setCharDexterity(+2);
-                character.setCharIntelligence(+1);
-                character.setCharSpeed(30);
-                character.setCharEyeColor(EyeColor.YELLOW);
-                character.setCharAlignment(Alignment.NEUTRALGOOD);
+                c.setCharDexterity(c.getCharDexterity()+2);
+                c.setCharIntelligence(c.getCharIntelligence()+1);
+                c.setCharSpeed(30);
+                c.setCharEyeColor(EyeColor.YELLOW);
+                c.setCharAlignment(Alignment.NEUTRALGOOD);
                 break;
             case DARKELF:
-                character.setCharDexterity(+2);
-                character.setCharWisdom(+1);
-                character.setCharSpeed(30);
-                character.setCharEyeColor(EyeColor.RED);
-                character.setCharAlignment(Alignment.CHAOTICEVIL);
+                c.setCharDexterity(c.getCharDexterity()+2);
+                c.setCharWisdom(c.getCharWisdom()+1);
+                c.setCharSpeed(30);
+                c.setCharEyeColor(EyeColor.RED);
+                c.setCharAlignment(Alignment.CHAOTICEVIL);
                 break;
             case WOODELF:
-                character.setCharDexterity(+2);
-                character.setCharCharisma(+1);
-                character.setCharSpeed(30);
-                character.setCharEyeColor(EyeColor.GREEN);
-                character.setCharAlignment(Alignment.LAWFULNEUTRAL);
+                c.setCharDexterity(c.getCharDexterity()+2);
+                c.setCharCharisma(c.getCharCharisma()+1);
+                c.setCharSpeed(30);
+                c.setCharEyeColor(EyeColor.GREEN);
+                c.setCharAlignment(Alignment.LAWFULNEUTRAL);
                 break;
             case HALFELF:
-                character.setCharCharisma(+2);
-                character.setCharSpeed(30);
-                character.setCharEyeColor(EyeColor.GREEN);
-                character.setCharAlignment(Alignment.CHAOTICNEUTRAL);
+                c.setCharCharisma(c.getCharCharisma()+2);
+                c.setCharSpeed(30);
+                c.setCharEyeColor(EyeColor.GREEN);
+                c.setCharAlignment(Alignment.CHAOTICNEUTRAL);
                 break;
             case HUMAN:
-                character.setCharDexterity(+1);
-                character.setCharCharisma(+1);
-                character.setCharConstitution(+1);
-                character.setCharWisdom(+1);
-                character.setCharStrength(+1);
-                character.setCharIntelligence(+1);
-                character.setCharSpeed(30);
-                character.setCharEyeColor(EyeColor.BROWN);
-                character.setCharAlignment(Alignment.TRUENEUTRAL);
+                c.setCharDexterity(c.getCharDexterity()+1);
+                c.setCharCharisma(c.getCharCharisma()+1);
+                c.setCharConstitution(c.getCharConstitution()+1);
+                c.setCharWisdom(c.getCharWisdom()+1);
+                c.setCharStrength(c.getCharStrength()+1);
+                c.setCharIntelligence(c.getCharIntelligence()+1);
+                c.setCharSpeed(30);
+                c.setCharEyeColor(EyeColor.BROWN);
+                c.setCharAlignment(Alignment.TRUENEUTRAL);
                 break;
             case STOUTHALFLING:
-                character.setCharDexterity(+2);
-                character.setCharConstitution(+1);
-                character.setCharSpeed(25);
-                character.setCharEyeColor(EyeColor.ORANGE);
-                character.setCharAlignment(Alignment.TRUENEUTRAL);
+                c.setCharDexterity(c.getCharDexterity()+2);
+                c.setCharConstitution(c.getCharConstitution()+1);
+                c.setCharSpeed(25);
+                c.setCharEyeColor(EyeColor.ORANGE);
+                c.setCharAlignment(Alignment.TRUENEUTRAL);
                 break;
             case LIGHTFOOTHALFLING:
-                character.setCharDexterity(+2);
-                character.setCharCharisma(+1);
-                character.setCharSpeed(25);
-                character.setCharEyeColor(EyeColor.BROWN);
-                character.setCharAlignment(Alignment.TRUENEUTRAL);
+                c.setCharDexterity(c.getCharDexterity()+2);
+                c.setCharCharisma(c.getCharCharisma()+1);
+                c.setCharSpeed(25);
+                c.setCharEyeColor(EyeColor.BROWN);
+                c.setCharAlignment(Alignment.TRUENEUTRAL);
                 break;
             case HALFORC:
-                character.setCharStrength(+2);
-                character.setCharConstitution(+1);
-                character.setCharSpeed(30);
-                character.setCharEyeColor(EyeColor.BLACK);
-                character.setCharAlignment(Alignment.LAWFULEVIL);
+                c.setCharStrength(c.getCharStrength()+2);
+                c.setCharConstitution(c.getCharConstitution()+1);
+                c.setCharSpeed(30);
+                c.setCharEyeColor(EyeColor.BLACK);
+                c.setCharAlignment(Alignment.LAWFULEVIL);
                 break;
             case ROCKGNOME:
-                character.setCharIntelligence(+2);
-                character.setCharConstitution(+1);
-                character.setCharSpeed(25);
-                character.setCharEyeColor(EyeColor.BROWN);
-                character.setCharAlignment(Alignment.CHAOTICGOOD);
+                c.setCharIntelligence(c.getCharIntelligence()+2);
+                c.setCharConstitution(c.getCharConstitution()+1);
+                c.setCharSpeed(25);
+                c.setCharEyeColor(EyeColor.BROWN);
+                c.setCharAlignment(Alignment.CHAOTICGOOD);
                 break;
             case FORESTGNOME:
-                character.setCharIntelligence(+2);
-                character.setCharDexterity(+1);
-                character.setCharSpeed(25);
-                character.setCharEyeColor(EyeColor.GREEN);
-                character.setCharAlignment(Alignment.LAWFULGOOD);
+                c.setCharIntelligence(c.getCharIntelligence()+2);
+                c.setCharDexterity(c.getCharDexterity()+1);
+                c.setCharSpeed(25);
+                c.setCharEyeColor(EyeColor.GREEN);
+                c.setCharAlignment(Alignment.LAWFULGOOD);
                 break;
             case TIEFLING:
-                character.setCharIntelligence(+2);
-                character.setCharCharisma(+1);
-                character.setCharSpeed(30);
-                character.setCharEyeColor(EyeColor.RED);
-                character.setCharAlignment(Alignment.CHAOTICGOOD);
+                c.setCharIntelligence(c.getCharIntelligence()+2);
+                c.setCharCharisma(c.getCharCharisma()+1);
+                c.setCharSpeed(30);
+                c.setCharEyeColor(EyeColor.RED);
+                c.setCharAlignment(Alignment.CHAOTICGOOD);
                 break;
             case HILLDWARF:
-                character.setCharConstitution(+2);
-                character.setCharWisdom(+1);
-                character.setCharSpeed(25);
-                character.setCharEyeColor(EyeColor.GREY);
-                character.setCharAlignment(Alignment.LAWFULNEUTRAL);
+                c.setCharConstitution(c.getCharConstitution()+2);
+                c.setCharWisdom(c.getCharWisdom()+1);
+                c.setCharSpeed(25);
+                c.setCharEyeColor(EyeColor.GREY);
+                c.setCharAlignment(Alignment.LAWFULNEUTRAL);
                 break;
             case MOUNTAINDWARF:
-                character.setCharStrength(+2);
-                character.setCharConstitution(+2);
-                character.setCharSpeed(25);
-                character.setCharEyeColor(EyeColor.BROWN);
-                character.setCharAlignment(Alignment.LAWFULGOOD);
+                c.setCharStrength(c.getCharStrength()+2);
+                c.setCharConstitution(c.getCharConstitution()+2);
+                c.setCharSpeed(25);
+                c.setCharEyeColor(EyeColor.BROWN);
+                c.setCharAlignment(Alignment.LAWFULGOOD);
                 break;
             case DRAGONBORN:
-                character.setCharStrength(+2);
-                character.setCharCharisma(+1);
-                character.setCharSpeed(30);
-                character.setCharEyeColor(EyeColor.YELLOW);
-                character.setCharAlignment(Alignment.LAWFULGOOD);
+                c.setCharStrength(c.getCharStrength()+2);
+                c.setCharCharisma(c.getCharCharisma()+1);
+                c.setCharSpeed(30);
+                c.setCharEyeColor(EyeColor.YELLOW);
+                c.setCharAlignment(Alignment.LAWFULGOOD);
                 break;
 
         }
@@ -765,7 +766,7 @@ public class Enum {
 
 
     /**
-     * Once the class is selected, this function will modify the character object's skills, hit die, and saving throws
+     * Once the class is selected, this function will modify the character object's hit die and saving throws
      * with the appropriate data for each specific class.
      * @param character object: The current character object with class already saved
      */
@@ -809,13 +810,6 @@ public class Enum {
                 break;
         }
     }
-    /**
-     * Once the class is selected, this function will modify the character object's skills, hit die, and saving throws
-     * with the appropriate data for each specific class.
-     * @param character object: The current character object
-     */
-
-
 
     /**
      * Calculate experience points from the 5e Character Advancement table.
@@ -835,7 +829,7 @@ public class Enum {
         if(level <= 17) return 165000 + 30000 * (level - 15);
         if(level == 18) return 265000;
         if(level == 19) return 305000;
-        else return 335000 + 30000 * (level - 20);
+        return 335000 + 30000 * (level - 20);
     }
 
     /**
@@ -846,6 +840,13 @@ public class Enum {
     public static Integer getModifier(Integer score){
         return (score - 10) / 2;
     }
+
+    /**
+     * Given a character level, calculate the proficiency bonus a character would receive for a proficient skill
+     * @param level The character's level
+     * @return The skill bonus
+     */
+    public static Integer getProficiencyBonus(Integer level) { return (int)Math.ceil(level / 4) + 1; }
 
     /**
      * Calculate the number of hit points a character should have, based on class and the given

@@ -352,14 +352,13 @@ public class Randomizer {
         c.setCharWisdom(getAbilityScore());
         c.setCharCharisma(getAbilityScore());
 
-        // TODO Character skills, equipment, attacks & spellcasting, treasure, symbol, backstory, addt'l features
         c.setCharArmorClass(Enum.getArmorClass(c.getCharDexterity()));
         c.setCharInitiative(c.getCharDexterity());
         c.setCharSpeed(c.getCharRace().getSpeed());
         c.setCharHitPointMaximum(Enum.getHitPoints(c.getCharClass(),  c.getCharLevel(), c.getCharConstitution()));
-        CharacterSkills skills = new CharacterSkills();
-        // TODO set skills
-        c.setCharSkills(skills);
+
+        // get various skill bonuses based on race and level
+        c.setCharSkills(CharacterSkills.getSkills(c));
 
         // appearance
         c.setCharAge(getAge(c.getCharRace()));
@@ -367,9 +366,16 @@ public class Randomizer {
         c.setCharWeight(getWeight(c.getCharRace()));
         c.setCharEyeColor(getEyeColor());
 
+        // hit die, saving throws
         Enum.checkClass(c);
+
+        // Character skills
+        // Set speed
         Enum.checkRace(c);
+
+        // Traits, ideals, bonds, flaws, GP, PP, SP, EP, CP
         Enum.checkBackground(c);
+
         return c;
     }
 

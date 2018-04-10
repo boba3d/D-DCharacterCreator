@@ -5,31 +5,31 @@ import java.io.Serializable;
 public class Character implements Serializable{
     private static final long serialVersionUID = 1L;
     //Basic info
-        private String charName; //
-        private Enum.Class charClass; //
-        private Integer charLevel; //
-        private Enum.Gender charGender; //
+        private String charName;
+        private Enum.Class charClass;
+        private Integer charLevel;
+        private Enum.Gender charGender;
         private Enum.Background charBackground;
-        private Enum.Race charRace; //
-        private Enum.Alignment charAlignment; //
-        private Integer charExperiencePoints; //
-        private String charPlayerName; //
+        private Enum.Race charRace;
+        private Enum.Alignment charAlignment;
+        private Integer charExperiencePoints;
+        private String charPlayerName;
 
     //Saving Throws
-        private Integer charStrength; //
-        private Integer charDexterity; //
-        private Integer charConstitution; //
-        private Integer charIntelligence; //
-        private Integer charWisdom; //
-        private Integer charCharisma; //
+        private Integer charStrength;
+        private Integer charDexterity;
+        private Integer charConstitution;
+        private Integer charIntelligence;
+        private Integer charWisdom;
+        private Integer charCharisma;
 
-        private DDCharacterCreator.CharacterSkills charSkills; //
+        private DDCharacterCreator.CharacterSkills charSkills;
 
-        private Integer charArmorClass; //
-        private Integer charInitiative; //
-        private Integer charSpeed; //
-        private Integer charHitPointMaximum; //
-        private Integer charHitDice; //
+        private Integer charArmorClass;
+        private Integer charInitiative;
+        private Integer charSpeed;
+        private Integer charHitPointMaximum;
+        private Integer charHitDice;
 
     //Attacks & spellcasting
         private String charATKName;
@@ -40,28 +40,28 @@ public class Character implements Serializable{
         private Integer charCP;
         private Integer charSP;
         private Integer charEP;
-        private Integer charGP; //
+        private Integer charGP;
         private Integer charPP;
-        private String charEquipment; //
+        private String charEquipment;
 
     //Character appearance
         private String charAppearance; //reference to db
-        private Integer charAge; //
-        private Integer charHeight; //
-        private Integer charWeight; //
-        private Enum.EyeColor charEyeColor; //
-        private Enum charSkin;
-        private Enum charHair;
-        private String charSymbol;
-        private String charBackstory; //
+        private Integer charAge;
+        private Integer charHeight;
+        private Integer charWeight;
+        private Enum.EyeColor charEyeColor;
+        //private Enum charSkin;
+        //private Enum charHair;
+        //private String charSymbol;
+        private String charBackstory;
         private String charAdditionalFeaturesTraits;
         private String Treasure;
 
 
-        private String charPersonalityTraits; //
-        private String charIdeals; //
-        private String charBonds; //
-        private String charFlaws; //
+        private String charPersonalityTraits;
+        private String charIdeals;
+        private String charBonds;
+        private String charFlaws; 
 
         //**************************************************************** GETTER AND SETTERS ***************************************
 
@@ -334,14 +334,9 @@ public class Character implements Serializable{
     public void setCharEyeColor(Enum.EyeColor charEyeColor) {
         this.charEyeColor = charEyeColor;
     }
+    //public Enum getCharSkin() { return charSkin; }
 
-    public Enum getCharSkin() {
-        return charSkin;
-    }
-
-    public void setCharSkin(Enum charSkin) {
-        this.charSkin = charSkin;
-    }
+    //public void setCharSkin(Enum charSkin) { this.charSkin = charSkin; }
 
     public void setCharPersonalityTraits(String charPersonalityTraits) { this.charPersonalityTraits = charPersonalityTraits; }
 
@@ -359,21 +354,13 @@ public class Character implements Serializable{
 
     public String getCharFlaws() { return charFlaws; }
 
-    public Enum getCharHair() {
-        return charHair;
-    }
+    //public Enum getCharHair() {return charHair; }
 
-    public void setCharHair(Enum charHair) {
-        this.charHair = charHair;
-    }
+   // public void setCharHair(Enum charHair) {this.charHair = charHair; }
 
-    public String getCharSymbol() {
-        return charSymbol;
-    }
+    //public String getCharSymbol() {return charSymbol;}
 
-    public void setCharSymbol(String charSymbol) {
-        this.charSymbol = charSymbol;
-    }
+    //public void setCharSymbol(String charSymbol) { this.charSymbol = charSymbol; }
 
     public String getCharBackstory() {
         return charBackstory;
