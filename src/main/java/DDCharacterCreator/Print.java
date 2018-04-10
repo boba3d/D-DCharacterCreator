@@ -109,48 +109,41 @@ public class Print {
             fields.get("Height").setFontSize(14);
             fields.get("Height").setValue(myChar.getCharHeight().toString());
         }
-        if (myChar.getCharSkin() != null) {//TODO
-            fields.get("Skin").setFontSize(14);
-            //fields.get("Skin").setValue(myChar.getCharSkin());
-        }
+
         if (myChar.getCharWeight() != null) { // TODO reformatting
             fields.get("Weight").setFontSize(14);
             fields.get("Weight").setValue(myChar.getCharWeight().toString());
-        }
-        if (myChar.getCharHair() != null) { //TODO
-            fields.get("Hair").setFontSize(14);
-            //fields.get("Hair").setValue(myChar.getCharHair());
         }
 
         //Saving Throws
         if (myChar.getCharStrength() != null) {
             fields.get("Strength1").setValue(myChar.getCharStrength().toString());
-            fields.get("Strength2").setValue(Integer.toString(myChar.getCharStrength() - 10));
+            fields.get("Strength2").setValue(Integer.toString(myChar.getCharStrength()));
             fields.get("ST_Strength").setValue(myChar.getCharStrength().toString());
         }
         if (myChar.getCharDexterity() != null) {
             fields.get("Dexterity1").setValue(myChar.getCharDexterity().toString());
-            fields.get("Dexterity2").setValue(Integer.toString(myChar.getCharDexterity() - 10));
+            fields.get("Dexterity2").setValue(Integer.toString(myChar.getCharDexterity()));
             fields.get("ST_Dexterity").setValue(myChar.getCharDexterity().toString());
         }
         if (myChar.getCharConstitution() != null) {
             fields.get("Constitution1").setValue(myChar.getCharConstitution().toString());
-            fields.get("Constitution2").setValue(Integer.toString(myChar.getCharConstitution() - 10));
+            fields.get("Constitution2").setValue(Integer.toString(myChar.getCharConstitution()));
             fields.get("ST_Constitution").setValue(myChar.getCharConstitution().toString());
         }
         if (myChar.getCharIntelligence() != null) {
             fields.get("Intelligence1").setValue(myChar.getCharIntelligence().toString());
-            fields.get("Intelligence2").setValue(Integer.toString(myChar.getCharIntelligence() - 10));
+            fields.get("Intelligence2").setValue(Integer.toString(myChar.getCharIntelligence()));
             fields.get("ST_Intelligence").setValue(myChar.getCharIntelligence().toString());
         }
         if (myChar.getCharWisdom() != null) {
             fields.get("Wisdom1").setValue(myChar.getCharWisdom().toString());
-            fields.get("Wisdom2").setValue(Integer.toString(myChar.getCharWisdom() - 10));
+            fields.get("Wisdom2").setValue(Integer.toString(myChar.getCharWisdom()));
             fields.get("ST_Wisdom").setValue(myChar.getCharWisdom().toString());
         }
         if (myChar.getCharCharisma() != null) {
             fields.get("Charisma1").setValue(myChar.getCharCharisma().toString());
-            fields.get("Charisma2").setValue(Integer.toString(myChar.getCharCharisma() - 10));
+            fields.get("Charisma2").setValue(Integer.toString(myChar.getCharCharisma()));
             fields.get("ST_Charisma").setValue(myChar.getCharCharisma().toString());
         }
 
