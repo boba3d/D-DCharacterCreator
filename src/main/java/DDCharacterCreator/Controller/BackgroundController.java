@@ -46,6 +46,7 @@ public class BackgroundController extends ControlledScreen implements Initializa
         Main.getChar().setCharBackground(Enum.Background.valueOf(options[getSelected()].toUpperCase().replace(" ", "")));
         Enum.checkBackground(Main.getChar());
         getScreenParent().setScene(ScreensController.AGEWEIGHTHEIGHT);
+        Enum.checkStats(Main.getChar());
     }
 
     @Override

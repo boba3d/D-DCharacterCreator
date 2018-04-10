@@ -47,7 +47,6 @@ public class DiceController extends ControlledScreen implements Initializable, M
     @Override
     public void forwardFunction() {
         Main.getChar().setCharLevel((int) levelSlider.getValue());
-        Enum.checkStats(Main.getChar());
         getScreenParent().setScene(ScreensController.CLASS);
     }
 

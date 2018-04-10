@@ -483,6 +483,7 @@ public class Enum {
             case HIGHELF:
                 c.setCharDexterity(c.getCharDexterity()+2);
                 c.setCharIntelligence(c.getCharIntelligence()+1);
+                System.out.println(c.getCharIntelligence());
                 c.setCharSpeed(30);
                 c.setCharEyeColor(EyeColor.YELLOW);
                 c.setCharAlignment(Alignment.NEUTRALGOOD);
