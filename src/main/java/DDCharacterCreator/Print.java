@@ -1,5 +1,6 @@
 package DDCharacterCreator;
 
+import DDCharacterCreator.Utilities.Format;
 import com.itextpdf.forms.PdfAcroForm;
 import com.itextpdf.forms.fields.PdfFormField;
 import com.itextpdf.io.image.ImageData;
@@ -31,10 +32,17 @@ public class Print {
             return;
         }
 
-        String fileName = myChar.getCharPlayerName();
-        String home = System.getProperty("user.home");
-        String destination = new File(home+"/Downloads/D-DCharachterSheet-"+ fileName +".pdf").toString();
-
+        String destination;
+        if(SaveLocation == null){
+            String fileName = myChar.getCharPlayerName();
+            String home = System.getProperty("user.home");
+            destination = new File(home+"/Downloads/D-DCharachterSheet-"+ fileName +".pdf").toString();
+        }
+        else{
+            destination = SaveLocation;
+            if(destination.substring(destination.length() - 5) != ".pdf")
+                destination += ".pdf";
+        }
 
         try {
             System.out.println(destination);
@@ -107,12 +115,12 @@ public class Print {
         }
         if (myChar.getCharHeight() != null) {
             fields.get("Height").setFontSize(14);
-            fields.get("Height").setValue(myChar.getCharHeight().toString());
+            fields.get("Height").setValue(Format.convertInchesToFtIn(myChar.getCharHeight()));
         }
 
-        if (myChar.getCharWeight() != null) { // TODO reformatting
+        if (myChar.getCharWeight() != null) { 
             fields.get("Weight").setFontSize(14);
-            fields.get("Weight").setValue(myChar.getCharWeight().toString());
+            fields.get("Weight").setValue(Format.convertInchesToFtIn(myChar.getCharWeight()));
         }
 
         //Saving Throws

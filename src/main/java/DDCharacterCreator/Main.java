@@ -2,6 +2,9 @@ package DDCharacterCreator;
 
 import javafx.application.Application;
 import javafx.stage.Stage;
+import javafx.stage.FileChooser;
+
+import java.io.File;
 
 
 public class Main extends Application {
@@ -35,7 +38,10 @@ public class Main extends Application {
 
     static public void PrintCharacter(){
         Print print = new Print();
-        print.printChar(mycharacter, null);
+        FileChooser fc = new FileChooser();
+        fc.setTitle("Save the Character Sheet");
+        File f = fc.showSaveDialog(null);
+        print.printChar(mycharacter, f == null ? null : f.toString());
         DB.CloseConnectionToDB();
     }
 
