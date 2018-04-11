@@ -40,7 +40,7 @@ public class Print {
         }
         else{
             destination = SaveLocation;
-            if(destination.substring(destination.length() - 5) != ".pdf")
+            if(!destination.substring(destination.length() - 4).equals(".pdf"))
                 destination += ".pdf";
         }
 
