@@ -22,10 +22,14 @@ public class CharacterTest {
 
         c.setCharClass(Enum.Class.MONK);
         Enum.checkClass(c);
-
         Assert.assertEquals(Enum.Class.MONK,c.getCharClass());
+
         Assert.assertEquals(8,(int)c.getCharHitDice());
         Assert.assertTrue(true);
+
+        c.setCharRace(Enum.Race.HUMAN);
+        Enum.checkRace(c);
+        Assert.assertEquals(Enum.Race.HUMAN,c.getCharRace());
     }
 }
 

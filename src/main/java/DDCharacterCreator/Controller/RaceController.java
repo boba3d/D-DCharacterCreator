@@ -62,7 +62,7 @@ public class RaceController extends ControlledScreen implements Initializable, M
 
     @Override
     public void randomizeAll() {
-        if(!disableRandom)
+        //if(!disableRandom)
             randomizeRace();
     }
 
@@ -72,10 +72,13 @@ public class RaceController extends ControlledScreen implements Initializable, M
     }
 
     private int getSelected(Enum.Race r) {
-        for(Integer i = 0; i < options.length; i++)
-            if (options[i].toUpperCase().replace(" ", "").equals(r.name()))
-                return i;
-        return 0; // hill dwarf city
+        int a = 0;
+        for(int i = 0; i < options.length; i++)
+            if (options[i].equals(r.toString())) {
+                a = i;
+            }
+        return a;
+
     }
 
     /* GETTERS */

@@ -194,7 +194,7 @@ public class Randomizer {
         return randomize(1, 20);
     }
 
-    public static Enum.Background getCharBackground(Enum.Race race, Enum.Class clss) { return null; }
+    public static Enum.Background getCharBackground() { return Enum.Background.values()[randomize(Enum.Background.values().length - 1)]; }
 
     /**
      * @return A random character class.

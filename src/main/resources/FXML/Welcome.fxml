@@ -3,15 +3,21 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.layout.*?>
-<AnchorPane prefHeight="600.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/8.0.111"
-            xmlns:fx="http://javafx.com/fxml/1" fx:controller="DDCharacterCreator.Controller.WelcomeController">
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="600.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="DDCharacterCreator.Controller.WelcomeController">
    <children>
       <AnchorPane layoutX="226.0" layoutY="65.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
-            <ComboBox fx:id="raceBox" layoutX="191.0" layoutY="233.0" onAction="#setRaceDescrip" prefWidth="150.0" promptText="Race" />
+            <ComboBox fx:id="raceBox" layoutX="191.0" layoutY="233.0" prefWidth="150.0" promptText="Race" />
             <Label fx:id="raceDescrip" layoutX="507.0" layoutY="15.0" prefHeight="575.0" prefWidth="479.0" text="Race Description" textAlignment="JUSTIFY" wrapText="true" />
-            <Button fx:id="raceSubmit" layoutX="276.0" layoutY="285.0" mnemonicParsing="false" onAction="#readRaceSubmit" text="Submit" />
+            <Button fx:id="raceSubmit" layoutX="276.0" layoutY="285.0" mnemonicParsing="false" text="Submit" />
+            <Button fx:id="classSubmit" layoutX="277.0" layoutY="419.0" mnemonicParsing="false" text="Submit" />
+            <ComboBox fx:id="classBox" layoutX="191.0" layoutY="367.0" prefWidth="150.0" promptText="Class" />
+            <ComboBox fx:id="cantripBox" layoutX="191.0" layoutY="116.0" prefWidth="150.0" promptText="Cantrips" />
+            <Button fx:id="cantripSubmit" layoutX="278.0" layoutY="166.0" mnemonicParsing="false"  text="Submit" />
+            <ListView fx:id="cantripList" layoutX="407.0" layoutY="24.0" prefHeight="200.0" prefWidth="200.0" />
          </children></AnchorPane>
    </children>
 </AnchorPane>

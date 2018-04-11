@@ -248,7 +248,7 @@ public class Enum {
         this.equipment=equipment;
         }
 
-        public String getName() {
+        public String toString() {
             return name;
         }
 

@@ -31,10 +31,14 @@ public class Character implements Serializable{
         private Integer charHitPointMaximum;
         private Integer charHitDice;
 
-    //Attacks & spellcasting
+    //Attacks
         private String charATKName;
         private Integer charATKBonus;
         private String charATKDamageType;
+
+    //Spells
+        private DDCharacterCreator.CharacterSpells charSpells;
+
 
     //Equipment
         private Integer charCP;
@@ -190,6 +194,10 @@ public class Character implements Serializable{
     public void setCharSkills(DDCharacterCreator.CharacterSkills charSkills) {
         this.charSkills = charSkills;
     }
+
+    public DDCharacterCreator.CharacterSpells getCharSpells() {return charSpells;}
+
+    public void setCharSpells(DDCharacterCreator.CharacterSpells charSpells) {this.charSpells = charSpells;}
 
     public Integer getCharArmorClass() {
         return charArmorClass;
@@ -385,4 +393,5 @@ public class Character implements Serializable{
     public void setTreasure(String treasure) {
         Treasure = treasure;
     }
+
 }

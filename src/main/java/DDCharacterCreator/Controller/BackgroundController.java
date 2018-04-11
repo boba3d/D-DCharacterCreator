@@ -4,6 +4,7 @@ import DDCharacterCreator.Enum;
 import DDCharacterCreator.Main;
 import DDCharacterCreator.ScreensController;
 import DDCharacterCreator.Utilities.Format;
+import DDCharacterCreator.Utilities.Randomizer;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXTextArea;
 import javafx.fxml.FXML;
@@ -51,7 +52,23 @@ public class BackgroundController extends ControlledScreen implements Initializa
 
     @Override
     public void randomizeAll() {
-        System.out.println("Rand test");
+        randomizeBackground();
+    }
+
+    public void randomizeBackground() {
+        Enum.Background b = Randomizer.getCharBackground();
+        setSelected(getSelected(b));
+    }
+
+
+    private int getSelected(Enum.Background b) {
+        int a = 0;
+        for(int i = 0; i < options.length; i++)
+            if (options[i].equals(b.toString())) {
+                a = i;
+            }
+        return a;
+
     }
 
     /* GETTERS */

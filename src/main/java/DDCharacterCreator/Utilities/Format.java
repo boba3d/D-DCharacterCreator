@@ -75,7 +75,7 @@ public class Format {
         String[][] returnArrays = new String[2][backgrounds.length];
 
         for (int i = 0; i < backgrounds.length; i++) {
-            returnArrays[0][i] = backgrounds[i].getName();
+            returnArrays[0][i] = backgrounds[i].toString();
             returnArrays[1][i] = "Number of Languages: " + backgrounds[i].getLanguages() +
                     "\nNumber of Musical Instruments: " + backgrounds[i].getMusical_instruments() +
                     "\nStarting Gold: " + backgrounds[i].getGold() +

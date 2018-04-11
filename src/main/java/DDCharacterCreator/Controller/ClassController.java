@@ -4,6 +4,7 @@ import DDCharacterCreator.Enum;
 import DDCharacterCreator.Main;
 import DDCharacterCreator.ScreensController;
 import DDCharacterCreator.Utilities.Format;
+import DDCharacterCreator.Utilities.Randomizer;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXTextArea;
 import javafx.fxml.FXML;
@@ -50,7 +51,23 @@ public class ClassController extends ControlledScreen implements Initializable, 
 
     @Override
     public void randomizeAll() {
-        System.out.println("Rand test");
+        randomizeClass();
+    }
+
+    public void randomizeClass() {
+        Enum.Class c = Randomizer.getCharClass();
+        setSelected(getSelected(c));
+    }
+
+
+    private int getSelected(Enum.Class c) {
+        int a = 0;
+        for(int i = 0; i < options.length; i++)
+            if (options[i].equals(c.toString())) {
+                a = i;
+            }
+        return a;
+
     }
 
     /* GETTERS */
