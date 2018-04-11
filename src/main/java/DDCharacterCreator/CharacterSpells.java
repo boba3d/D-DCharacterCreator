@@ -8,7 +8,8 @@ import java.util.ArrayList;
 // and methods to determine number of spells based on character's class and level
 
 // Note: this means a character's CLASS and LEVEL must be selected first
-public class CharacterSpells extends Character implements Serializable {
+public class
+CharacterSpells extends Character implements Serializable {
 
     // Initialized with random values for testing purposes
     // to print out the array:

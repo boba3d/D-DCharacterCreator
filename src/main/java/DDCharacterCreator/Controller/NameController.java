@@ -14,9 +14,9 @@ public class NameController extends ControlledScreen implements MenuController {
     @Override
     public void forwardFunction() {
         if (!getCharacterName().isEmpty() && !getPlayerName().isEmpty()) {
-            if (getCharacterName().length() < 15)
+            if (getCharacterName().length() < 20)
                 Main.mycharacter.setCharName(getCharacterName());
-            if (getPlayerName().length() < 15)
+            if (getPlayerName().length() < 20)
                 Main.mycharacter.setCharPlayerName(getPlayerName());
             getScreenParent().setScene(ScreensController.DICE);
         }

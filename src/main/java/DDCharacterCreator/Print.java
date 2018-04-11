@@ -70,8 +70,8 @@ public class Print {
         //charater main fields
             String charname = myChar.getCharName().toLowerCase();
             charname = charname.substring(0,1).toUpperCase() + charname.substring(1);
-            fields.get("CharacterNameP2").setFontSize(22);
-            fields.get("CharacterNameP1").setFontSize(22);
+            fields.get("CharacterNameP2").setFontSize(20);
+            fields.get("CharacterNameP1").setFontSize(20);
             fields.get("CharacterNameP2").setValue(charname);
             fields.get("CharacterNameP1").setValue(charname);
 
@@ -87,16 +87,17 @@ public class Print {
         if (myChar.getCharBackground() != null) {
             String Background = myChar.getCharBackground().name().toLowerCase();
             Background = Background.substring(0,1).toUpperCase() + Background.substring(1);
-            fields.get("Background").setFontSize(14);
+            fields.get("Background").setFontSize(12);
             fields.get("Background").setValue(Background);
         }
         if (myChar.getCharAlignment() != null) {
+            fields.get("Alignment").setFontSize(10);
             fields.get("Alignment").setValue(myChar.getCharAlignment().name());
         }
         if (myChar.getCharPlayerName() != null) {
             String PlayerName =myChar.getCharPlayerName().toLowerCase();
             PlayerName = PlayerName.substring(0,1).toUpperCase() + PlayerName.substring(1);
-            fields.get("PlayerName").setFontSize(14);
+            fields.get("PlayerName").setFontSize(12);
             fields.get("PlayerName").setValue(PlayerName);
         }
         if (myChar.getCharExperiencePoints() != null) {
