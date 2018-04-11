@@ -36,11 +36,11 @@ public class Print {
         if(SaveLocation == null){
             String fileName = myChar.getCharPlayerName();
             String home = System.getProperty("user.home");
-            destination = new File(home+"/Downloads/D-DCharachterSheet-"+ fileName +".pdf").toString();
+            destination = new File(home+"/Downloads/D-DCharacterSheet-"+ fileName +".pdf").toString();
         }
         else{
             destination = SaveLocation;
-            if(destination.substring(destination.length() - 5) != ".pdf")
+            if(!destination.substring(destination.length() - 4).equals(".pdf"))
                 destination += ".pdf";
         }
 
