@@ -191,7 +191,7 @@ public class Randomizer {
      * @return Random character level.
      */
     public static Integer getCharLevel(){
-        return randomize(1, 20);
+        return randomize(1, 10);
     }
 
     public static Enum.Background getCharBackground() { return Enum.Background.values()[randomize(Enum.Background.values().length - 1)]; }
@@ -231,11 +231,11 @@ public class Randomizer {
      * @return A random ability score.
      */
     public static Integer getAbilityScore(){
-        Integer[] rolls = new Integer[4];
+        Double[] rolls = new Double[4];
         for(int i = 0; i < 4; i++)
-            rolls[i] = dice.Roll(6, 1);
+            rolls[i] = (double)dice.Roll(6, 1);
         Arrays.sort(rolls);
-        return rolls[1]+rolls[2]+rolls[3];
+        return (int)(((rolls[1]+rolls[2]+ rolls[3])-10)/2);
     }
 
 

@@ -21,7 +21,7 @@ public class DiceController extends ControlledScreen implements Initializable, M
     @FXML public JFXButton diceButton;
     @FXML public JFXSlider levelSlider;
     final private int MINLEVEL = 1;
-    final private int MAXLEVEL = 25;
+    final private int MAXLEVEL = 10;
     private boolean rolled;
 
     @Override
