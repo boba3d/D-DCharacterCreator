@@ -18,8 +18,8 @@ public class Main extends Application {
             mycharacter = new Character();
             mycharacter.setCharSkills(new CharacterSkills());
         //Start Database
-            DB = new CharacterDatabase();
-            DB.OpenConnectionToDB();
+           /* DB = new CharacterDatabase();
+            DB.OpenConnectionToDB();*/
         new ScreensController(primaryStage);
 
     }
@@ -42,7 +42,7 @@ public class Main extends Application {
         fc.setTitle("Save the Character Sheet");
         File f = fc.showSaveDialog(null);
         print.printChar(mycharacter, f == null ? null : f.toString());
-        DB.CloseConnectionToDB();
+        //DB.CloseConnectionToDB();
     }
 
 }

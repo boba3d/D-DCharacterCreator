@@ -72,7 +72,6 @@ public class CharacterTest {
         Assert.assertEquals(8,(int)c.getCharHitDice());
         Assert.assertTrue(true);
 
-<<<<<<< HEAD
         c.setCharClass(Enum.Class.WARLOCK);
         Enum.checkClass(c);
         Assert.assertEquals(Enum.Class.WARLOCK,c.getCharClass());
@@ -114,11 +113,9 @@ public class CharacterTest {
         Assert.assertEquals(Enum.Race.HUMAN, c.getCharRace());
         Assert.assertTrue(true);
 
-=======
         c.setCharRace(Enum.Race.HUMAN);
         Enum.checkRace(c);
         Assert.assertEquals(Enum.Race.HUMAN,c.getCharRace());
->>>>>>> origin/master
     }
 }
 

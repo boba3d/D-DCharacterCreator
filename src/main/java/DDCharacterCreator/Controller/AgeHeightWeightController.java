@@ -4,6 +4,7 @@ import DDCharacterCreator.Main;
 import DDCharacterCreator.ScreensController;
 import DDCharacterCreator.Utilities.*;
 import com.jfoenix.controls.JFXSlider;
+import javafx.application.Platform;
 import javafx.beans.binding.Bindings;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -105,7 +106,9 @@ public class AgeHeightWeightController extends ControlledScreen implements Initi
         Main.getChar().setCharAge((int) getAge());
         Main.getChar().setCharHeight((int) getHeight());
         Main.getChar().setCharWeight((int) getWeight());
-        getScreenParent().setScene(ScreensController.CHARAPPEARANCE);
+        //getScreenParent().setScene(ScreensController.CHARAPPEARANCE);
+        Main.PrintCharacter();
+        Platform.exit();
     }
 
     @Override
